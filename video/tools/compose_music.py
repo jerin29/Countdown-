@@ -1,6 +1,7 @@
 # Soft romantic bed, 26 s, 80 BPM, D major: piano arpeggios + pad + bass + reverb. Deterministic.
 import numpy as np, wave, sys
-SR = 48000; DUR = 30.0; N = int(SR * DUR)
+OFF = 1.8  # cold open before the first bar
+SR = 48000; DUR = 30.0 + OFF; N = int(SR * DUR)
 rng = np.random.default_rng(7)
 t_all = np.arange(N) / SR
 L = np.zeros(N); R = np.zeros(N)
@@ -11,7 +12,7 @@ prog = [[62,66,69],[61,64,69],[59,62,66],[55,59,62]]
 roots = [38, 37, 35, 31]
 bars = [0,1,2,3,0,1,2,3,1]  # 9 bars = 27 s (ends on A), then final D at 27 under the end card
 def add(sig, start, pan=0.0, gain=1.0):
-    i = int(start * SR); j = min(N, i + len(sig))
+    i = int((start + OFF) * SR); j = min(N, i + len(sig))
     if j <= i: return
     s = sig[: j - i] * gain
     L[i:j] += s * np.sqrt(0.5 * (1 - pan)); R[i:j] += s * np.sqrt(0.5 * (1 + pan))
@@ -36,6 +37,9 @@ def bass(m, dur):
     env = np.minimum(1, t / 0.04) * np.exp(-t * 0.6) * np.minimum(1, (dur - t) / 0.2)
     return out * np.clip(env, 0, 1) * 0.10
 arp = [0, 1, 2, 1, 2, 0, 1, 2]  # eighth-note pattern over the chord, octave lifts on beats 3-4
+# cold open: a held D pad that swells into the first bar
+add(pad([62, 66, 69], OFF + 0.9), -OFF, 0.0, 0.9)
+add(piano(74, dur=2.4, vel=0.5), -OFF + 0.3, 0.2)
 for b, ci in enumerate(bars):
     t0 = b * BAR; ch = prog[ci]
     add(pad(ch, BAR + 0.9), t0, 0.0)
