@@ -11,7 +11,10 @@ npm install -g hyperframes@latest @remotion/cli@latest
 uv tool install --upgrade "yt-dlp[default]"
 uv tool install --upgrade openai-whisper --with faster-whisper
 
-# Skills for HyperFrames and Remotion are committed in .claude/skills,
+# onetake (Python deps; playwright pinned to match the preinstalled Chromium)
+pip3 install --break-system-packages "playwright==1.63.0" numpy scipy Pillow matplotlib opencv-python-headless fonttools brotli
+
+# Skills for HyperFrames, Remotion and onetake are committed in .claude/skills,
 # so Claude Code loads them automatically from this repo.
 
 ffmpeg -version | head -1; node --version; python3 --version
