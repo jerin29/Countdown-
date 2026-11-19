@@ -1,0 +1,47 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    #glow-leak { position: absolute; inset: -16%; opacity: 0; mix-blend-mode: screen; }
+    .glow-layer { position: absolute; inset: -20%; }
+    #glow-amber {
+      background:
+        radial-gradient(ellipse 52% 60% at 8% 30%, rgb(255 241 197 / 85%), transparent 45%),
+        radial-gradient(ellipse 72% 70% at 18% 34%, rgb(255 126 57 / 70%), transparent 66%);
+      filter: blur(40px);
+    }
+    #glow-red {
+      background: radial-gradient(ellipse 58% 55% at 88% 22%, rgb(255 79 61 / 62%), rgb(255 44 92 / 24%) 48%, transparent 76%);
+      filter: blur(60px);
+    }
+    #glow-gold {
+      background: linear-gradient(104deg, transparent 24%, rgb(255 144 62 / 26%) 40%, rgb(255 247 205 / 60%) 51%, rgb(255 124 48 / 18%) 62%, transparent 78%);
+      filter: blur(30px);
+    }
+    #glow-flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 55%, #fffaf0 0%, #ffe6d0 45%, rgba(255,220,200,.6) 100%); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="glow" data-width="1080" data-height="1920">
+    <div id="glow-leak" class="clip" data-start="0" data-duration="26">
+      <div class="glow-layer" id="glow-amber"></div>
+      <div class="glow-layer" id="glow-red"></div>
+      <div class="glow-layer" id="glow-gold"></div>
+    </div>
+    <div id="glow-flash" class="clip" data-start="17.3" data-duration="0.6"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 26 }, 0);
+    // three warm "memory" leaks: opening, the beat before the letter, the goodbye
+    [[0.0, 3.6, 0.6], [13.8, 3.4, 0.62], [23.6, 2.4, 0.6]].forEach(([t, d, peak]) => {
+      tl.fromTo("#glow-leak", { opacity: 0 }, { opacity: peak, duration: d * 0.3, ease: "sine.out", immediateRender: false }, t);
+      tl.to("#glow-leak", { opacity: peak * 0.5, duration: d * 0.3, ease: "sine.inOut" }, t + d * 0.35);
+      tl.to("#glow-leak", { opacity: 0, duration: d * 0.3, ease: "sine.in" }, t + d * 0.68);
+    });
+    tl.fromTo("#glow-amber", { xPercent: -10 }, { xPercent: 14, duration: 26, ease: "none" }, 0);
+    tl.fromTo("#glow-red", { xPercent: 8, yPercent: -4 }, { xPercent: -12, yPercent: 6, duration: 26, ease: "none" }, 0);
+    tl.fromTo("#glow-gold", { xPercent: -30, rotation: 0 }, { xPercent: 30, rotation: 4, duration: 26, ease: "none" }, 0);
+    // camera flash as the letter comes up
+    tl.fromTo("#glow-flash", { opacity: 0 }, { opacity: 0.8, duration: 0.08, ease: "power2.in" }, 17.36);
+    tl.to("#glow-flash", { opacity: 0, duration: 0.3, ease: "power2.out" }, 17.46);
+    window.__timelines["glow"] = tl;
+  </script>
+</template>
