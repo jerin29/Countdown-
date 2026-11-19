@@ -33,7 +33,17 @@ pip3 install --break-system-packages "playwright==1.63.0" numpy scipy Pillow mat
 LEMO_SETUP=$(find ~/.claude/plugins -path '*lemo-opuscar/scripts/setup.sh' 2>/dev/null | head -1)
 if [ -n "$LEMO_SETUP" ]; then sh "$LEMO_SETUP" && sh "$LEMO_SETUP" deps; fi
 
-# Skills for HyperFrames, Remotion, onetake and earshot (earshot, real-sound) are committed in .claude/skills,
+# gbro-collage-broll: its shared venv for Gemini video generation
+# (also needs GEMINI_API_KEY and an image generator for its stills step)
+[ -x ~/hyperframes-projects/.omni-venv/bin/python ] || {
+  python3 -m venv ~/hyperframes-projects/.omni-venv
+  ~/hyperframes-projects/.omni-venv/bin/python -m pip install --upgrade "google-genai>=2.10.0" "httpx[socks]"
+}
+
+# ClaudeAnimationBase (animation-base/): its npm packages
+(cd "$(dirname "$0")/../animation-base" && npm install --no-audit --no-fund)
+
+# Skills for HyperFrames, Remotion, onetake, earshot and gbro-collage-broll (earshot, real-sound) are committed in .claude/skills,
 # so Claude Code loads them automatically from this repo.
 
 ffmpeg -version | head -1; node --version; python3 --version
