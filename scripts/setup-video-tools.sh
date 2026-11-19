@@ -19,6 +19,12 @@ npm install -g hyperframes@latest @remotion/cli@latest
 uv tool install --upgrade "yt-dlp[default]"
 uv tool install --upgrade openai-whisper --with faster-whisper
 
+# earshot (sound for videos). --no-sources takes torch from PyPI, because the
+# PyTorch CPU index it asks for is not reachable from every network.
+uv tool install --upgrade --no-sources "earshot[mcp] @ git+https://github.com/Leonxlnx/earshot"
+# Its two listening models (~1.1 GB, from huggingface.co) download on first use,
+# or now with: earshot doctor --fetch
+
 # onetake (Python deps; playwright pinned to match the preinstalled Chromium)
 pip3 install --break-system-packages "playwright==1.63.0" numpy scipy Pillow matplotlib opencv-python-headless fonttools brotli
 
@@ -27,7 +33,7 @@ pip3 install --break-system-packages "playwright==1.63.0" numpy scipy Pillow mat
 LEMO_SETUP=$(find ~/.claude/plugins -path '*lemo-opuscar/scripts/setup.sh' 2>/dev/null | head -1)
 if [ -n "$LEMO_SETUP" ]; then sh "$LEMO_SETUP" && sh "$LEMO_SETUP" deps; fi
 
-# Skills for HyperFrames, Remotion and onetake are committed in .claude/skills,
+# Skills for HyperFrames, Remotion, onetake and earshot (earshot, real-sound) are committed in .claude/skills,
 # so Claude Code loads them automatically from this repo.
 
 ffmpeg -version | head -1; node --version; python3 --version
