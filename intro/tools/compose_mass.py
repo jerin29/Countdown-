@@ -50,6 +50,17 @@ def riser(dur=0.75):
 def cym(dur=1.8):
     n = int(dur * SR); x = rng.standard_normal(n); hp = x - np.convolve(x, np.ones(6) / 6, 'same')
     return hp * env_exp(n, 2.6) * 0.5
+def slap(dur=0.18):
+    n = int(dur * SR); x = rng.standard_normal(n)
+    hp = x - np.convolve(x, np.ones(5) / 5, 'same')
+    body = np.convolve(x, np.ones(30) / 30, 'same') * 3
+    return (hp * 0.8 + body) * env_exp(n, 32)
+def rip(dur=0.42):
+    n = int(dur * SR); t = np.arange(n) / SR; x = rng.standard_normal(n)
+    crackle = (rng.random(n) < 0.02).astype(float) * rng.standard_normal(n) * 3
+    am = 0.5 + 0.5 * np.abs(np.sin(2 * np.pi * (40 + 120 * t / dur) * t))
+    hp = x - np.convolve(x, np.ones(3) / 3, 'same')
+    return (hp * am + crackle) * np.minimum(1, t / 0.02) * np.exp(-t * 4)
 D = [38, 45, 50]          # D power chord (low)
 Dh = [50, 57, 62, 66]     # D major high stab
 # 1) build: taiko hits accelerating 0 -> 1.0
@@ -75,6 +86,9 @@ for k, t in enumerate(np.arange(3.5, 4.0, 0.0625)): add(brass([62 + (k % 3) * 0]
 add(brass(D, 0.5, 4), 4.25, 0.45); add(brass([m + 2 for m in D], 0.5, 4), 4.5, 0.45)
 # 6) final boom 5.5, ring out
 add(boom(1.0, 75, 26), 5.5, 1.1); add(brass(Dh + D, 1.0, 2.2), 5.5, 0.7); add(cym(1.0), 5.5, 0.5)
+# paper sounds: slaps on the word strips and the sheet, a rip on the reveal
+for t in (1.0, 1.5, 2.0, 2.52, 4.39): add(slap(), t, 0.55, 0.1)
+add(rip(0.45), 2.97, 0.7, -0.15); add(rip(0.4), 2.99, 0.55, 0.2)
 # reverb (seeded noise IR) + glue
 irn = int(1.4 * SR); ti = np.arange(irn) / SR
 def conv(x, ir):

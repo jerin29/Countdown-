@@ -20,14 +20,19 @@
       #glow-teal { position: absolute; inset: -10%; background: radial-gradient(ellipse 50% 30% at 50% 70%, rgba(31,127,134,.45) 0%, rgba(0,0,0,0) 70%); opacity: 0; }
       .streak { position: absolute; left: -40%; width: 180%; height: 26px; background: linear-gradient(90deg, rgba(255,194,74,0) 0%, rgba(255,194,74,.9) 50%, rgba(255,194,74,0) 100%); transform-origin: 50% 50%; }
       #streak1 { top: 520px; } #streak2 { top: 980px; height: 10px; } #streak3 { top: 1360px; height: 18px; }
-      .word { position: absolute; left: 0; right: 0; top: 760px; text-align: center; opacity: 0; }
-      .word span {
-        display: inline-block; font: 400 260px/1 "League Gothic", "Oswald", sans-serif; letter-spacing: .04em;
-        background: linear-gradient(180deg, var(--gold-1) 0%, var(--gold-2) 48%, var(--gold-3) 100%);
-        -webkit-background-clip: text; background-clip: text; color: transparent;
-        filter: drop-shadow(0 10px 40px rgba(255,120,40,.45));
+      .word { position: absolute; left: 0; right: 0; top: 700px; text-align: center; opacity: 0; filter: drop-shadow(0 18px 30px rgba(0,0,0,.6)); }
+      .strip {
+        display: inline-block; padding: 34px 64px 26px; background-color: #f1e3c4; background-image: url(assets/paper.png);
+        background-size: 1080px 1920px; background-blend-mode: overlay;
       }
-      #w3 span { font-size: 200px; }
+      .strip span { display: inline-block; font: 400 210px/1 "League Gothic", "Oswald", sans-serif; letter-spacing: .04em; color: #1a0e0a; }
+      #w2 .strip { background-color: #c4262c; } #w2 .strip span { color: #fff3dc; }
+      #handle-tag { padding: 18px 36px 14px; }
+      #w3 .strip { background-color: #1f7f86; } #w3 .strip span { color: #ffd27a; font-size: 160px; }
+      .rip { position: absolute; inset: 0; background-color: #efe0bf; background-image: url(assets/paper.png); background-size: 1080px 1920px; background-blend-mode: overlay; }
+      #rip-wrap { position: absolute; inset: 0; z-index: 20; filter: drop-shadow(0 0 40px rgba(0,0,0,.7)); }
+      #rip-mark { position: absolute; left: 0; right: 0; top: 860px; text-align: center; font: 400 120px/1 "League Gothic", "Oswald", sans-serif; letter-spacing: .3em; color: rgba(60,30,20,.18); }
+      #paper { position: absolute; inset: 0; background: url(assets/paper.png) center / 1080px 1920px; mix-blend-mode: overlay; opacity: .6; pointer-events: none; }
       #ring { position: absolute; left: 540px; top: 720px; width: 600px; height: 600px; margin: -300px 0 0 -300px; border-radius: 50%; border: 18px solid var(--gold-2); opacity: 0; }
       #ring2 { position: absolute; left: 540px; top: 720px; width: 600px; height: 600px; margin: -300px 0 0 -300px; border-radius: 50%; border: 8px solid var(--teal); opacity: 0; }
       #logo-wrap { position: absolute; left: 220px; top: 400px; width: 640px; height: 640px; opacity: 0; }
@@ -41,7 +46,7 @@
         -webkit-background-clip: text; background-clip: text; color: transparent; opacity: 0;
       }
       #name span.sp { width: 40px; }
-      #handle { position: absolute; left: 0; right: 0; top: 1250px; text-align: center; font: 800 52px/1 "Montserrat", sans-serif; color: #fff6ec; letter-spacing: .01em; opacity: 0; }
+      #handle { position: absolute; left: 0; right: 0; top: 1236px; text-align: center; font: 800 50px/1 "Montserrat", sans-serif; color: #1a0e0a; filter: drop-shadow(0 8px 16px rgba(0,0,0,.6)); letter-spacing: .01em; opacity: 0; }
       #tag { position: absolute; left: 0; right: 0; top: 1322px; text-align: center; font: 700 28px/1 "Montserrat", sans-serif; color: var(--gold-2); letter-spacing: .38em; opacity: 0; }
       .ember { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle, #fff3c4 0%, #ffb347 45%, rgba(255,120,40,0) 70%); opacity: 0; }
       #flash { position: absolute; inset: 0; background: #fff6e6; opacity: 0; }
@@ -56,9 +61,10 @@
         <div id="streaks" class="clip" data-start="0" data-duration="3.0" data-track-index="1">
           <div class="streak" id="streak1"></div><div class="streak" id="streak2"></div><div class="streak" id="streak3"></div>
         </div>
-        <div class="word clip" id="w1" data-start="1.0" data-duration="0.5" data-track-index="2"><span>COOKING</span></div>
-        <div class="word clip" id="w2" data-start="1.5" data-duration="0.5" data-track-index="2"><span>TRAVEL</span></div>
-        <div class="word clip" id="w3" data-start="2.0" data-duration="0.9" data-track-index="2"><span>EVERYDAY LIFE</span></div>
+        <div class="word clip" id="w1" data-start="1.0" data-duration="0.5" data-track-index="2"><div class="strip"><span>COOKING</span></div></div>
+        <div class="word clip" id="w2" data-start="1.5" data-duration="0.5" data-track-index="2"><div class="strip"><span>TRAVEL</span></div></div>
+        <div class="word clip" id="w3" data-start="2.0" data-duration="0.5" data-track-index="2"><div class="strip"><span>EVERYDAY LIFE</span></div></div>
+        <div id="rip-wrap" class="clip" data-start="2.3" data-duration="1.1" data-track-index="11"><div class="rip" id="rip-l"></div><div class="rip" id="rip-r"></div><div id="rip-mark">JERIN</div></div>
         <div id="embers" class="clip" data-start="2.4" data-duration="4.1" data-track-index="3"></div>
         <div id="ring" class="clip" data-start="3.0" data-duration="0.8" data-track-index="4"></div>
         <div id="ring2" class="clip" data-start="3.05" data-duration="0.9" data-track-index="5"></div>
@@ -67,10 +73,11 @@
           <div id="shine"><div id="shine-bar"></div></div>
         </div>
         <div id="name" class="clip" data-start="3.45" data-duration="3.05" data-track-index="7" data-var-text="name"></div>
-        <div id="handle" class="clip" data-start="4.2" data-duration="2.3" data-track-index="8" data-var-text="handle">@jerin_chronicles_</div>
+        <div id="handle" class="clip" data-start="4.2" data-duration="2.3" data-track-index="8"><span class="strip" id="handle-tag">@jerin_chronicles_</span></div>
         <div id="tag" class="clip" data-start="4.45" data-duration="2.05" data-track-index="9">COOKING · TRAVEL · LIFE</div>
       </div>
       <div id="vignette" data-layout-ignore></div>
+      <div id="paper" data-layout-ignore></div>
       <div id="flash" data-layout-ignore></div>
       <audio id="score" class="clip" src="assets/audio/mass-score.wav" data-start="0" data-duration="6.5" data-track-index="10" data-volume="1"></audio>
     </div>
@@ -96,19 +103,37 @@
         glowHit(t, 0.6 + i * 0.08);
       });
       shake(0.0, 10, 4);
-      // three word slams
+      // torn-paper edges (seeded) for every strip and the rip halves
+      let tseed = 77; const tr = () => { tseed = (tseed * 16807) % 2147483647; return tseed / 2147483647; };
+      const tornStrip = (el) => {
+        const pts = []; const n = 22;
+        for (let i = 0; i <= n; i++) pts.push(`${(i / n * 100).toFixed(1)}% ${(tr() * 9).toFixed(1)}%`);
+        for (let i = n; i >= 0; i--) pts.push(`${(i / n * 100).toFixed(1)}% ${(91 + tr() * 9).toFixed(1)}%`);
+        el.style.clipPath = `polygon(${pts.join(",")})`;
+      };
+      document.querySelectorAll(".strip").forEach(tornStrip);
+      const tear = []; for (let i = 0; i <= 40; i++) tear.push([50 + (tr() - 0.5) * 7 + Math.sin(i * 0.9) * 2.5, i / 40 * 100]);
+      document.getElementById("rip-l").style.clipPath = `polygon(0% 0%, ${tear.map(([x, y]) => `${x.toFixed(1)}% ${y.toFixed(1)}%`).join(",")}, 0% 100%)`;
+      document.getElementById("rip-r").style.clipPath = `polygon(100% 0%, ${tear.map(([x, y]) => `${x.toFixed(1)}% ${y.toFixed(1)}%`).join(",")}, 100% 100%)`;
+      // three word slams (paper strips slapped on at a tilt)
       ["#w1", "#w2", "#w3"].forEach((w, i) => {
         const t = 1.0 + i * 0.5;
-        tl.fromTo(w, { opacity: 1, scale: 1.7 }, { scale: 1, duration: 0.09, ease: "power4.in" }, t);
+        tl.fromTo(w, { opacity: 1, scale: 1.7, rotation: [-14, 12, -9][i] }, { scale: 1, rotation: [-4, 3, -2][i], duration: 0.09, ease: "power4.in" }, t);
         tl.to(w, { scale: 1.06, duration: i === 2 ? 0.5 : 0.4, ease: "none" }, t + 0.09);
         flash(t, 0.55); shake(t, 22); glowHit(t, 1);
       });
-      tl.to("#w3", { opacity: 0, scale: 1.3, duration: 0.3, ease: "power2.in" }, 2.6);
+      // paper sheet drops over the riser, then rips apart on the big hit
+      tl.fromTo("#rip-wrap", { yPercent: -100 }, { yPercent: 0, duration: 0.22, ease: "power3.in" }, 2.3);
+      tl.fromTo("#rip-wrap", { scale: 1 }, { scale: 1.06, duration: 0.65, ease: "power1.in", immediateRender: false }, 2.33);
+      tl.fromTo("#rip-l", { x: 0, rotation: 0 }, { x: -1250, rotation: -14, duration: 0.32, ease: "power2.out", immediateRender: false }, 2.97);
+      tl.fromTo("#rip-r", { x: 0, rotation: 0 }, { x: 1250, rotation: 14, duration: 0.32, ease: "power2.out", immediateRender: false }, 2.97);
+      tl.to("#rip-mark", { opacity: 0, duration: 0.08 }, 2.97);
+      shake(2.3, 14, 4);
       // riser: glow tightens, darkness
       tl.to("#glow", { opacity: 0.1, duration: 0.6, ease: "power1.in" }, 2.3);
       // BIG HIT 3.0: logo slams in with shockwave
       tl.fromTo("#logo-wrap", { opacity: 0, scale: 2.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.14, ease: "power4.in" }, 2.88);
-      flash(3.0, 1, 0.35); shake(3.0, 40, 7); glowHit(3.0, 1.2);
+      flash(3.05, 0.75, 0.3); shake(3.0, 40, 7); glowHit(3.0, 1.2);
       tl.fromTo("#glow-teal", { opacity: 0 }, { opacity: 0.8, duration: 0.3, ease: "power2.out" }, 3.0);
       tl.fromTo("#ring", { scale: 0.6, opacity: 1 }, { scale: 2.6, opacity: 0, duration: 0.7, ease: "power2.out" }, 3.0);
       tl.fromTo("#ring2", { scale: 0.5, opacity: 0.9 }, { scale: 2.2, opacity: 0, duration: 0.8, ease: "power2.out" }, 3.05);
@@ -126,7 +151,7 @@
         tl.fromTo(s, { opacity: 0, scale: 2.2, y: -30 }, { opacity: 1, scale: 1, y: 0, duration: 0.07, ease: "power4.in" }, t);
       });
       shake(4.0, 8, 4);
-      tl.fromTo("#handle", { opacity: 0, y: 30, scaleX: 1.35 }, { opacity: 1, y: 0, scaleX: 1, duration: 0.25, ease: "power3.out" }, 4.25);
+      tl.fromTo("#handle", { opacity: 0, y: 30, scale: 1.4, rotation: -8 }, { opacity: 1, y: 0, scale: 1, rotation: -2, duration: 0.14, ease: "power4.in" }, 4.25);
       tl.fromTo("#tag", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 4.5);
       // final hit 5.5: flash, shine across the logo
       flash(5.5, 0.7, 0.3); shake(5.5, 26, 6); glowHit(5.5, 1.1);
