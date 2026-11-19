@@ -1,0 +1,22 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #out-wrap { position: absolute; left: 0; right: 0; top: 300px; text-align: center; }
+    #out-title { font: italic 700 104px/1 "Playfair Display", serif; color: #fff6ec; text-shadow: 0 6px 30px rgba(0,0,0,.5); }
+    #out-heart { display: block; margin: 22px auto 0; width: 86px; height: 86px; }
+    #out-heart path { fill: #ff4d6d; }
+  </style>
+  <div id="root" data-composition-id="outro" data-width="1080" data-height="1920">
+    <div id="out-wrap" class="clip" data-start="0" data-duration="2.2">
+      <div id="out-title">See you soon</div>
+      <svg id="out-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 5.4 3.2 1.8-2 3.3-3.2 5.4-3.2 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#out-title", { opacity: 0, y: 30, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 0.05);
+    tl.fromTo("#out-heart", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)" }, 0.3);
+    tl.fromTo("#out-heart", { scale: 1 }, { scale: 1.18, duration: 0.18, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 0.75);
+    window.__timelines["outro"] = tl;
+  </script>
+</template>

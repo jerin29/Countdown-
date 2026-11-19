@@ -1,0 +1,51 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #ctr-card {
+      position: absolute; left: 140px; right: 140px; top: 1030px; padding: 22px 36px 24px;
+      border-radius: 36px; background: rgba(26,11,18,.78); backdrop-filter: blur(22px);
+      border: 2px solid rgba(255,77,109,.55); text-align: center; color: #fff6ec;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    #ctr-label { font: 700 28px/1 "Montserrat", sans-serif; letter-spacing: .3em; color: #ff9aac; text-transform: uppercase; }
+    #ctr-tiles { margin-top: 16px; display: flex; justify-content: center; gap: 18px; }
+    .ctr-tile {
+      position: relative; width: 128px; height: 150px; border-radius: 22px; overflow: hidden;
+      background: linear-gradient(180deg, #3a1726 0%, #2a0f1b 50%, #220c16 50%, #2f1220 100%);
+    }
+    .ctr-num {
+      position: absolute; left: 0; right: 0; top: 0; height: 150px;
+      font: 900 110px/150px "Montserrat", sans-serif; color: #fff6ec;
+    }
+    #ctr-unit { margin-top: 12px; font: italic 600 38px/1.1 "Playfair Display", serif; color: #ffd9df; }
+  </style>
+  <div id="root" data-composition-id="counter" data-width="1080" data-height="1920">
+    <div id="ctr-card" class="clip" data-start="0" data-duration="5.6">
+      <div id="ctr-label">Day by day</div>
+      <div id="ctr-tiles">
+        <div class="ctr-tile"><div class="ctr-num" id="ctr-a">3</div></div>
+        <div class="ctr-tile"><div class="ctr-num" id="ctr-b">0</div></div>
+      </div>
+      <div id="ctr-unit">until I'm there with you</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ctr-card", { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 0);
+    // tick 30 -> 01, fast then slowing; the digits are a pure function of time
+    const a = document.getElementById("ctr-a"), b = document.getElementById("ctr-b");
+    const n0 = 30, n1 = 1, t0 = 0.6, t1 = 3.6, k = 1.8;
+    const show = (i) => { const v = String(n0 - i).padStart(2, "0"); a.textContent = v[0]; b.textContent = v[1]; };
+    const clock = { t: 0 };
+    tl.fromTo(clock, { t: 0 }, { t: 1, duration: t1 - t0, ease: "none",
+      onUpdate: () => show(Math.min(n0 - n1, Math.floor(Math.pow(clock.t, 1 / k) * (n0 - n1) + 1e-6))) }, t0);
+    for (let i = 1; i <= n0 - n1; i++) {
+      const t = t0 + (t1 - t0) * Math.pow(i / (n0 - n1), k);
+      tl.fromTo(".ctr-num", { yPercent: -18, opacity: 0.4 }, { yPercent: 0, opacity: 1, duration: 0.07, ease: "power2.out", immediateRender: false }, t);
+    }
+    tl.fromTo("#ctr-tiles", { scale: 1 }, { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" }, 3.65);
+    tl.fromTo("#ctr-unit", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.4);
+    tl.to("#ctr-card", { opacity: 0, y: 40, duration: 0.35, ease: "power2.in" }, 5.2);
+    window.__timelines["counter"] = tl;
+  </script>
+</template>

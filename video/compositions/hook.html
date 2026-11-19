@@ -1,0 +1,31 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #hook-wrap { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+    #hook-kicker {
+      display: inline-block; font: 700 30px/1 "Montserrat", sans-serif; letter-spacing: .2em;
+      text-transform: uppercase; color: #1a0b12; background: var(--rose, #ff4d6d);
+      padding: 14px 22px 12px 26px; border-radius: 999px; margin-top: 20px;
+    }
+    #hook-title {
+      font: italic 700 88px/1.02 "Playfair Display", serif; color: #fff6ec;
+      text-shadow: 0 6px 30px rgba(0,0,0,.45);
+    }
+    #hook-title span { display: inline-block; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-wrap" class="clip" data-start="0" data-duration="4.2">
+      <div id="hook-title"><span id="hook-w1">Counting down</span><br /><span id="hook-w2">the days</span></div>
+      <div id="hook-kicker" data-var-text="hookSub">until I see you again</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // frame 0 already shows the hook (thumbnail): a pop, not a fade-in
+    tl.fromTo("#hook-w1", { scale: 1.12 }, { scale: 1, duration: 0.45, ease: "power3.out" }, 0);
+    tl.fromTo("#hook-w2", { scale: 1.12 }, { scale: 1, duration: 0.45, ease: "power3.out" }, 0.12);
+    tl.fromTo("#hook-kicker", { scale: 1 }, { scale: 1.07, duration: 0.22, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0.5);
+    tl.to("#hook-wrap", { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, 3.8);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>
