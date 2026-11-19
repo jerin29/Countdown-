@@ -1,0 +1,75 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    #end-sheet {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 95% 70% at 50% 38%, #fbf5e6 0%, #fbf5e6 62%, #efe3c8 100%);
+    }
+    .end-ring { position: absolute; border-radius: 50%; border-style: solid; z-index: 2; }
+    #end-ring1 { left: -160px; top: 120px; width: 420px; height: 420px; border-width: 26px; border-color: #1f7f86; opacity: .18; }
+    #end-ring2 { right: -180px; top: 1260px; width: 480px; height: 480px; border-width: 30px; border-color: #d4673e; opacity: .18; }
+    #end-ring3 { left: 80px; top: 1500px; width: 160px; height: 160px; border-width: 14px; border-color: #13222b; opacity: .12; }
+    #end-logo { position: absolute; left: 140px; top: 290px; width: 800px; height: 800px; }
+    .end-layer { position: absolute; inset: 0; }
+    .end-layer img { width: 800px; height: 800px; display: block; }
+    #end-top { clip-path: inset(0 0 31.15% 0); }
+    #end-bottom { clip-path: inset(68.85% 9.2% 0 0); transform-origin: 50% 77%; }
+    #end-handle-wrap { position: absolute; left: 0; right: 0; top: 1118px; text-align: center; }
+    #end-handle { font: 800 64px/1 "Montserrat", sans-serif; color: #13222b; letter-spacing: -0.01em; }
+    #end-caret { display: inline-block; width: 6px; height: 60px; margin-left: 6px; vertical-align: -6px; background: #d4673e; }
+    #end-sub { margin-top: 14px; font: 600 32px/1 "Montserrat", sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #1f7f86; }
+    #end-btn {
+      position: absolute; left: 340px; top: 1270px; width: 400px; height: 92px; border-radius: 46px;
+      background: #d4673e; color: #fbf5e6; text-align: center; box-shadow: 0 10px 0 #9c4526;
+      font: 800 40px/92px "Montserrat", sans-serif;
+    }
+    #end-btn-on { position: absolute; inset: 0; border-radius: 46px; background: #13222b; color: #fbf5e6; opacity: 0; }
+    #end-btn-on svg { width: 34px; height: 34px; vertical-align: -4px; margin-right: 10px; }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-sheet" class="clip" data-start="0" data-duration="4.4">
+      <div class="end-ring" id="end-ring1"></div>
+      <div class="end-ring" id="end-ring2"></div>
+      <div class="end-ring" id="end-ring3"></div>
+      <div id="end-logo">
+        <div class="end-layer" id="end-top"><div class="end-layer" id="end-top-in"><img src="assets/logo.png" alt="" /></div></div>
+        <div class="end-layer" id="end-bottom"><img src="assets/logo.png" alt="" /></div>
+      </div>
+      <div id="end-handle-wrap">
+        <div><span id="end-handle"></span><span id="end-caret"></span></div>
+        <div id="end-sub">Follow on Instagram</div>
+      </div>
+      <div id="end-btn">Follow<div id="end-btn-on"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#fbf5e6" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Following</div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // cream sheet slides up over the outro
+    tl.fromTo("#end-sheet", { yPercent: 100 }, { yPercent: 0, duration: 0.42, ease: "power3.out" }, 0);
+    tl.fromTo(["#end-ring1", "#end-ring2", "#end-ring3"], { scale: 0.6 }, { scale: 1.08, duration: 4.4, ease: "sine.out" }, 0);
+    tl.fromTo("#end-ring1", { y: 0 }, { y: 60, duration: 4.4, ease: "none" }, 0);
+    tl.fromTo("#end-ring2", { y: 0 }, { y: -70, duration: 4.4, ease: "none" }, 0);
+    // portrait + rings open out of a circle
+    tl.fromTo("#end-top-in", { clipPath: "circle(0% at 50% 42%)", scale: 0.86, rotation: -6 },
+      { clipPath: "circle(72% at 50% 42%)", scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.5)" }, 0.32);
+    // banner slams in on the D chord
+    tl.fromTo("#end-bottom", { opacity: 0, y: 120, scaleX: 0.55 }, { opacity: 1, y: 0, scaleX: 1, duration: 0.42, ease: "back.out(2.2)" }, 0.85);
+    tl.fromTo("#end-logo", { y: 0 }, { y: 10, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, 1.22);
+    tl.fromTo("#end-logo", { scale: 1 }, { scale: 1.025, duration: 1.6, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 1.4);
+    // handle types on, a function of time
+    const handle = "@jerin_chronicles_", el = document.getElementById("end-handle");
+    const typing = { n: 0 };
+    tl.fromTo(typing, { n: 0 }, { n: handle.length, duration: 0.7, ease: "none",
+      onUpdate: () => { el.textContent = handle.slice(0, Math.floor(typing.n + 1e-6)); } }, 1.1);
+    tl.set("#end-caret", { opacity: 0 }, 0);
+    tl.fromTo("#end-caret", { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "steps(1)", yoyo: true, repeat: 5, immediateRender: false }, 1.1);
+    tl.set("#end-caret", { opacity: 0 }, 2.6);
+    tl.fromTo("#end-sub", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 1.6);
+    // follow button pops in, gets tapped
+    tl.fromTo("#end-btn", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 1.8);
+    tl.to("#end-btn", { scale: 0.9, y: 8, duration: 0.08, ease: "power2.in" }, 2.4);
+    tl.set("#end-btn-on", { opacity: 1 }, 2.48);
+    tl.to("#end-btn", { scale: 1, y: 0, duration: 0.25, ease: "back.out(3)" }, 2.48);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

@@ -1,6 +1,6 @@
 # Soft romantic bed, 26 s, 80 BPM, D major: piano arpeggios + pad + bass + reverb. Deterministic.
 import numpy as np, wave, sys
-SR = 48000; DUR = 26.0; N = int(SR * DUR)
+SR = 48000; DUR = 30.0; N = int(SR * DUR)
 rng = np.random.default_rng(7)
 t_all = np.arange(N) / SR
 L = np.zeros(N); R = np.zeros(N)
@@ -9,7 +9,7 @@ BEAT = 0.75; BAR = 4 * BEAT  # 3 s
 # chords (midi): D, A/C#, Bm, G  -> repeat; last bar resolves to D and holds
 prog = [[62,66,69],[61,64,69],[59,62,66],[55,59,62]]
 roots = [38, 37, 35, 31]
-bars = [0,1,2,3,0,1,2,3]  # 8 bars = 24 s, then final D at 24
+bars = [0,1,2,3,0,1,2,3,1]  # 9 bars = 27 s (ends on A), then final D at 27 under the end card
 def add(sig, start, pan=0.0, gain=1.0):
     i = int(start * SR); j = min(N, i + len(sig))
     if j <= i: return
@@ -50,11 +50,11 @@ mel = [(4, 0, 74), (4, 2, 73), (5, 0, 73), (5, 2, 71), (6, 0, 71), (6, 2, 69), (
 for b, beat, m in mel:
     add(piano(m, dur=2.5, vel=0.75), b * BAR + beat * BEAT + 0.01, pan=0.1)
 # final: D major held under the outro, then fade
-t0 = 8 * BAR  # 24.0
-add(pad([62, 66, 69, 74], 2.0), t0 - 0.05, 0.0, 1.2)
-add(bass(38, 2.0), t0, 0.0)
+t0 = 9 * BAR  # 27.0
+add(pad([62, 66, 69, 74], 3.0), t0 - 0.05, 0.0, 1.2)
+add(bass(38, 3.0), t0, 0.0)
 for k, m in enumerate([62, 66, 69, 74, 78]):
-    add(piano(m, dur=2.0, vel=0.8), t0 + k * 0.06, pan=-0.3 + 0.15 * k)
+    add(piano(m, dur=3.0, vel=0.8), t0 + k * 0.06, pan=-0.3 + 0.15 * k)
 # reverb: decaying stereo noise IR (seeded), FFT convolution
 irn = int(2.2 * SR); ti = np.arange(irn) / SR
 irL = rng.standard_normal(irn) * np.exp(-ti * 3.2); irR = rng.standard_normal(irn) * np.exp(-ti * 3.2)
