@@ -1,21 +1,18 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    #glow-leak { position: absolute; inset: -16%; opacity: 0; mix-blend-mode: screen; }
-    .glow-layer { position: absolute; inset: -20%; }
+    #glow-leak { position: absolute; inset: -8%; will-change: opacity; opacity: 0; mix-blend-mode: screen; }
+    .glow-layer { position: absolute; inset: -12%; }
     #glow-amber {
       background:
         radial-gradient(ellipse 52% 60% at 8% 30%, rgb(255 241 197 / 85%), transparent 45%),
         radial-gradient(ellipse 72% 70% at 18% 34%, rgb(255 126 57 / 70%), transparent 66%);
-      filter: blur(40px);
     }
     #glow-red {
       background: radial-gradient(ellipse 58% 55% at 88% 22%, rgb(255 79 61 / 62%), rgb(255 44 92 / 24%) 48%, transparent 76%);
-      filter: blur(60px);
     }
     #glow-gold {
       background: linear-gradient(104deg, transparent 24%, rgb(255 144 62 / 26%) 40%, rgb(255 247 205 / 60%) 51%, rgb(255 124 48 / 18%) 62%, transparent 78%);
-      filter: blur(30px);
     }
     #glow-flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 55%, #fffaf0 0%, #ffe6d0 45%, rgba(255,220,200,.6) 100%); opacity: 0; }
   </style>
