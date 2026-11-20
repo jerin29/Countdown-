@@ -1,0 +1,54 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .tag { position: absolute; right: 36px; top: 1010px; width: 400px; opacity: 0; transform-origin: 85% -40px; filter: drop-shadow(0 14px 22px rgba(0,0,0,.55)); }
+    .tag .card { position: relative; padding: 30px 30px 26px 40px; background-color: #f1e3c4; background-image: url(assets/paper.png); background-size: 1080px 1920px; background-blend-mode: overlay; }
+    .tag .hole { position: absolute; right: 40px; top: 18px; width: 22px; height: 22px; border-radius: 50%; background: #3a2418; }
+    .tag .name { font: 800 32px/1.1 "Montserrat", sans-serif; color: #1a0e0a; text-transform: uppercase; letter-spacing: .02em; padding-right: 40px; }
+    .tag .note { margin-top: 6px; font: 600 24px/1 "Montserrat", sans-serif; color: #6b4a36; }
+    .tag .price { margin-top: 10px; font: 400 120px/1 "League Gothic", "Oswald", sans-serif; color: #c4262c; letter-spacing: .01em; }
+    .tag .was { font: 600 34px/1 "Montserrat", sans-serif; color: #6b4a36; text-decoration: line-through; margin-left: 14px; vertical-align: 40px; }
+    .tag .badge { position: absolute; z-index: 2; left: -44px; top: -50px; width: 104px; height: 104px; border-radius: 50%; background: #ffc24a; color: #1a0e0a; text-align: center; font: 900 32px/104px "Montserrat", sans-serif; transform: rotate(-14deg); }
+    .string { position: absolute; right: 50px; top: -60px; width: 3px; height: 72px; background: #3a2418; }
+    #basket { position: absolute; right: 36px; top: 196px; width: 250px; padding: 16px 20px 14px; text-align: center; background-color: #1f7f86; background-image: url(assets/paper.png); background-size: 1080px 1920px; background-blend-mode: overlay; transform: rotate(3deg); filter: drop-shadow(0 10px 16px rgba(0,0,0,.5)); opacity: 0; }
+    #basket .lbl { font: 800 22px/1 "Montserrat", sans-serif; letter-spacing: .22em; color: #ffd27a; }
+    #basket .amt { margin-top: 6px; font: 400 76px/1 "League Gothic", "Oswald", sans-serif; color: #fff3dc; }
+  </style>
+  <div id="root" data-composition-id="prices" data-width="1080" data-height="1920">
+    <div id="basket" class="clip" data-start="0" data-duration="101.1"><div class="lbl">BASKET</div><div class="amt" id="basket-amt">€0.00</div></div>
+    <div class="tag clip" id="tag1" data-start="9" data-duration="5.6"><div class="string"></div><div class="card"><div class="hole"></div><div class="name">Tortilla wraps</div><div class="note">6 pieces</div><div class="price">€1.99</div></div></div>
+    <div class="tag clip" id="tag2" data-start="42.5" data-duration="5.6"><div class="string"></div><div class="card"><div class="hole"></div><div class="name">Salad mix</div><div class="note">1 bag</div><div class="price">€0.99</div></div></div>
+    <div class="tag clip" id="tag3" data-start="63.5" data-duration="5.6"><div class="string"></div><div class="card"><div class="hole"></div><div class="name">Jagdwurst</div><div class="note">sliced cold cut</div><div class="price">€1.19</div></div></div>
+    <div class="tag clip" id="tag4" data-start="72" data-duration="5.6"><div class="string"></div><div class="badge">-18%</div><div class="card"><div class="hole"></div><div class="name">Chicken mortadella</div><div class="note">on offer</div><div class="price">€1.29<span class="was">€1.59</span></div></div></div>
+    <div class="tag clip" id="tag5" data-start="91.8" data-duration="5.6"><div class="string"></div><div class="card"><div class="hole"></div><div class="name">Yogurt mild</div><div class="note">4 × 150 g</div><div class="price">€0.79</div></div></div>
+  </div>
+  <script>
+    let sd = 53; const r = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+    const torn = (el) => {
+      const p = []; const n = 14;
+      for (let i = 0; i <= n; i++) p.push(`${(i / n * 100).toFixed(1)}% ${(r() * 5).toFixed(1)}%`);
+      for (let i = n; i >= 0; i--) p.push(`${(i / n * 100).toFixed(1)}% ${(95 + r() * 5).toFixed(1)}%`);
+      el.style.clipPath = `polygon(${p.join(",")})`;
+    };
+    document.querySelectorAll("#root .card, #basket").forEach(torn);
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#basket", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 0.4);
+    // tags swing in from the side like a hanging price label, then settle
+    const tags = [["#tag1", 9, 1.99], ["#tag2", 42.5, 0.99], ["#tag3", 63.5, 1.19], ["#tag4", 72, 1.29], ["#tag5", 91.8, 0.79]];
+    tags.forEach(([el, t]) => {
+      tl.fromTo(el, { opacity: 0, x: 460, rotation: 24 }, { opacity: 1, x: 0, rotation: -8, duration: 0.32, ease: "power3.out" }, t);
+      tl.to(el, { rotation: 5, duration: 0.35, ease: "sine.inOut" }, t + 0.32);
+      tl.to(el, { rotation: -3, duration: 0.4, ease: "sine.inOut" }, t + 0.67);
+      tl.to(el, { rotation: 0, duration: 0.4, ease: "sine.out" }, t + 1.07);
+      tl.to(el, { opacity: 0, x: 460, rotation: 20, duration: 0.3, ease: "power2.in" }, t + 5.25);
+    });
+    // basket total is a function of time: each item lands 0.9 s after its tag
+    const amt = document.getElementById("basket-amt");
+    const lands = tags.map(([, t, p]) => [t + 0.9, p]);
+    const clock = { t: 0 };
+    tl.fromTo(clock, { t: 0 }, { t: 101.1, duration: 101.1, ease: "none",
+      onUpdate: () => { const sum = lands.filter(([lt]) => clock.t >= lt).reduce((a, [, p]) => a + p, 0); amt.textContent = "€" + sum.toFixed(2); } }, 0);
+    lands.forEach(([lt]) => tl.fromTo("#basket", { scale: 1.18 }, { scale: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, lt));
+    window.__timelines["prices"] = tl;
+  </script>
+</template>
