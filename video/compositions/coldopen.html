@@ -1,0 +1,27 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    #co-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,11,18,.7) 0%, rgba(26,11,18,0) 30%), linear-gradient(0deg, rgba(26,11,18,.55) 0%, rgba(26,11,18,0) 28%); }
+    #co-text { position: absolute; left: 0; right: 0; top: 300px; text-align: center; }
+    #co-l1 { font: 800 40px/1 "Montserrat", sans-serif; letter-spacing: .3em; text-transform: uppercase; color: #ff9aac; text-shadow: 0 3px 14px rgba(0,0,0,.6); }
+    #co-l2 { margin-top: 18px; font: italic 700 104px/1 "Playfair Display", serif; color: #fff6ec; text-shadow: 0 6px 30px rgba(0,0,0,.55); }
+    #co-flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #fffaf0 0%, #ffe6d0 60%, #ffd2c2 100%); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="coldopen" data-width="1080" data-height="1920">
+    <div id="co-shade" class="clip" data-start="0" data-duration="1.8"></div>
+    <div id="co-text" class="clip" data-start="0" data-duration="1.8">
+      <div id="co-l1">Some love</div>
+      <div id="co-l2">can't be texted.</div>
+    </div>
+    <div id="co-flash" class="clip" data-start="1.6" data-duration="0.3"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // frame 0 already reads (it is the thumbnail); the line settles in with a small pop
+    tl.fromTo("#co-l1", { scale: 1.15 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+    tl.fromTo("#co-l2", { scale: 1.12 }, { scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.05);
+    tl.fromTo("#co-flash", { opacity: 0 }, { opacity: 0.9, duration: 0.12, ease: "power2.in" }, 1.6);
+    tl.to("#co-flash", { opacity: 0, duration: 0.17, ease: "power2.out" }, 1.72);
+    window.__timelines["coldopen"] = tl;
+  </script>
+</template>

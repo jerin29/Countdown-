@@ -1,0 +1,32 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .sheet { position: absolute; left: -40px; top: 0; width: 1160px; height: 2400px; background-color: #efe0bf; background-image: url(assets/paper.png); background-size: 1080px 1920px; background-blend-mode: overlay; filter: drop-shadow(0 0 30px rgba(0,0,0,.6)); }
+    .sheet span { position: absolute; left: 0; right: 0; top: 1140px; text-align: center; font: 400 150px/1 "League Gothic", "Oswald", sans-serif; letter-spacing: .12em; color: rgba(196,38,44,.85); }
+  </style>
+  <div id="root" data-composition-id="wipes" data-width="1080" data-height="1920">
+    <div class="sheet clip" id="wipe0" data-start="3.2" data-duration="0.8"><span></span></div>
+    <div class="sheet clip" id="wipe1" data-start="35.2" data-duration="0.8"><span>STOP 1</span></div>
+    <div class="sheet clip" id="wipe2" data-start="68.2" data-duration="0.8"><span>STOP 2</span></div>
+    <div class="sheet clip" id="wipe3" data-start="85.2" data-duration="0.8"><span>STOP 3</span></div>
+    <div class="sheet clip" id="wipe4" data-start="119.5" data-duration="0.8"><span>STOP 4</span></div>
+    <div class="sheet clip" id="wipe5" data-start="136.3" data-duration="0.8"><span>TOTAL?</span></div>
+  </div>
+  <script>
+    let sd = 97; const r = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+    document.querySelectorAll("#root .sheet").forEach((el) => {
+      const p = []; const n = 26;
+      for (let i = 0; i <= n; i++) p.push(`${(i / n * 100).toFixed(1)}% ${(r() * 3.5).toFixed(2)}%`);
+      for (let i = n; i >= 0; i--) p.push(`${(i / n * 100).toFixed(1)}% ${(96.5 + r() * 3.5).toFixed(2)}%`);
+      el.style.clipPath = `polygon(${p.join(",")})`;
+    });
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 141.7 }, 0);
+    // each sheet sweeps up through the frame; it fully covers the frame at the cut (start + 0.4)
+    [3.2, 35.2, 68.2, 85.2, 119.5, 136.3].forEach((t, i) => {
+      tl.fromTo("#wipe" + i, { y: 1920, rotation: i % 2 ? 2 : -2 }, { y: -240, rotation: 0, duration: 0.4, ease: "power2.in" }, t);
+      tl.to("#wipe" + i, { y: -2500, rotation: i % 2 ? -2 : 2, duration: 0.38, ease: "power2.out" }, t + 0.4);
+    });
+    window.__timelines["wipes"] = tl;
+  </script>
+</template>

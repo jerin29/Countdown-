@@ -1,0 +1,50 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    #rc-bg { position: absolute; inset: 0; background-color: #efe0bf; background-image: url(assets/paper.png); background-size: 1080px 1920px; background-blend-mode: overlay; }
+    #rc-paper { position: absolute; left: 150px; top: 330px; width: 780px; padding: 46px 54px 170px; background: #fffdf6; filter: drop-shadow(0 20px 30px rgba(60,30,10,.35)); transform: rotate(-2deg); }
+    #rc-head { text-align: center; font: 700 34px/1 "Space Mono", "IBM Plex Mono", monospace; letter-spacing: .2em; color: #1a0e0a; }
+    #rc-sub { margin-top: 10px; text-align: center; font: 400 28px/1 "Space Mono", monospace; color: #6b4a36; }
+    .rc-line { display: flex; justify-content: space-between; margin-top: 22px; font: 400 34px/1 "Space Mono", "IBM Plex Mono", monospace; color: #1a0e0a; opacity: 0; }
+    .rc-rule { margin-top: 26px; border-top: 4px dashed #1a0e0a; opacity: .7; }
+    #rc-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 22px; opacity: 0; }
+    #rc-total b { font: 700 46px/1 "Space Mono", monospace; color: #1a0e0a; }
+    #rc-total span { font: 400 120px/1 "League Gothic", "Oswald", sans-serif; color: #c4262c; }
+    #rc-stamp { position: absolute; left: 60px; bottom: 60px; padding: 14px 22px 10px; border: 6px solid #c4262c; border-radius: 12px; color: #c4262c; font: 900 34px/1 "Montserrat", sans-serif; letter-spacing: .08em; transform: rotate(-12deg); opacity: 0; }
+    #rc-brand { position: absolute; left: 0; right: 0; top: 1300px; display: flex; align-items: center; justify-content: center; gap: 18px; opacity: 0; }
+    #rc-brand img { width: 200px; height: 200px; }
+    #rc-brand div { font: 800 46px/1 "Montserrat", sans-serif; color: #1a0e0a; }
+  </style>
+  <div id="root" data-composition-id="receipt" data-width="1080" data-height="1920">
+    <div id="rc-bg" class="clip" data-start="0" data-duration="5">
+      <div id="rc-paper">
+        <div id="rc-head">WRAP NIGHT</div>
+        <div id="rc-sub">groceries · Germany</div>
+        <div class="rc-rule"></div>
+        <div class="rc-line"><span>Tortilla wraps</span><span>1.99</span></div>
+        <div class="rc-line"><span>Salad mix</span><span>0.99</span></div>
+        <div class="rc-line"><span>Jagdwurst</span><span>1.19</span></div>
+        <div class="rc-line"><span>Chicken mortadella</span><span>1.29</span></div>
+        <div class="rc-line"><span>Yogurt mild</span><span>0.79</span></div>
+        <div class="rc-rule"></div>
+        <div id="rc-total"><b>TOTAL</b><span>€6.25</span></div>
+        <div id="rc-stamp">BUDGET WIN</div>
+      </div>
+      <div id="rc-brand"><img src="assets/logo-cut.png" alt="" /><div>@jerin_chronicles_</div></div>
+    </div>
+  </div>
+  <script>
+    let sd = 11; const r = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+    const p = []; const n = 24;
+    p.push("0% 0%", "100% 0%");
+    for (let i = n; i >= 0; i--) p.push(`${(i / n * 100).toFixed(1)}% ${(96 + (i % 2 ? 4 : 0) + r()).toFixed(1)}%`);
+    document.getElementById("rc-paper").style.clipPath = `polygon(${p.join(",")})`;
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#rc-paper", { yPercent: 120 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.05);
+    gsap.utils.toArray("#root .rc-line").forEach((el, i) => tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.14, ease: "steps(3)" }, 0.55 + i * 0.22));
+    tl.fromTo("#rc-total", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in" }, 1.85);
+    tl.fromTo("#rc-stamp", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in" }, 2.3);
+    tl.fromTo("#rc-brand", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 2.6);
+    window.__timelines["receipt"] = tl;
+  </script>
+</template>
