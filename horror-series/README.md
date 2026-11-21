@@ -7,6 +7,8 @@
 | [01-series-bible.md](01-series-bible.md) | Story, horror rules, setting, characters (with AI image prompts), visual style, episode list |
 | [02-scripts.md](02-scripts.md) | All 10 episode scripts, timecoded shot by shot, plus upload titles and thumbnail ideas |
 | [03-music-and-sound.md](03-music-and-sound.md) | Theme song lyrics, BGM cue list with AI music prompts, SFX list, voice casting, mixing |
+| [malayalam/](malayalam/) | **മലയാളം:** the series bible, all 10 scripts, and the music doc in Malayalam |
+| [audio/](audio/README.md) | **All audio:** 10 mixed episode soundtracks, 2 Malayalam songs, 11 score cues, 37 effects, 65 Malayalam dialogue lines |
 
 ## Suggested production pipeline (per episode)
 
