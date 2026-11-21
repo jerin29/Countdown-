@@ -1,0 +1,100 @@
+[
+ {
+  "name": "anjali_shadow_11",
+  "prompt": "portrait of a 32 year old Indian Malayali woman, sharp high cheekbones, narrow jaw, intense dark eyes, black hair tied back, black hoodie, dark industrial room, red monitor glow",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "anjali_shadow_23",
+  "prompt": "portrait of a 32 year old Indian Malayali woman, sharp high cheekbones, narrow jaw, intense dark eyes, black hair tied back, black hoodie, dark industrial room, red monitor glow",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "anjali_old_11",
+  "prompt": "portrait of a gentle 30 year old Indian Malayali woman scientist, round soft face, spectacles, long black hair in a plait, white lab coat, laboratory, soft light",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "anjali_old_23",
+  "prompt": "portrait of a gentle 30 year old Indian Malayali woman scientist, round soft face, spectacles, long black hair in a plait, white lab coat, laboratory, soft light",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "rahul_11",
+  "prompt": "portrait of a 23 year old slim Indian Malayali young man, short wavy hair, light stubble, white office shirt, ID lanyard, office at night, rain on window",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "rahul_23",
+  "prompt": "portrait of a 23 year old slim Indian Malayali young man, short wavy hair, light stubble, white office shirt, ID lanyard, office at night, rain on window",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "rona_11",
+  "prompt": "portrait of an arrogant Indian woman in her thirties, sleek straight hair with blonde highlights, red lipstick, black designer pantsuit, gold watch, luxury nightclub, purple neon",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "rona_23",
+  "prompt": "portrait of an arrogant Indian woman in her thirties, sleek straight hair with blonde highlights, red lipstick, black designer pantsuit, gold watch, luxury nightclub, purple neon",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "christy_11",
+  "prompt": "portrait of a nervous Indian woman in her thirties, short burgundy pixie cut hair, nose ring, leather jacket, smoking cigarette, nightclub, magenta neon",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "christy_23",
+  "prompt": "portrait of a nervous Indian woman in her thirties, short burgundy pixie cut hair, nose ring, leather jacket, smoking cigarette, nightclub, magenta neon",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "vikram_11",
+  "prompt": "portrait of a 45 year old Indian police officer, broad shoulders, salt and pepper short hair, thick moustache, khaki police uniform, cyber crime control room, blue screens",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "vikram_23",
+  "prompt": "portrait of a 45 year old Indian police officer, broad shoulders, salt and pepper short hair, thick moustache, khaki police uniform, cyber crime control room, blue screens",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ },
+ {
+  "name": "arun_11",
+  "prompt": "portrait of a lean 30 year old Indian police inspector, clean shaven, glasses, khaki police uniform, police office at night",
+  "w": 512,
+  "h": 640,
+  "seed": 11
+ },
+ {
+  "name": "arun_23",
+  "prompt": "portrait of a lean 30 year old Indian police inspector, clean shaven, glasses, khaki police uniform, police office at night",
+  "w": 512,
+  "h": 640,
+  "seed": 23
+ }
+]
