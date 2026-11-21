@@ -1,2 +1,3 @@
 horror-series/video/*.mp4.tmp
 __pycache__/
+horror-series/video/*.mp4

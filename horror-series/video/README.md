@@ -13,6 +13,8 @@ This is a **cinematic animatic**: the storyboard panels from `../art/storyboard/
 - **Transitions:** fade in from black, dips around the title and end cards, and a fade out at the end.
 - **Subtitles:** Malayalam subtitles are a soft track inside each MP4; turn them on in your player. They're also in `subs/` as `.srt` files for YouTube or your editor.
 
+> The MP4s are **not stored in git** (63–95 MB each). They were sent to you in the chat; rebuild them any time with the commands below.
+
 ## Use it
 - Post it as a teaser or a "motion comic" episode, or
 - use it as the **timing reference for animation**: replace each panel with animated shots and keep the cut, because the audio is already locked.
