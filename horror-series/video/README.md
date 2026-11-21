@@ -43,3 +43,18 @@ To re-cut one, edit its `CUTS` (start/end seconds in the 1:30 episode) or its `H
 - the title card with "10 എപ്പിസോഡുകൾ · ഉടൻ വരുന്നു".
 
 To change the shots, their timings or the lines, edit `SHOTS` / `LINES`.
+
+## Hindi version with English subtitles (`hi/`)
+`hi/COUNTDOWN_epNN_cinematic_hi.mp4`: all 10 episodes with Hindi dialogue, 1:30 each, 1080p. English subtitles are burned into the picture and also included as a track you can turn off. The `.srt` files are in `hi/subs/`. The videos themselves aren't stored in git.
+- **Voices:** Hindi AI voices (vidIQ), with the same character effects as the Malayalam version. Sia: Meera and Neha. Bunty: Arjun. Raju: the Keeper and Elias. Zara: Ammachi, Mom and the Teacher.
+- **Music:** the Hindi lullaby "दस घंटियाँ" (`audio/songs/ten-little-chimes-hi.mp3`) for the end-card hums. Score and effects are the same as the Malayalam version.
+- **On-screen text:** in Hindi (the mirror writing, name plates, phone screens, the engraving), with English captions.
+- **Rebuild:**
+  ```bash
+  COUNTDOWN_LANG=hi python3 audio/tools/process_voices.py hi
+  COUNTDOWN_LANG=hi python3 audio/tools/mix_episodes.py
+  cd animation-base && node render_boards.mjs --lang=hi --only=3,6,7,8 --w=1920 --h=1080 --out=out/panels_hd_hi
+  COUNTDOWN_LANG=hi python3 horror-series/video/tools/make_animatic.py
+  ```
+  Copy `out/panels_hd` to `out/panels_hd_hi` before rendering the Hindi panels.
+- Hindi dialogue is in `audio/voice_hi/lines.json` and the English subtitle text in `audio/voice_hi/subtitles_en.json`.
