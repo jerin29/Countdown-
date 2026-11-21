@@ -10,6 +10,9 @@ from make_promo import frame_of, look, ease, W, H, FPS, SW, SH, PANELS, HS, HERE
 
 A0, A1, B0 = 11.3, 64.0, 138.6
 SONG = os.path.join(HS, "audio", "songs", "ten-little-chimes-FULL-ml.mp3")
+FONT = "Noto Sans Malayalam"                                     # text font (Hindi: Noto Sans Devanagari)
+TITLE2, INFO, CTA = "കൗണ്ട്ഡൗൺ", "10 എപ്പിസോഡുകൾ · ഉടൻ വരുന്നു", "Follow ചെയ്യൂ · ഓരോ രാത്രിയും ഒരു മണി കുറയും"
+OUTNAME = "COUNTDOWN_promo_fullsong_ml"
 XF = 0.4
 B_LEN = 179.17 - B0
 DUR = round((A1 - A0) + B_LEN - XF, 2)                       # ≈ 92.9 s
@@ -48,7 +51,7 @@ HITS = [(0.0, 1.0), (15.6, .7), (32.2, .6), (56.9, .7), (68.8, .7), (TT, 1.0)]
 
 def ass(path):
     t = lambda s: f"0:{int(s // 60):02d}:{s % 60:05.2f}"
-    head = """[Script Info]
+    head = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
 PlayResY: 1920
@@ -56,20 +59,20 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Line,Noto Sans Malayalam,60,&H00F0F4F6,&H000000FF,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,4,3,2,70,70,330,1
+Style: Line,{FONT},60,&H00F0F4F6,&H000000FF,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,4,3,2,70,70,330,1
 Style: Title,Permanent Marker,150,&H00D0E2E9,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,8,0,1,0,8,5,40,40,0,1
-Style: TitleMl,Noto Sans Malayalam,78,&H00C9D2DA,&H000000FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,0,4,5,40,40,0,1
-Style: Info,Noto Sans Malayalam,52,&H003A3AD3,&H000000FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,0,3,5,40,40,0,1
-Style: Cta,Noto Sans Malayalam,46,&H00D8E8FF,&H000000FF,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,3,2,5,40,40,0,1
+Style: TitleMl,{FONT},78,&H00C9D2DA,&H000000FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,0,4,5,40,40,0,1
+Style: Info,{FONT},52,&H003A3AD3,&H000000FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,0,3,5,40,40,0,1
+Style: Cta,{FONT},46,&H00D8E8FF,&H000000FF,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,3,2,5,40,40,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = [f"Dialogue: 0,{t(a)},{t(b)},Line,,0,0,0,,{{\\fad(250,300)}}{x}" for a, b, x in LINES]
     ev += [f"Dialogue: 0,{t(TT + .4)},{t(DUR)},Title,,0,0,0,,{{\\fad(400,0)\\pos(540,1420)}}COUNTDOWN",
-           f"Dialogue: 0,{t(TT + .9)},{t(DUR)},TitleMl,,0,0,0,,{{\\fad(400,0)\\pos(540,1560)}}കൗണ്ട്ഡൗൺ",
-           f"Dialogue: 0,{t(TT + 1.5)},{t(DUR)},Info,,0,0,0,,{{\\fad(400,0)\\pos(540,1690)}}10 എപ്പിസോഡുകൾ · ഉടൻ വരുന്നു",
-           f"Dialogue: 0,{t(TT + 2.1)},{t(DUR)},Cta,,0,0,0,,{{\\fad(400,0)\\pos(540,1790)}}Follow ചെയ്യൂ · ഓരോ രാത്രിയും ഒരു മണി കുറയും"]
+           f"Dialogue: 0,{t(TT + .9)},{t(DUR)},TitleMl,,0,0,0,,{{\\fad(400,0)\\pos(540,1560)}}{TITLE2}",
+           f"Dialogue: 0,{t(TT + 1.5)},{t(DUR)},Info,,0,0,0,,{{\\fad(400,0)\\pos(540,1690)}}{INFO}",
+           f"Dialogue: 0,{t(TT + 2.1)},{t(DUR)},Cta,,0,0,0,,{{\\fad(400,0)\\pos(540,1790)}}{CTA}"]
     open(path, "w", encoding="utf-8").write(head + "\n".join(ev) + "\n")
 
 
@@ -79,7 +82,7 @@ def main():
     assert all(v is not None for v in imgs.values()), "render HD panels first"
     sub = os.path.join(OUT, "promo_full.ass"); ass(sub)
     bell = os.path.join(HS, "audio", "sfx", "chime_tower_bell.wav")
-    out = os.path.join(OUT, "COUNTDOWN_promo_fullsong_ml.mp4")
+    out = os.path.join(OUT, OUTNAME + ".mp4")
     fc = (f"[0:v]ass='{sub}':fontsdir={os.path.join(HERE, 'fonts')}[v];"
           f"[1:a]atrim={A0}:{A1},asetpts=PTS-STARTPTS,afade=t=in:d=0.3[sa];"
           f"[1:a]atrim={B0},asetpts=PTS-STARTPTS,afade=t=out:st={B_LEN - 1.5:.2f}:d=1.5[sb];"
@@ -111,7 +114,7 @@ def main():
         if dip < 1: img = (img * max(0, dip)).astype(np.uint8)
         ff.stdin.write(img.tobytes())
     ff.stdin.close(); ff.wait()
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "17.0", "-i", out, "-frames:v", "1", "-q:v", "3", os.path.join(OUT, "COUNTDOWN_promo_fullsong_cover.jpg")], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "17.0", "-i", out, "-frames:v", "1", "-q:v", "3", os.path.join(OUT, OUTNAME.replace("_ml", "").replace("_hi", "") + ("_hi" if OUTNAME.endswith("_hi") else "") + "_cover.jpg")], check=True)
     os.remove(sub)
     print("wrote", os.path.relpath(out, os.path.dirname(OUT)), DUR, "s")
 
