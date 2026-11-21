@@ -1,0 +1,59 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F7D9A8; }
+    #d-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #d-ding { position: absolute; left: 170px; top: 260px; font-family: "Archivo Black", sans-serif; font-size: 130px; line-height: 0.9;
+      color: #E63A2E; text-shadow: 7px 7px 0 #2B1B17; transform-origin: 0% 50%; }
+  </style>
+  <div id="root" data-composition-id="door" data-width="1920" data-height="1080">
+    <svg id="d-svg" viewBox="0 0 1920 1080">
+      <rect width="1920" height="1080" fill="#F7D9A8"/>
+      <g fill="#EFC98F"><rect x="0" y="0" width="1920" height="40"/><rect x="0" y="240" width="1920" height="12"/><rect x="0" y="480" width="1920" height="12"/></g>
+      <!-- doorway with the family behind the door -->
+      <rect x="620" y="140" width="560" height="760" fill="#FFE9B8" stroke="#2B1B17" stroke-width="12"/>
+      <g id="d-family">
+        <g class="d-p" transform="translate(760 900)"><g class="d-pi"><rect x="-70" y="-380" width="140" height="380" rx="50" fill="#2E8B57" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-450" r="70" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-70 -480 Q0 -560 70 -480 Z" fill="#6B3A22"/><circle cx="-24" cy="-455" r="7" fill="#2B1B17"/><circle cx="24" cy="-455" r="7" fill="#2B1B17"/><path d="M-30 -420 Q0 -390 30 -420" stroke="#2B1B17" stroke-width="7" fill="#E63A2E"/></g></g>
+        <g class="d-p" transform="translate(1040 900)"><g class="d-pi"><rect x="-70" y="-360" width="140" height="360" rx="50" fill="#E63A2E" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-430" r="70" fill="#C98F6A" stroke="#2B1B17" stroke-width="7"/><path d="M-80 -440 Q0 -540 80 -440 L80 -380 L60 -440 Q0 -490 -60 -440 L-80 -380 Z" fill="#2B1B17"/><circle cx="-24" cy="-435" r="7" fill="#2B1B17"/><circle cx="24" cy="-435" r="7" fill="#2B1B17"/><path d="M-30 -400 Q0 -370 30 -400" stroke="#2B1B17" stroke-width="7" fill="#FFF3DC"/></g></g>
+        <g class="d-p" transform="translate(900 900)"><g class="d-pi"><rect x="-55" y="-230" width="110" height="230" rx="40" fill="#FFC93C" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-290" r="60" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-60 -300 Q0 -380 60 -300 Z" fill="#C0472E"/><circle cx="-20" cy="-295" r="6" fill="#2B1B17"/><circle cx="20" cy="-295" r="6" fill="#2B1B17"/><path d="M-26 -265 Q0 -238 26 -265" stroke="#2B1B17" stroke-width="6" fill="#E63A2E"/></g></g>
+      </g>
+      <g id="d-door"><rect x="626" y="146" width="548" height="748" fill="#C0472E" stroke="#2B1B17" stroke-width="10"/>
+        <rect x="690" y="210" width="420" height="260" rx="14" fill="none" stroke="#2B1B17" stroke-width="8"/>
+        <rect x="690" y="530" width="420" height="300" rx="14" fill="none" stroke="#2B1B17" stroke-width="8"/>
+        <circle cx="1110" cy="520" r="18" fill="#FFC93C" stroke="#2B1B17" stroke-width="5"/></g>
+      <rect x="1230" y="470" width="70" height="110" rx="14" fill="#FFF7EA" stroke="#2B1B17" stroke-width="7"/>
+      <circle id="d-bell" cx="1265" cy="525" r="20" fill="#FFC93C" stroke="#2B1B17" stroke-width="5"/>
+      <rect x="560" y="900" width="680" height="40" fill="#8A4B2A"/>
+      <rect x="0" y="940" width="1920" height="140" fill="#7CC38A"/>
+      <!-- delivery rider with the box, arm reaches the bell -->
+      <g id="d-rider" transform="translate(1600 940)">
+        <rect x="-80" y="-420" width="160" height="420" rx="50" fill="#2E8B57" stroke="#2B1B17" stroke-width="7"/>
+        <g id="d-arm"><path d="M-40 -330 L-300 -415" stroke="#2E8B57" stroke-width="40" stroke-linecap="round"/><circle cx="-310" cy="-418" r="22" fill="#F2C9A0" stroke="#2B1B17" stroke-width="5"/></g>
+        <circle cx="0" cy="-490" r="72" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/>
+        <path d="M-78 -495 A80 80 0 0 1 78 -495 L 84 -475 L -84 -475 Z" fill="#FFC93C" stroke="#2B1B17" stroke-width="7"/>
+        <circle cx="-30" cy="-460" r="7" fill="#2B1B17"/><path d="M-50 -428 Q-26 -408 -4 -428" stroke="#2B1B17" stroke-width="6" fill="none"/>
+        <g transform="translate(-60 -270)"><rect x="-160" y="-40" width="260" height="70" rx="8" fill="#FFF7EA" stroke="#2B1B17" stroke-width="7"/>
+          <text data-layout-ignore x="-30" y="12" text-anchor="middle" font-family="Archivo Black" font-size="34" fill="#E63A2E">PCE</text></g>
+      </g>
+      <g id="d-confetti">
+        <rect class="d-c" x="700" y="200" width="24" height="12" fill="#E63A2E"/><rect class="d-c" x="820" y="240" width="24" height="12" fill="#2E8B57"/>
+        <rect class="d-c" x="980" y="190" width="24" height="12" fill="#FFC93C"/><rect class="d-c" x="1100" y="230" width="24" height="12" fill="#E63A2E"/>
+        <circle class="d-c" cx="760" cy="260" r="12" fill="#FFC93C"/><circle class="d-c" cx="1040" cy="250" r="12" fill="#2E8B57"/>
+        <circle class="d-c" cx="900" cy="200" r="12" fill="#E63A2E"/><rect class="d-c" x="660" y="300" width="24" height="12" fill="#FFC93C"/>
+      </g>
+    </svg>
+    <div id="d-ding">DING<br>DONG!</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#d-rider", { x: 2300 }, { x: 1600, duration: 1.2, ease: "power3.out" }, 0.20);
+    tl.fromTo("#d-arm", { rotation: 30 }, { rotation: 0, duration: 0.4, ease: "back.out(2)", svgOrigin: "1560 610" }, 2.67);
+    tl.fromTo("#d-bell", { scale: 1 }, { scale: 0.7, duration: 0.12, yoyo: true, repeat: 1, transformOrigin: "50% 50%" }, 3.06);
+    tl.fromTo("#d-ding", { scale: 0, rotation: -15, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: "back.out(2.5)" }, 3.06);
+    tl.fromTo("#d-ding", { y: 0 }, { y: -20, duration: 0.2, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 3.59);
+    tl.fromTo("#d-ding", { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, 6.24);
+    tl.fromTo("#d-door", { scaleX: 1 }, { scaleX: 0.08, duration: 0.8, ease: "power2.inOut", svgOrigin: "626 520" }, 4.22);
+    tl.fromTo(".d-pi", { y: 0 }, { y: -70, duration: 0.25, yoyo: true, repeat: 5, ease: "power2.out", stagger: 0.12 }, 6.64);
+    tl.fromTo(".d-c", { y: -300, rotation: 0, opacity: 0 }, { y: 500, rotation: 540, opacity: 1, duration: 2, ease: "power1.in", stagger: 0.08, transformOrigin: "50% 50%" }, 6.64);
+    window.__timelines["door"] = tl;
+  </script>
+</template>

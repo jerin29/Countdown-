@@ -1,0 +1,71 @@
+<template>
+  <style>
+    @font-face { font-family: "Baloo 2"; font-weight: 800; src: url("assets/fonts/baloo2-devanagari.woff2") format("woff2"); unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+    @font-face { font-family: "Baloo 2"; font-weight: 800; src: url("assets/fonts/baloo2-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2013-2014, U+2018-201E, U+2026; }
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .ly-line { position: absolute; left: 0; right: 0; bottom: 80px; text-align: center; }
+    .ly-pill { display: inline-block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 58px; line-height: 1.25; color: #2B1B17;
+      background: #FFF3DC; border: 6px solid #2B1B17; border-radius: 60px; padding: 6px 44px 0; box-shadow: 8px 8px 0 #2B1B17; }
+    .ly-ch .ly-pill { background: #E63A2E; color: #FFF3DC; font-size: 62px; }
+  </style>
+  <div id="root" data-composition-id="lyrics" data-width="1920" data-height="1080">
+    <div id="ly0" class="clip ly-line ly-ch" data-start="0.1" data-duration="3.0" data-track-index="0"><span id="ly0t" class="ly-pill">Pizza! Pizza! Pizza City!</span></div>
+    <div id="ly1" class="clip ly-line" data-start="10.0" data-duration="3.7" data-track-index="0"><span id="ly1t" class="ly-pill">वाइनगार्टन में जब भूख लगे,</span></div>
+    <div id="ly2" class="clip ly-line" data-start="13.8" data-duration="4.0" data-track-index="0"><span id="ly2t" class="ly-pill">पिज़्ज़ा की ख़ुशबू हर ओर जगे!</span></div>
+    <div id="ly3" class="clip ly-line" data-start="22.0" data-duration="3.7" data-track-index="0"><span id="ly3t" class="ly-pill">ताज़ा आटा, लाल टमाटर,</span></div>
+    <div id="ly4" class="clip ly-line" data-start="25.8" data-duration="3.4" data-track-index="0"><span id="ly4t" class="ly-pill">ऊपर चीज़, स्वाद बराबर!</span></div>
+    <div id="ly5" class="clip ly-line ly-ch" data-start="30.0" data-duration="3.55" data-track-index="0"><span id="ly5t" class="ly-pill">पिज़्ज़ा सिटी एक्सप्रेस, गरम-गरम तेरे पास!</span></div>
+    <div id="ly6" class="clip ly-line ly-ch" data-start="33.62" data-duration="3.88" data-track-index="0"><span id="ly6t" class="ly-pill">पिज़्ज़ा सिटी एक्सप्रेस, सबसे अच्छा, सबसे ख़ास!</span></div>
+    <div id="ly7" class="clip ly-line ly-ch" data-start="37.56" data-duration="3.19" data-track-index="0"><span id="ly7t" class="ly-pill">सलामी हो, फ़ुंगी हो, या मार्गेरीटा,</span></div>
+    <div id="ly8" class="clip ly-line ly-ch" data-start="40.8" data-duration="5.0" data-track-index="0"><span id="ly8t" class="ly-pill">पिज़्ज़ा सिटी एक्सप्रेस, वाइनगार्टन, फिर मिलेंगे!</span></div>
+    <div id="ly9" class="clip ly-line" data-start="48.58" data-duration="4.62" data-track-index="0"><span id="ly9t" class="ly-pill">ओवन जले, डिब्बा बंद,</span></div>
+    <div id="ly10" class="clip ly-line" data-start="53.25" data-duration="4.2" data-track-index="0"><span id="ly10t" class="ly-pill">स्कूटर चला, फुल आनंद!</span></div>
+    <div id="ly11" class="clip ly-line" data-start="57.5" data-duration="4.2" data-track-index="0"><span id="ly11t" class="ly-pill">बासिलिका के पास से, पुराने शहर से!</span></div>
+    <div id="ly12" class="clip ly-line" data-start="61.82" data-duration="3.48" data-track-index="0"><span id="ly12t" class="ly-pill">डिंग-डॉन्ग, दरवाज़ा खुला,</span></div>
+    <div id="ly13" class="clip ly-line" data-start="65.38" data-duration="3.97" data-track-index="0"><span id="ly13t" class="ly-pill">सब हँसे, सबका दिल खिला!</span></div>
+    <div id="ly14" class="clip ly-line ly-ch" data-start="69.42" data-duration="5.48" data-track-index="0"><span id="ly14t" class="ly-pill">पिज़्ज़ा सिटी एक्सप्रेस, गरम-गरम तेरे पास!</span></div>
+    <div id="ly15" class="clip ly-line ly-ch" data-start="75.0" data-duration="2.6" data-track-index="0"><span id="ly15t" class="ly-pill">सबसे अच्छा, सबसे ख़ास!</span></div>
+    <div id="ly16" class="clip ly-line ly-ch" data-start="77.68" data-duration="3.77" data-track-index="0"><span id="ly16t" class="ly-pill">सलामी हो, फ़ुंगी हो, या मार्गेरीटा,</span></div>
+    <div id="ly17" class="clip ly-line ly-ch" data-start="81.52" data-duration="1.88" data-track-index="0"><span id="ly17t" class="ly-pill">पिज़्ज़ा सिटी एक्सप्रेस!</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ly0t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.1);
+    tl.fromTo("#ly0t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 2.93);
+    tl.fromTo("#ly1t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 10.0);
+    tl.fromTo("#ly1t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 13.53);
+    tl.fromTo("#ly2t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 13.8);
+    tl.fromTo("#ly2t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 17.63);
+    tl.fromTo("#ly3t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 22.0);
+    tl.fromTo("#ly3t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 25.53);
+    tl.fromTo("#ly4t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 25.8);
+    tl.fromTo("#ly4t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 29.03);
+    tl.fromTo("#ly5t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 30.0);
+    tl.fromTo("#ly5t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 33.38);
+    tl.fromTo("#ly6t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 33.62);
+    tl.fromTo("#ly6t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 37.33);
+    tl.fromTo("#ly7t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 37.56);
+    tl.fromTo("#ly7t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 40.58);
+    tl.fromTo("#ly8t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 40.8);
+    tl.fromTo("#ly8t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 45.63);
+    tl.fromTo("#ly9t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 48.58);
+    tl.fromTo("#ly9t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 53.03);
+    tl.fromTo("#ly10t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 53.25);
+    tl.fromTo("#ly10t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 57.28);
+    tl.fromTo("#ly11t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 57.5);
+    tl.fromTo("#ly11t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 61.53);
+    tl.fromTo("#ly12t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 61.82);
+    tl.fromTo("#ly12t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 65.13);
+    tl.fromTo("#ly13t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 65.38);
+    tl.fromTo("#ly13t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 69.18);
+    tl.fromTo("#ly14t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 69.42);
+    tl.fromTo("#ly14t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 74.73);
+    tl.fromTo("#ly15t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 75.0);
+    tl.fromTo("#ly15t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 77.43);
+    tl.fromTo("#ly16t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 77.68);
+    tl.fromTo("#ly16t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 81.28);
+    tl.fromTo("#ly17t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 81.52);
+    tl.fromTo("#ly17t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 83.23);
+    window.__timelines["lyrics"] = tl;
+  </script>
+</template>

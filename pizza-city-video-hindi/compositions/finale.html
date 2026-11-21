@@ -1,0 +1,91 @@
+<template>
+  <style>
+    @font-face { font-family: "Baloo 2"; font-weight: 800; src: url("assets/fonts/baloo2-devanagari.woff2") format("woff2"); unicode-range: U+0900-097F, U+200C-200D, U+25CC; }
+    @font-face { font-family: "Baloo 2"; font-weight: 800; src: url("assets/fonts/baloo2-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2013-2014; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #FFF3DC; }
+    #f-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #f-card { position: absolute; inset: 0; background: #E63A2E; }
+    #f-logo { position: absolute; left: 0; right: 0; top: 230px; text-align: center; font-family: "Archivo Black", sans-serif;
+      font-size: 150px; line-height: 0.92; color: #FFF3DC; text-shadow: 9px 9px 0 #2B1B17; letter-spacing: -0.02em; }
+    #f-tag { position: absolute; left: 0; right: 0; top: 580px; text-align: center; font-family: "Baloo 2", sans-serif; font-weight: 800;
+      font-size: 64px; color: #FFC93C; letter-spacing: 0.04em; }
+    #f-city { position: absolute; left: 50%; top: 700px; width: 560px; margin-left: -280px; text-align: center; font-family: "Nunito", sans-serif;
+      font-weight: 900; font-size: 40px; color: #2B1B17; background: #FFF3DC; border-radius: 40px; padding: 10px 0; letter-spacing: 0.25em; }
+    #f-cardsvg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  </style>
+  <div id="root" data-composition-id="finale" data-width="1920" data-height="1080">
+    <svg id="f-svg" viewBox="0 0 1920 1080">
+      <rect width="1920" height="1080" fill="#FFF3DC"/>
+      <rect x="0" y="0" width="1920" height="620" fill="#FBE3B8"/>
+      <rect x="760" y="110" width="400" height="300" rx="16" fill="#8FD3F5" stroke="#2B1B17" stroke-width="10"/>
+      <path d="M760 260 H1160 M960 110 V410" stroke="#2B1B17" stroke-width="8"/>
+      <!-- family behind the table -->
+      <g id="f-fam">
+        <g class="f-p" transform="translate(520 640)"><g class="f-pi"><rect x="-90" y="-300" width="180" height="320" rx="60" fill="#2E8B57" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-370" r="80" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-80 -400 Q0 -490 80 -400 Z" fill="#6B3A22"/><circle cx="-28" cy="-375" r="8" fill="#2B1B17"/><circle cx="28" cy="-375" r="8" fill="#2B1B17"/><path d="M-34 -335 Q0 -300 34 -335" stroke="#2B1B17" stroke-width="7" fill="#E63A2E"/></g></g>
+        <g class="f-p" transform="translate(960 640)"><g class="f-pi"><rect x="-70" y="-200" width="140" height="220" rx="50" fill="#FFC93C" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-260" r="66" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-66 -270 Q0 -350 66 -270 Z" fill="#C0472E"/><circle cx="-22" cy="-265" r="7" fill="#2B1B17"/><circle cx="22" cy="-265" r="7" fill="#2B1B17"/><path d="M-28 -232 Q0 -205 28 -232" stroke="#2B1B17" stroke-width="6" fill="#E63A2E"/></g></g>
+        <g class="f-p" transform="translate(1400 640)"><g class="f-pi"><rect x="-90" y="-290" width="180" height="310" rx="60" fill="#E63A2E" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-360" r="80" fill="#C98F6A" stroke="#2B1B17" stroke-width="7"/><path d="M-90 -370 Q0 -480 90 -370 L90 -300 L68 -370 Q0 -420 -68 -370 L-90 -300 Z" fill="#2B1B17"/><circle cx="-28" cy="-365" r="8" fill="#2B1B17"/><circle cx="28" cy="-365" r="8" fill="#2B1B17"/><path d="M-34 -325 Q0 -290 34 -325" stroke="#2B1B17" stroke-width="7" fill="#FFF3DC"/></g></g>
+      </g>
+      <rect x="160" y="620" width="1600" height="60" rx="20" fill="#8A4B2A"/>
+      <rect x="200" y="680" width="1520" height="400" fill="#B8693A"/>
+      <!-- pizza on the table -->
+      <g transform="translate(960 640)">
+        <ellipse rx="360" ry="70" fill="#F4E4C8" stroke="#2B1B17" stroke-width="8"/>
+        <ellipse rx="300" ry="54" fill="#F2C68A" stroke="#E8A55B" stroke-width="12"/>
+        <ellipse rx="262" ry="44" fill="#FFD966"/>
+        <ellipse cx="-120" cy="-6" rx="30" ry="10" fill="#B3262B"/><ellipse cx="60" cy="10" rx="30" ry="10" fill="#B3262B"/><ellipse cx="160" cy="-12" rx="30" ry="10" fill="#B3262B"/><ellipse cx="-30" cy="-20" rx="30" ry="10" fill="#B3262B"/>
+      </g>
+      <!-- slices lifted, with cheese strings -->
+      <g class="f-slice" id="f-s1"><path d="M560 640 Q560 590 600 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M560 560 L700 520 L640 420 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="640" cy="500" r="14" fill="#B3262B"/></g>
+      <g class="f-slice" id="f-s2"><path d="M960 640 Q960 600 960 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M900 540 L1020 540 L960 430 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="960" cy="510" r="12" fill="#B3262B"/></g>
+      <g class="f-slice" id="f-s3"><path d="M1360 640 Q1360 590 1320 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M1360 560 L1220 520 L1280 420 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="1280" cy="500" r="14" fill="#B3262B"/></g>
+    </svg>
+    <div id="f-card" data-layout-allow-overflow>
+      <svg id="f-cardsvg" viewBox="0 0 1920 1080">
+        <g fill="#D9342A"><circle cx="160" cy="140" r="110"/><circle cx="1780" cy="200" r="140"/><circle cx="1700" cy="960" r="120"/><circle cx="220" cy="940" r="90"/></g>
+        <g id="f-scoot" transform="translate(-400 1060) scale(0.7)">
+ <g class="f-rider">
+  <path d="M-20 -140 L 45 -115 L 45 -75" stroke="#2B4A8A" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-45 -135 L -15 -265 L 45 -255 L 35 -135 Z" fill="#2E8B57" stroke="#2B1B17" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M20 -235 L 105 -238" stroke="#2E8B57" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="110" cy="-238" r="13" fill="#F2C9A0" stroke="#2B1B17" stroke-width="4"/>
+  <circle cx="15" cy="-305" r="44" fill="#F2C9A0" stroke="#2B1B17" stroke-width="6"/>
+  <path d="M-32 -308 A47 47 0 0 1 62 -308 L 66 -296 L -36 -296 Z" fill="#FFC93C" stroke="#2B1B17" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="42" cy="-286" r="5" fill="#2B1B17"/>
+  <path d="M30 -268 Q 44 -258 56 -270" stroke="#2B1B17" stroke-width="5" fill="none" stroke-linecap="round"/>
+ </g>
+ <rect x="-185" y="-245" width="130" height="110" rx="12" fill="#E63A2E" stroke="#2B1B17" stroke-width="6"/>
+ <text x="-120" y="-178" text-anchor="middle" font-family="Archivo Black" font-size="36" fill="#FFF3DC">PCE</text>
+ <path d="M-175 -55 Q-175 -140 -60 -140 L 45 -140 L 70 -55 Z" fill="#E63A2E" stroke="#2B1B17" stroke-width="6" stroke-linejoin="round"/>
+ <path d="M40 -140 L 108 -240 L 126 -232 L 78 -55 Z" fill="#E63A2E" stroke="#2B1B17" stroke-width="6" stroke-linejoin="round"/>
+ <rect x="92" y="-256" width="70" height="16" rx="8" fill="#2B1B17"/>
+ <circle cx="138" cy="-205" r="17" fill="#FFE9A0" stroke="#2B1B17" stroke-width="5"/>
+ <g class="f-wheel" transform="translate(-115 -45)"><circle r="46" fill="#2B1B17"/><circle r="20" fill="#D9D9D9"/><rect x="-4" y="-40" width="8" height="80" fill="#8C8C8C"/></g>
+ <g class="f-wheel" transform="translate(120 -45)"><circle r="46" fill="#2B1B17"/><circle r="20" fill="#D9D9D9"/><rect x="-4" y="-40" width="8" height="80" fill="#8C8C8C"/></g>
+</g>
+      </svg>
+      <div id="f-logo">PIZZA CITY<br>EXPRESS</div>
+      <div id="f-tag">गरम-गरम – फिर मिलेंगे!</div>
+      <div id="f-city">WEINGARTEN</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // chorus: everyone grabs a slice, cheese stretches, the family bounces on the beat
+    tl.fromTo(".f-slice", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(1.8)", stagger: 0.5 }, 0.32);
+    tl.fromTo(".f-slice", { y: 0 }, { y: -40, duration: 0.5, yoyo: true, repeat: 15, ease: "sine.inOut", immediateRender: false }, 2.87);
+    tl.fromTo(".f-pi", { y: 0 }, { y: -26, duration: 0.25, yoyo: true, repeat: 39, ease: "power2.out", stagger: 0.12 }, 0.80);
+    // 10.6 end card slides up
+    tl.fromTo("#f-card", { y: 1080 }, { y: 0, duration: 0.6, ease: "power3.out" }, 14.02);
+    tl.fromTo("#f-logo", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2)" }, 14.35);
+    tl.fromTo("#f-tag", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 14.69);
+    tl.fromTo("#f-city", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.5)" }, 14.95);
+    tl.fromTo("#f-scoot", { x: -400 }, { x: 2400, duration: 2.4, ease: "power1.inOut" }, 14.52);
+    tl.fromTo(".f-wheel", { rotation: 0 }, { rotation: 2520, duration: 2.4, ease: "power1.inOut", transformOrigin: "50% 50%" }, 14.52);
+    // last "Pizza City Express!" — logo punch
+    tl.fromTo("#f-logo", { scale: 1 }, { scale: 1.1, duration: 0.2, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 15.76);
+    window.__timelines["finale"] = tl;
+  </script>
+</template>
