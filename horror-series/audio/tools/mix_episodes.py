@@ -12,7 +12,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 from dsp import SR, to_stereo
 
 A = os.path.join(os.path.dirname(__file__), "..")
-OUT = os.path.join(A, "episodes")
+LANG = os.environ.get("COUNTDOWN_LANG", "ml")             # ml (Malayalam) or hi (Hindi)
+VOICE = "voice" if LANG == "ml" else f"voice_{LANG}"
+ENDC = "endcards" if LANG == "ml" else f"endcards_{LANG}"
+OUT = os.path.join(A, "episodes" if LANG == "ml" else f"episodes_{LANG}")
 os.makedirs(OUT, exist_ok=True)
 DUR = 90.0
 _cache = {}
@@ -25,8 +28,8 @@ def load(src):
     if kind == "end":
         name = f"{int(name):02d}"
     path = {
-        "v": "voice/processed/{}.wav", "sfx": "sfx/{}.wav", "bgm": "bgm/{}.mp3",
-        "end": "bgm/endcards/endcard_hum_{}.wav", "song": "songs/{}.mp3",
+        "v": VOICE + "/processed/{}.wav", "sfx": "sfx/{}.wav", "bgm": "bgm/{}.mp3",
+        "end": "bgm/" + ENDC + "/endcard_hum_{}.wav", "song": "songs/{}.mp3",
     }[kind].format(name)
     path = os.path.join(A, path)
     if path.endswith(".mp3"):
@@ -277,6 +280,20 @@ EP[10] = [
 ]
 
 
+def cues(ep):
+    """The episode's cue sheet for the current language. A voice line that would start before the previous one ends
+    (lines differ in length between languages) is pushed later; returns the cues and a list of the shifts made."""
+    out, shifts, last_end = [], [], 0.0
+    for at, src, gain, opts in sorted(EP[ep], key=lambda c: c[0]):
+        if src.startswith("v:"):
+            d = sf.info(os.path.join(A, VOICE, "processed", src[2:] + ".wav")).duration
+            if at < last_end + .15:
+                shifts.append((src[2:], at, round(last_end + .15, 2))); at = round(last_end + .15, 2)
+            last_end = at + d
+        out.append((at, src, gain, opts))
+    return out, shifts
+
+
 def master(path_wav, buf):
     tmp = path_wav + ".raw.wav"
     sf.write(tmp, buf, SR, subtype="FLOAT")
@@ -292,8 +309,11 @@ if __name__ == "__main__":
     only = [int(a) for a in sys.argv[1:]] or list(EP)
     for ep in only:
         buf = np.zeros((int(DUR * SR), 2))
-        for at, src, gain, opts in EP[ep]:
+        sheet, shifts = cues(ep)
+        for name, a, b in shifts:
+            print(f"  ep{ep}: {name} moved {a} -> {b}")
+        for at, src, gain, opts in sheet:
             cue(buf, at, src, gain, **opts)
         k = int(0.5 * SR); buf[-k:] *= np.linspace(1, 0, k)[:, None]
-        mp3 = master(os.path.join(OUT, f"COUNTDOWN_ep{ep:02d}_soundtrack_ml.wav"), buf)
+        mp3 = master(os.path.join(OUT, f"COUNTDOWN_ep{ep:02d}_soundtrack_{LANG}.wav"), buf)
         print("wrote", os.path.relpath(mp3, A))

@@ -1,7 +1,9 @@
-"""Apply per-character voice treatments to the raw Malayalam voice lines.
+"""Apply per-character voice treatments to the raw voice lines (Malayalam: voice/, Hindi: voice_hi/).
+Usage: python3 process_voices.py [ml|hi]
 raw/*.mp3 -> processed/*.wav (48 kHz mono, loudness-normalized)."""
 import os, subprocess, glob, sys
-ROOT = os.path.join(os.path.dirname(__file__), "..", "voice")
+LANG = sys.argv[1] if len(sys.argv) > 1 else "ml"          # ml (Malayalam) or hi (Hindi)
+ROOT = os.path.join(os.path.dirname(__file__), "..", "voice" if LANG == "ml" else f"voice_{LANG}")
 RAW, OUT = os.path.join(ROOT, "raw"), os.path.join(ROOT, "processed")
 os.makedirs(OUT, exist_ok=True)
 

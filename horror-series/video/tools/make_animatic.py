@@ -15,7 +15,8 @@ import soundfile as sf
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HS = os.path.abspath(os.path.join(HERE, "..", ".."))                       # horror-series/
-PANELS = os.path.abspath(os.path.join(HS, "..", "animation-base", "out", "panels_hd"))
+LANG = os.environ.get("COUNTDOWN_LANG", "ml")                                # ml, or hi (Hindi audio + English subtitles)
+PANELS = os.path.abspath(os.path.join(HS, "..", "animation-base", "out", "panels_hd" if LANG == "ml" else f"panels_hd_{LANG}"))
 AUDIO = os.path.join(HS, "audio")
 OUT = os.path.join(HS, "video")
 sys.path.insert(0, os.path.join(AUDIO, "tools"))
@@ -81,7 +82,26 @@ def hits(ep):
     return out
 
 
+def subtitles_en(ep):
+    en = json.load(open(os.path.join(AUDIO, f"voice_{LANG}", "subtitles_en.json"), encoding="utf-8"))
+    subs = []
+    for at, src, gain, opts in MIX.cues(ep)[0]:
+        if src.startswith("v:"):
+            d = sf.info(os.path.join(AUDIO, f"voice_{LANG}", "processed", src[2:] + ".wav")).duration
+            subs.append((at, at + d + .3, en[src[2:]]))
+    for key, text in en["_screen"].items():
+        e, m, sec = key.split(":")
+        if int(e) == ep:
+            a = int(m) * 60 + int(sec) + .3
+            subs.append((a, a + 3.2, text))
+    subs.sort()
+    fmt = lambda t: f"{int(t // 3600):02d}:{int(t % 3600 // 60):02d}:{int(t % 60):02d},{int(round(t % 1 * 1000)) % 1000:03d}"
+    return "\n".join(f"{i + 1}\n{fmt(a)} --> {fmt(min(b, subs[i + 1][0] - .05) if i + 1 < len(subs) else b)}\n{t}\n" for i, (a, b, t) in enumerate(subs))
+
+
 def subtitles(ep):
+    if LANG != "ml":
+        return subtitles_en(ep)
     lines = {}
     for v in json.load(open(os.path.join(AUDIO, "voice", "lines.json"), encoding="utf-8")).values():
         for name, text in v:
@@ -151,14 +171,18 @@ def render(ep):
     assert all(i is not None for i in imgs), "missing HD panels: render them first"
     H_ = hits(ep)
     os.makedirs(os.path.join(OUT, "subs"), exist_ok=True)
-    srt = os.path.join(OUT, "subs", f"COUNTDOWN_ep{ep:02d}_ml.srt")
+    sub_tag = "ml" if LANG == "ml" else "en"
+    odir = OUT if LANG == "ml" else os.path.join(OUT, LANG)
+    os.makedirs(os.path.join(odir, "subs"), exist_ok=True)
+    srt = os.path.join(odir, "subs", f"COUNTDOWN_ep{ep:02d}_{sub_tag}.srt")
     open(srt, "w", encoding="utf-8").write(subtitles(ep))
-    audio = os.path.join(AUDIO, "episodes", f"COUNTDOWN_ep{ep:02d}_soundtrack_ml.mp3")
-    out = os.path.join(OUT, f"COUNTDOWN_ep{ep:02d}_cinematic_ml.mp4")
+    audio = os.path.join(AUDIO, "episodes" if LANG == "ml" else f"episodes_{LANG}", f"COUNTDOWN_ep{ep:02d}_soundtrack_{LANG}.mp3")
+    out = os.path.join(odir, f"COUNTDOWN_ep{ep:02d}_cinematic_{LANG}.mp4")
+    burn = [] if LANG == "ml" else ["-vf", f"subtitles='{srt}':force_style='FontName=Noto Sans,FontSize=17,Bold=1,PrimaryColour=&H00F2F5F7,OutlineColour=&H00101010,BorderStyle=1,Outline=1.6,Shadow=0.8,MarginV=34'"]
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-i", audio, "-i", srt, "-map", "0:v", "-map", "1:a", "-map", "2:s",
-                           "-c:v", "libx264", "-preset", "medium", "-crf", "25", "-x264-params", "aq-mode=3:deblock=1,1", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
-                           "-c:s", "mov_text", "-metadata:s:s:0", "language=mal", "-metadata:s:s:0", "title=മലയാളം",
+                           *burn, "-c:v", "libx264", "-preset", "medium", "-crf", "25", "-x264-params", "aq-mode=3:deblock=1,1", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+                           "-c:s", "mov_text", "-metadata:s:s:0", f"language={'mal' if LANG == 'ml' else 'eng'}", "-metadata:s:s:0", f"title={'മലയാളം' if LANG == 'ml' else 'English'}",
                            "-movflags", "+faststart", "-t", str(DUR), out], stdin=subprocess.PIPE)
     n = int(DUR * FPS)
     for fr in range(n):

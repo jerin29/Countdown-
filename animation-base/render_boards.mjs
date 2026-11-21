@@ -20,7 +20,7 @@ const browser = await puppeteer.launch({ executablePath: CHROME, headless: true,
 async function openPage() {
   const page = await browser.newPage();
   page.on('pageerror', e => console.log('[page error]', e.message));
-  await page.goto(pathToFileURL(resolve('countdown.html')).href + '?render', { waitUntil: 'networkidle0' });
+  await page.goto(pathToFileURL(resolve('countdown.html')).href + '?render' + (args.lang ? '&lang=' + args.lang : ''), { waitUntil: 'networkidle0' });
   await page.waitForFunction('window.ready === true', { timeout: 60000 });
   await page.evaluate(() => document.fonts.load('40px "Noto Sans Malayalam"'));
   return page;

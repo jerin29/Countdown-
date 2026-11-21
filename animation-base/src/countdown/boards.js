@@ -2,7 +2,16 @@
 // PANELS[i] = { ep, tc, fn }. Rendered with render_boards.mjs at t = 0.5 (still frames).
 const PANELS = [];
 const P = (ep, tc, fn) => PANELS.push({ ep, tc, fn });
-const ML = '"Noto Sans Malayalam", sans-serif';
+// language of the on-screen text: ?lang=hi renders the Hindi version of the panels that show words
+const LANG = new URLSearchParams(location.search).get('lang') || 'ml';
+const ML = LANG === 'hi' ? '"Noto Sans Devanagari", sans-serif' : '"Noto Sans Malayalam", sans-serif';
+const HI = {
+  'എണ്ണരുത്': 'गिनना मत', 'നേഹ തോമസ് — 1986': 'नेहा थॉमस — 1986', 'സാം മാത്യു — 2026': 'सैम मैथ्यू — 2026',
+  'മീര ജോസഫ്': 'मीरा जोसफ़', 'അർജുൻ നായർ': 'अर्जुन नायर', 'റോസ ജോസഫ് — 1986': 'रोज़ा जोसफ़ — 1986', 'മീര 💛': 'मीरा 💛',
+  'അർജുൻ': 'अर्जुन', 'പിന്നോട്ട് ചുറ്റണം': 'उल्टा घुमाओ', 'ഞാനും കേട്ടു.': 'मैंने भी सुना।', 'ഞാനും നിന്റെ': 'मैं तुम्हारे',
+  'കൂടെ വരുന്നു.': 'साथ आ रहा हूँ।',
+};
+const L = t => (LANG === 'hi' && HI[t]) || t;
 
 // ---------- close-up helpers ----------
 function bust(name, x, y, r, o = {}) {
@@ -113,7 +122,7 @@ P(3, '0:08', () => titleCard(8));
 P(3, '0:12', () => { bathroom(); bust('meera', 960, 400, 110, { expr: 'tired', look: [0, .4] }); mirrorFog(80); });
 P(3, '0:20', () => { bathroom(); bust('meera', 960, 400, 110, { expr: 'scared', look: [.6, -.5] }); mirrorFog(60); });
 P(3, '0:26', () => { bathroom(); mirrorFog(190, [[800, 420, 60], [1120, 400, 60]]); });
-P(3, '0:33', () => { bathroom(); mirrorFog(190, [[800, 420, 60], [1120, 400, 60]]); letter('എണ്ണരുത്', 960, 560, 90, '#4C5864', { screen: true, ink: false, font: `90px ${ML}` }); });
+P(3, '0:33', () => { bathroom(); mirrorFog(190, [[800, 420, 60], [1120, 400, 60]]); letter(L('എണ്ണരുത്'), 960, 560, 90, '#4C5864', { screen: true, ink: false, font: `90px ${ML}` }); });
 P(3, '0:40', () => { bathroom(); bust('neha', 1150, 330, 80, { glitch: .8 }); bust('meera', 860, 400, 115, { expr: 'scared', look: [0, 0], key: 'm' }); mirrorFog(50); });
 P(3, '0:47', () => { bathroom({ mirrorCol: '#4A5A66' }); bust('neha', 960, 380, 130, { glitch: 1 }); });
 P(3, '0:54', () => { bathroom(); person('meera', 960, 1100, 30, { pose: 'coverEars', expr: 'terror' }); });
@@ -164,15 +173,15 @@ P(6, '0:00', () => { market({ day: true, ts: 9 }); boilSeed('sign'); inkLine([[6
 P(6, '0:08', () => titleCard(5));
 P(6, '0:12', () => { full('#3A3A40'); paint(rectPts(700, 180, 520, 820), { wash: '#4A3A30', ink: CP.ink, sw: 1.2 }); person('arjun', 1200, 1050, 26, { pose: 'hold2', flip: true, expr: 'scared', view: 'q' }); person('meera', 560, 1050, 26, { pose: 'tense', flip: true, expr: 'tired', view: 'q', key: 'm' }); });
 P(6, '0:19', () => { shopInterior(); person('meera', 760, 1060, 22, { view: 'back', key: 'm' }); person('arjun', 1100, 1060, 22, { view: 'back' }); });
-P(6, '0:27', () => { shopInterior({ dark: 90 }); clockFace(960, 430, 270, { sw: 1.4, hands: [0, Math.PI], cracks: false }); plate(960, 820, 560, 'നേഹ തോമസ് — 1986'); hand(1300, 860, 70, -.4); });
-P(6, '0:34', () => { shopInterior({ dark: 90 }); clockFace(960, 380, 250, { sw: 1.4, hands: [0, Math.PI], cracks: false }); inkLine([[960, 640], [1060, 900]], 1.4, CP.brassDk, 'ink', 0); paint(ellPts(1060, 920, 50, 50, 16), { wash: CP.brass, ink: CP.ink, sw: 1 }); plate(760, 760, 420, 'സാം മാത്യു — 2026'); });
+P(6, '0:27', () => { shopInterior({ dark: 90 }); clockFace(960, 430, 270, { sw: 1.4, hands: [0, Math.PI], cracks: false }); plate(960, 820, 560, L('നേഹ തോമസ് — 1986')); hand(1300, 860, 70, -.4); });
+P(6, '0:34', () => { shopInterior({ dark: 90 }); clockFace(960, 380, 250, { sw: 1.4, hands: [0, Math.PI], cracks: false }); inkLine([[960, 640], [1060, 900]], 1.4, CP.brassDk, 'ink', 0); paint(ellPts(1060, 920, 50, 50, 16), { wash: CP.brass, ink: CP.ink, sw: 1 }); plate(760, 760, 420, L('സാം മാത്യു — 2026')); });
 P(6, '0:41', () => { shopInterior({ dark: 70 }); clockFace(640, 480, 200, { sw: 1.2, hands: [Math.PI * .1, Math.PI * 1.9], cracks: false, glow: .3, glowCol: '#FFE2A8' }); clockFace(1280, 480, 200, { sw: 1.2, hands: [Math.PI * .2, Math.PI * 1.7], cracks: false, glow: .3, glowCol: '#FFE2A8' });
-  plate(640, 780, 420, 'മീര ജോസഫ്'); plate(1280, 780, 420, 'അർജുൻ നായർ'); });
-P(6, '0:50', () => { shopInterior({ dark: 100 }); clockFace(960, 430, 270, { sw: 1.4, cracks: true, col: '#C9C0AA' }); for (let i = 0; i < 6; i++) inkLine([[960, 430], [960 + Math.cos(i) * 260, 430 + Math.sin(i * 1.7) * 260]], 1.2, CP.ink, 'ink'); plate(960, 820, 560, 'റോസ ജോസഫ് — 1986'); });
+  plate(640, 780, 420, L('മീര ജോസഫ്')); plate(1280, 780, 420, L('അർജുൻ നായർ')); });
+P(6, '0:50', () => { shopInterior({ dark: 100 }); clockFace(960, 430, 270, { sw: 1.4, cracks: true, col: '#C9C0AA' }); for (let i = 0; i < 6; i++) inkLine([[960, 430], [960 + Math.cos(i) * 260, 430 + Math.sin(i * 1.7) * 260]], 1.2, CP.ink, 'ink'); plate(960, 820, 560, L('റോസ ജോസഫ് — 1986')); });
 P(6, '0:57', () => { shopInterior({ dark: 40 }); person('meera', 760, 1060, 26, { pose: 'coverEars', expr: 'terror', key: 'm' }); person('arjun', 1160, 1060, 26, { pose: 'coverEars', expr: 'terror' }); });
 P(6, '1:03', () => { shopInterior({ dark: 80 }); glow(960, 500, 600, '#E6EEF2', .9); paint(rectPts(780, 140, 360, 700), { wash: '#DDE6EA', ink: CP.ink, sw: 1 }); person('keeper', 960, 840, 22, { glow: .2 }); bust('arjun', 300, 700, 120, { view: 'q', expr: 'terror', look: [1, 0] }); });
 P(6, '1:08', () => { shopInterior({ dark: 60 }); person('meera', 600, 1060, 26, { pose: 'run', expr: 'terror', key: 'm' }); person('arjun', 1000, 1060, 26, { pose: 'run', expr: 'terror' }); phone(1250, 1010, 50, { glowA: .4, hand: false }); });
-P(6, '1:15', () => { full('#3A3029'); boilSeed('floor'); for (let i = 0; i < 8; i++) inkLine([[0, 140 * i], [W, 140 * i + 30]], .6, '#2A221C', 'inkfine'); phone(960, 620, 220, { text: [['Calling:', -.15, 18], ['മീര 💛', 0, 22]], hand: false });
+P(6, '1:15', () => { full('#3A3029'); boilSeed('floor'); for (let i = 0; i < 8; i++) inkLine([[0, 140 * i], [W, 140 * i + 30]], .6, '#2A221C', 'inkfine'); phone(960, 620, 220, { text: [['Calling:', -.15, 18], [L('മീര 💛'), 0, 22]], hand: false });
   paint(ribbon([[1950, -60], [1600, 160]], 120, 90), { wash: CP.coat, ink: CP.ink, sw: 1.2 }); for (let i = -1; i <= 1; i++) keyFinger([1600, 160], -0.72 + i * .14, 470, 34, 1.2); });
 P(6, '1:25', () => endCard(5, { next: 4 }));
 
@@ -182,11 +191,11 @@ P(7, '0:00', () => { full('#0A0B0F'); push(); bathroom(); pop(); paint(rectPts(6
   bust('meera', 320, 420, 90, { expr: 'tired', key: 'a' }); push(); paint(rectPts(690, -50, 590, H + 100), { wash: '#8A8F94', ink: null }); pop(); person('meera', 980, 1000, 18, { expr: 'tired', key: 'b' }); paint(rectPts(1330, -50, 640, H + 100), { wash: '#0C0F18', ink: null }); stars(10); person('meera', 1620, 1000, 18, { view: 'back', key: 'c' }); });
 P(7, '0:08', () => titleCard(4));
 P(7, '0:12', () => { full('#141824'); phone(960, 560, 300, { text: [['11:40', -.08, 34], ['PM', .07, 16]] }); vignette(); });
-P(7, '0:20', () => { full('#141824'); phone(960, 560, 320, { screen: '#E9ECEF', text: [['അർജുൻ', -.36, 14, '#222'], ['11:40', -.2, 11, '#555'], ['1:15', -.02, 11, '#555'], ['2:30', .16, 11, '#555']], glowA: .5 }); });
+P(7, '0:20', () => { full('#141824'); phone(960, 560, 320, { screen: '#E9ECEF', text: [[L('അർജുൻ'), -.36, 14, '#222'], ['11:40', -.2, 11, '#555'], ['1:15', -.02, 11, '#555'], ['2:30', .16, 11, '#555']], glowA: .5 }); });
 P(7, '0:28', () => { bedroom({ blanket: true }); paint(rectPts(1180, 160, 520, 700), { wash: CP.wood, ink: CP.ink, sw: 1 }); paint(rectPts(1220, 200, 440, 620), { wash: '#4A5664', ink: CP.ink, sw: .7 });
   person('meera', 1440, 800, 18, { expr: 'tired', key: 'refl' }); person('meera', 900, 1060, 30, { view: 'back', key: 'real' }); });
 P(7, '0:34', () => { full('#1E2333'); paint(rectPts(960, -50, 20, H + 100), { wash: CP.wood, ink: CP.ink, sw: 1 }); bust('meera', 520, 480, 150, { expr: 'tired', key: 'real' }); full('#1E2333', 0); paint(rectPts(980, -50, 990, H + 100), { wash: '#4A5664', washOp: 120, ink: null }); bust('meera', 1420, 480, 150, { expr: 'smile', key: 'refl' }); });
-P(7, '0:42', () => { full('#141824'); phone(960, 560, 300, { text: [['അർജുൻ', -.1, 28], ['📞', .1, 30]] }); vignette(); });
+P(7, '0:42', () => { full('#141824'); phone(960, 560, 300, { text: [[L('അർജുൻ'), -.1, 28], ['📞', .1, 30]] }); vignette(); });
 P(7, '0:46', () => { bedroom({ blanket: true }); bust('meera', 960, 460, 160, { expr: 'terror', look: [-.5, 0], hands: [[1200, 520]] }); phone(1240, 470, 60, { hand: false, glowA: .3 }); });
 P(7, '0:55', () => { full('#141824'); watchCU(980, 520, 230, { hands: [Math.PI * 2.9 / 6 * 1.0 + Math.PI * .45, Math.PI * 1.95] }); vignette(); });
 P(7, '1:02', () => { bedroom({ blanket: true }); person('meera', 900, 900, 30, { pose: 'coverEars', expr: 'closed' }); });
@@ -205,9 +214,9 @@ P(8, '0:29', () => { full('#4A3B33'); boilSeed('ros'); for (let i = 0; i < 12; i
 P(8, '0:37', () => { houseEmpty({ momSil: true }); person('meera', 700, 1000, 26, { view: 'q', flip: true, expr: 'cry' }); });
 P(8, '0:44', () => { houseEmpty(); bust('meera', 960, 460, 160, { expr: 'cry' }); });
 P(8, '0:52', () => { veranda({ lampOff: true, dusk: 0 }); rockingChair(960, 830, 1.1); pocketWatch(960, 600, 60, { hands: [Math.PI * .5, Math.PI * .8] }); glow(960, 600, 200, '#FFE2A8', .5); });
-P(8, '0:58', () => { full('#1B1713'); pocketWatch(960, 880, 230, { open: true, engrave: 'പിന്നോട്ട് ചുറ്റണം', hands: [Math.PI * .5, Math.PI * 1.1] }); });
+P(8, '0:58', () => { full('#1B1713'); pocketWatch(960, 880, 230, { open: true, engrave: L('പിന്നോട്ട് ചുറ്റണം'), hands: [Math.PI * .5, Math.PI * 1.1] }); });
 P(8, '1:07', () => { houseEmpty(); bust('meera', 960, 460, 160, { expr: 'determined', look: [.3, 0] }); });
-P(8, '1:12', () => { full('#141824'); phone(960, 560, 320, { screen: '#E9ECEF', text: [['അർജുൻ', -.36, 14, '#222'], ['ഞാനും കേട്ടു.', -.12, 12, '#222'], ['ഞാനും നിന്റെ', .04, 12, '#222'], ['കൂടെ വരുന്നു.', .16, 12, '#222']], glowA: .5 }); });
+P(8, '1:12', () => { full('#141824'); phone(960, 560, 320, { screen: '#E9ECEF', text: [[L('അർജുൻ'), -.36, 14, '#222'], [L('ഞാനും കേട്ടു.'), -.12, 12, '#222'], [L('ഞാനും നിന്റെ'), .04, 12, '#222'], [L('കൂടെ വരുന്നു.'), .16, 12, '#222']], glowA: .5 }); });
 P(8, '1:17', () => valleyWide({ faces: true }));
 P(8, '1:25', () => endCard(3, { next: 2 }));
 
