@@ -1,0 +1,15 @@
+[
+{"name":"s02_highway","prompt":"wide shot, lone sedan car speeding on empty Indian highway at night, heavy rain, headlights cutting through rain, wet asphalt reflections"},
+{"name":"s03_crash","prompt":"sedan car crashed into back of container lorry exploding in huge fireball on highway at night, heavy rain, debris flying"},
+{"name":"s04_firecrew","prompt":"firefighters spraying water on burning car wreck on highway at night, police lights blue and red, rain, smoke"},
+{"name":"s05_idcard","prompt":"close-up of half burnt hospital ID card lying on wet road at night, rain drops, orange fire reflections, police lights bokeh"},
+{"name":"s07_club","prompt":"luxury nightclub interior in Kochi, purple and magenta neon lights, crowd dancing, haze, VIP booth in background"},
+{"name":"s08_rona","prompt":"arrogant Indian woman with straight blonde shoulder length hair, dark red lipstick, black blazer, gold watch, raising champagne glass and smirking in VIP booth of neon nightclub"},
+{"name":"s09_christy","prompt":"Indian woman with short burgundy pixie cut hair, nose ring, leather jacket, exhaling cigarette smoke and laughing in neon nightclub VIP booth, champagne bottles"},
+{"name":"s10_basement","prompt":"two drunk women in party clothes walking towards a luxury car in an empty underground parking basement at night, flickering tube lights, concrete pillars"},
+{"name":"s11_lightsoff","prompt":"empty underground parking garage, row of fluorescent tube lights turning off one by one into darkness, lift doors at end, eerie"},
+{"name":"s12_figure","prompt":"mysterious figure in black raincoat, black hoodie and matte black mask emerging from darkness in underground parking garage, silhouette, backlit"},
+{"name":"s13_stungun","prompt":"close-up of a stun gun crackling with blue electric spark in the dark, gloved hand, underground parking garage"},
+{"name":"s14_van","prompt":"black van speeding out of underground parking garage exit at night, red tail lights, rain outside, motion blur"},
+{"name":"s15_shadow","prompt":"silhouette of hooded masked woman standing in the rain at night, city lights behind her, back light, mysterious"}
+]
