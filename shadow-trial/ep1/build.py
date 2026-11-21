@@ -215,69 +215,57 @@ for k in range(12):
 add(boom, 109.3, 0.9); add(norm(reverb(imp, 2.5, 0.7)), 109.3, 0.4)
 
 # voices (with ducking)
-for st, who, a in tts():
+VOICES = tts()
+for st, who, a in VOICES:
     g = {"radio": 0.75, "rona": 0.95, "christy": 0.95}[who]
     i = at(st); n = len(a); duck = np.ones(N, np.float32); duck[max(0, i - 4800):i + n + 9600] = 0.45
     L *= duck; R *= duck
     add(a, st, g, pan=(0.15 if who == "rona" else -0.15 if who == "christy" else 0))
 
+import score
+bgm = score.make_score(TOTAL)
+for st, who, a in VOICES:  # duck score under dialogue
+    i = at(st); bgm[max(0, i - 4800):i + len(a) + 9600] *= 0.4
+L += bgm[:, 0] * 0.55; R += bgm[:, 1] * 0.55
 mix = np.stack([L, R], 1)
 mix = np.tanh(mix / (np.abs(mix).max() + 1e-9) * 1.6) * 0.89
 wavf.write(os.path.join(TMP, "mix.wav"), SR, mix.astype(np.float32))
 
-# ---------------------------------------------------------------- rain layer video
-rain_v = os.path.join(TMP, "rain.mp4")
-if not os.path.exists(rain_v):
-    p = subprocess.Popen(["ffmpeg", "-y", "-f", "rawvideo", "-pix_fmt", "gray", "-s", "960x540", "-r", str(FPS), "-i", "-",
-                          "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", rain_v], stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    drops = [(rng.uniform(0, 960), rng.uniform(0, 540), rng.uniform(25, 45), rng.uniform(80, 200)) for _ in range(450)]
-    for fr in range(FPS * 3):
-        im = np.zeros((540, 960), np.float32)
-        for x0, y0, ln, b in drops:
-            y = (y0 + fr * 540 / (FPS * 3) * 6) % 600 - 30; x = x0 + 0.15 * (y - y0)
-            for k in range(int(ln)):
-                yy, xx = int(y + k), int((x + 0.15 * k) % 960)
-                if 0 <= yy < 540: im[yy, xx] = max(im[yy, xx], b * (k / ln))
-        p.stdin.write(np.clip(im, 0, 255).astype(np.uint8).tobytes())
-    p.stdin.close(); p.wait()
-
-# ---------------------------------------------------------------- clips
-clips = []
-for k, (st, d, img, mot, fx, rn) in enumerate(SHOTS):
-    out = os.path.join(TMP, f"c{k:02d}.mp4"); clips.append(out)
-    if os.path.exists(out): continue
-    nf = d * FPS
-    if img is None:
-        run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s=1920x1080:r={FPS}:d={d}", "-pix_fmt", "yuv420p", "-c:v", "libx264", out]); continue
-    src = os.path.join(IMG, img + ".png"); big = os.path.join(TMP, img + "_4k.png")
-    if img == "basement_crop":
-        run(["ffmpeg", "-y", "-i", os.path.join(IMG, "bs_b.png"), "-vf", "crop=540:304:200:110,scale=3840:2160:flags=lanczos", big])
-    else:
-        run(["ffmpeg", "-y", "-i", src, "-vf", "scale=3840:2160:force_original_aspect_ratio=increase:flags=lanczos,crop=3840:2160", big])
-    z = {"in": f"1.0+0.14*on/{nf}", "out": f"1.14-0.14*on/{nf}", "left": "1.12", "right": "1.12"}[mot]
-    x = {"left": f"(iw-iw/zoom)*(1-on/{nf})", "right": f"(iw-iw/zoom)*on/{nf}"}.get(mot, "iw/2-iw/zoom/2")
-    vf = [f"zoompan=z='{z}':x='{x}':y='ih/2-ih/zoom/2':d=1:s=1920x1080:fps={FPS}"]
-    if fx == "crash":
-        vf += ["crop=1800:1012:'60+40*sin(n*2.1)*exp(-t*1.5)':'34+30*cos(n*2.7)*exp(-t*1.5)'", "scale=1920:1080",
-               "eq=brightness='if(lt(t,0.5)*gt(t,0.45),0.9,if(between(t,0.5,1.2),0.6*(1.2-t)/0.7,0))':eval=frame"]
-    elif fx == "police":
-        vf += ["eq=brightness='0.06*sin(t*9)':saturation=1.1:eval=frame"]
-    elif fx == "club":
-        vf += ["eq=brightness='0.05*gt(sin(t*13),0.7)':eval=frame"]
-    elif fx == "lightsoff":
-        vf += ["eq=brightness='-0.11*min(floor((t-1)/1.4)+1,5)*gt(t,1)':eval=frame"]
-    elif fx == "stun":
-        vf += ["eq=brightness='if(between(t,0.6,2.8),0.35*gt(sin(t*55),0.5),if(gt(t,3.4),-0.5,0))':eval=frame"]
-    vf += ["format=yuv420p"]
-    cmd = ["ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-t", str(d), "-i", big]
-    if rn:
-        cmd += ["-stream_loop", "-1", "-i", rain_v,
-                "-filter_complex", f"[0]{','.join(vf)}[b];[1]scale=1920:1080[r];[b]format=gbrp[bb];[r]format=gbrp[rr];[bb][rr]blend=all_mode=screen:all_opacity=0.35,trim=duration={d},format=yuv420p[v]",
-                "-map", "[v]"]
-    else:
-        cmd += ["-vf", ",".join(vf)]
-    run(cmd + ["-frames:v", str(nf), "-c:v", "libx264", "-crf", "16", "-preset", "fast", out])
-    print("clip", k, img, flush=True)
+# ---------------------------------------------------------------- motion clips (2.5D depth parallax)
+from multiprocessing import Pool
+import motion
+DEP = os.path.join(W, "ep1_depth")
+def P(name): return os.path.join(IMG, name + ".png"), os.path.join(DEP, name + ".png")
+R = [("rain", 380)]
+SPEC = [
+  dict(img=None, dur=5, dust=True),
+  dict(n="s02_highway_5", dur=7, cam=dict(z=(1.0, 1.22), dolly=(0, 0.35), py=(0, -20)), particles=R, shake=6, shake_freq=1.6, whip_out=0),
+  dict(n="s03_crash_5", dur=8, cam=dict(z=(1.05, 1.2), px=(-70, 70), dolly=(0.1, 0.2)), particles=[("embers", 140)] + R, fire=True,
+       hits=[(0.0, 40)], flashes=[(0.0, 0.9)], shake=5),
+  dict(n="s04_firecrew_5", dur=8, cam=dict(z=(1.08, 1.12), x=(-90, 90), px=(-110, 110)), particles=[("embers", 80)] + R, fire=True, fx="police", shake=4),
+  dict(n="s05_idcard_17", dur=10, cam=dict(z=(1.0, 1.3), rot=(-2, 1.5), dolly=(0, 0.25)), particles=R, fire=True, fx="police", shake=2, whip_out=1),
+  dict(img=None, dur=4, dust=True),
+  dict(n="s07_club_5", dur=8, cam=dict(z=(1.1, 1.18), x=(80, -80), px=(120, -120)), fx="club", t0=42, whip_in=1, shake=3,
+       punches=[(42 - 42 + i * 60 / 124 * 4, 0.025) for i in range(4)]),
+  dict(n="s08_rona_5", dur=10, cam=dict(z=(1.05, 1.22), px=(-90, 90), rot=(1, -1)), fx="club", t0=50, shake=3, particles=[("dust", 40)]),
+  dict(n="s09_christy_5", dur=10, cam=dict(z=(1.18, 1.04), px=(90, -90), rot=(-1, 1)), fx="club", t0=60, shake=3, particles=[("dust", 40)], whip_out=1),
+  dict(n="bs_b", crop=(200, 110, 540, 304), dur=8, cam=dict(z=(1.0, 1.18), dolly=(0, 0.3)), fx="basement", particles=[("dust", 70)], shake=5, shake_freq=1.3, whip_in=1),
+  dict(n="s11_lightsoff_5", dur=8, cam=dict(z=(1.0, 1.15), dolly=(0, 0.25)), fx="lightsoff", hits=[(st, 8) for st in (1.0, 2.4, 3.8, 5.2, 6.6)], shake=3),
+  dict(n="s12_figure_5", dur=6, cam=dict(z=(1.0, 1.4), dolly=(0, 0.5), px=(60, -60)), hits=[(0.2, 25)], particles=[("dust", 50)], shake=4, ca=1),
+  dict(n="s13_stungun_5", dur=6, cam=dict(z=(1.1, 1.25), rot=(2, -2)), fx="stun", hits=[(0.6, 30), (1.6, 15)], punches=[(0.6, 0.08)], shake=6, ca=2),
+  dict(n="s14_van_5", dur=6, cam=dict(z=(1.3, 1.0), dolly=(0.4, 0), px=(0, 0)), hits=[(0.5, 25)], particles=[("dust", 60)], shake=6, whip_out=0),
+  dict(n="s15_shadow_17", dur=5, cam=dict(z=(1.0, 1.15), px=(-50, 30), dolly=(0, 0.2)), particles=R, shake=2,
+       punches=[(103.5 + k * 1.05 - 104, 0.02) for k in range(1, 5)], fade_out=0.6),
+  dict(img=None, dur=7),
+]
+assert sum(x["dur"] for x in SPEC) == TOTAL
+clips, jobs = [], []
+for k, sp in enumerate(SPEC):
+    sp = dict(sp); out = os.path.join(TMP, f"m{k:02d}.mp4"); clips.append(out); sp["out"] = out; sp["seed"] = k + 3
+    if "n" in sp: sp["img"], sp["depth"] = P(sp.pop("n"))
+    if not os.path.exists(out): jobs.append(sp)
+with Pool(4) as pool:
+    for o in pool.imap_unordered(motion.render_shot, jobs): print("clip", os.path.basename(o), flush=True)
 
 lst = os.path.join(TMP, "list.txt"); open(lst, "w").write("".join(f"file '{c}'\n" for c in clips))
 run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", os.path.join(TMP, "raw.mp4")])
