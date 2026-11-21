@@ -17,12 +17,14 @@ function sheetFor(name, title, sub, u, exprs, cols, extra = {}) {
     const views = [['front', false, 'മുന്നിൽ'], ['q', true, '3/4'], ['q', false, '3/4'], ['back', false, 'പിന്നിൽ']];
     views.forEach(([v, f, l], i) => { person(name, 170 + i * 270, 900, u, { view: v, flip: f, expr: extra.expr || 'neutral', key: 'v' + i, glitch: name === 'neha' ? .25 : 0, nehaEyes: extra.nehaEyes, hands: extra.hands }); label(l, 170 + i * 270, 950); });
     exprs.forEach(([e, l, o = {}], i) => {
-      const x = 1340 + (i % 2) * 300, y = 300 + Math.floor(i / 2) * 330;
-      paint(rrPts(x - 140, y - 140, 280, 300, 20), { wash: '#E6E0D3', ink: CP.ink, sw: .5 });
-      if (name === 'keeper') { clockFace(x, y + 10, 95, { sw: .8, glow: 0, ...o }); }
-      else bust(name, x, y, 62, { expr: e, key: 'e' + i, glitch: 0, ...o });
-      paint(rectPts(x - 142, y + 115, 284, 50), { wash: '#E6E0D3', ink: null });
-      label(l, x, y + 140, 22);
+      const x = 1340 + (i % 2) * 300, y = 300 + Math.floor(i / 2) * 360;
+      paint(rrPts(x - 140, y - 140, 280, 340, 20), { wash: '#E6E0D3', ink: CP.ink, sw: .5 });
+      if (name === 'keeper') { clockFace(x, y + 10, 100, { sw: .8, glow: 0, ...o }); }
+      else bust(name, x, y, 50, { expr: e, key: 'e' + i, glitch: 0, ...o });
+      paint(rectPts(x - 141, y + 150, 282, 49), { wash: '#E6E0D3', ink: null });
+      paint(rectPts(x - 150, y + 201, 300, 40), { wash: '#D8D2C4', ink: null });
+      inkLine([[x - 140, y + 200], [x + 140, y + 200]], .5, CP.ink, 'inkfine', 0);
+      label(l, x, y + 176, 22);
     });
     swatches(cols);
   };
