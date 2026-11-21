@@ -58,3 +58,11 @@ To change the shots, their timings or the lines, edit `SHOTS` / `LINES`.
   ```
   Copy `out/panels_hd` to `out/panels_hd_hi` before rendering the Hindi panels.
 - Hindi dialogue is in `audio/voice_hi/lines.json` and the English subtitle text in `audio/voice_hi/subtitles_en.json`.
+
+## Tamil version with English subtitles (`ta/`)
+`ta/COUNTDOWN_epNN_cinematic_ta.mp4`: all 10 episodes with Tamil dialogue, 1:30 each, with English subtitles burned in, a subtitle track you can turn off, and `.srt` files in `ta/subs/`. The videos aren't stored in git.
+- **Voices:** Tamil AI voices (vidIQ). Meera: Meera and Neha. Muthu: Arjun. Maneesh: the Keeper and Elias. Nila: Ammachi, Mom and the Teacher.
+- **Music:** the full Tamil title song "பத்து மணியோசை" (`audio/songs/pathu-maniyosai-FULL-ta.mp3`). The end-card hums are cut from its numbered lines.
+- **On-screen text:** in Tamil.
+- **Promo:** `promo/COUNTDOWN_promo_fullsong_ta.mp4` (1:41), built with `tools/make_promo_ta.py`.
+- **Rebuild:** the same steps as Hindi, with `ta` in place of `hi`.
