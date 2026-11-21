@@ -34,3 +34,12 @@ Camera moves and effects per panel are in the `DIRECT` table at the top of `tool
 
 They're 1080×1920, with burned-in Malayalam subtitles, the series title, loudness at −14 LUFS, and a cover image each.
 To re-cut one, edit its `CUTS` (start/end seconds in the 1:30 episode) or its `HOOK` line, then run `python3 tools/make_teasers.py 3`.
+
+## Series promo (9:16, 76 s)
+`tools/make_promo.py` builds a single trailer in `promo/` (not in git), set to the Malayalam theme song "പത്തു മണിയൊച്ച" (intro, both verses and the whispered bridge):
+- full-screen vertical shots from all 10 episodes, each reframed by hand on its subject;
+- short Malayalam story lines on screen;
+- bell-hit flashes;
+- the title card with "10 എപ്പിസോഡുകൾ · ഉടൻ വരുന്നു".
+
+To change the shots, their timings or the lines, edit `SHOTS` / `LINES`.
