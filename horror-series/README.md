@@ -10,6 +10,7 @@
 | [malayalam/](malayalam/) | **മലയാളം:** the series bible, all 10 scripts, and the music doc in Malayalam |
 | [art/](art/README.md) | **Art:** 5 character model sheets + cast lineup, and a 31-page storyboard book (139 panels, Malayalam captions) |
 | [video/](video/README.md) | **Cinematic animatics:** 10 × 1:30 videos (camera moves, film look, chime-synced hits, Malayalam subtitles) |
+| [kling/](kling/00_setup.md) | **Realistic version:** Kling AI prompts for 118 shots (character references, start-frame and video prompts per shot) |
 | [audio/](audio/README.md) | **All audio:** 10 mixed episode soundtracks, 2 Malayalam songs, 11 score cues, 37 effects, 65 Malayalam dialogue lines |
 
 ## Suggested production pipeline (per episode)
