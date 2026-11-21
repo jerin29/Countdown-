@@ -6,6 +6,7 @@ import os, sys, subprocess, json
 import numpy as np, scipy.io.wavfile as wavf, scipy.signal as sig
 
 W = sys.argv[1]; OUT = sys.argv[2]
+HERE = os.path.dirname(os.path.abspath(__file__))
 IMG = os.path.join(W, "ep1"); TMP = os.path.join(W, "ep1_build"); os.makedirs(TMP, exist_ok=True)
 FPS, SR = 24, 48000
 rng = np.random.default_rng(7)
@@ -64,25 +65,15 @@ LINES = [  # (start, who, malayalam, english)
 
 # ---------------------------------------------------------------- voices
 def tts():
-    import torch
-    from transformers import VitsModel, AutoTokenizer
-    m = VitsModel.from_pretrained("facebook/mms-tts-mal"); tok = AutoTokenizer.from_pretrained("facebook/mms-tts-mal")
+    """Natural Malayalam voices (vidIQ / ElevenLabs) from assets/voice/<who>.mp3."""
     out = []
     for i, (st, who, ml, en) in enumerate(LINES):
-        raw = os.path.join(TMP, f"vo{i}_raw.wav"); fin = os.path.join(TMP, f"vo{i}.wav")
-        torch.manual_seed(3 + i)
-        with torch.no_grad():
-            y = m(**tok(ml, return_tensors="pt")).waveform[0].numpy()
-        wavf.write(raw, 16000, (y / np.abs(y).max() * 0.9).astype(np.float32))
-        af = {
-            "radio":   "highpass=f=400,lowpass=f=3000,acrusher=bits=10:mix=0.3,volume=1.4",
-            "rona":    "rubberband=pitch=1.55:tempo=0.92,equalizer=f=3000:t=q:w=1:g=3,aecho=0.8:0.6:40:0.15",
-            "christy": "rubberband=pitch=1.68:tempo=1.0,equalizer=f=4000:t=q:w=1:g=2,aecho=0.8:0.6:40:0.15",
-        }[who]
-        run(["ffmpeg", "-y", "-i", raw, "-af", af + ",aresample=48000", "-ac", "1", fin])
+        fin = os.path.join(TMP, f"vo{i}.wav")
+        af = {"radio": "highpass=f=350,lowpass=f=3200,acrusher=bits=11:mix=0.25,volume=1.3",
+              "rona": "aecho=0.8:0.5:35:0.12", "christy": "aecho=0.8:0.5:35:0.12"}[who]
+        run(["ffmpeg", "-y", "-i", os.path.join(HERE, "assets", "voice", who + ".mp3"), "-af", af + ",aresample=48000", "-ac", "1", fin])
         sr, a = wavf.read(fin); a = a.astype(np.float32); a /= (np.abs(a).max() + 1e-9)
-        dur = len(a) / SR
-        sub(st, st + dur + 0.6, ml, en)
+        sub(st, st + len(a) / SR + 0.6, ml, en)
         out.append((st, who, a))
     return out
 
@@ -259,10 +250,22 @@ SPEC = [
   dict(img=None, dur=7),
 ]
 assert sum(x["dur"] for x in SPEC) == TOTAL
+SHOT_IDS = [None, 's02', 's03', 's04', 's05', None, 's07', 's08', 's09', 'basement', 's11', 's12', 's13', 's14', 's15', None]
 clips, jobs = [], []
 for k, sp in enumerate(SPEC):
     sp = dict(sp); out = os.path.join(TMP, f"m{k:02d}.mp4"); clips.append(out); sp["out"] = out; sp["seed"] = k + 3
     if "n" in sp: sp["img"], sp["depth"] = P(sp.pop("n"))
+    vid = os.path.join(HERE, "assets", "shots", SHOT_IDS[k] + ".mp4") if SHOT_IDS[k] else None
+    if vid and os.path.exists(vid):  # real animated clip
+        out = os.path.join(TMP, f"v{k:02d}.mp4"); clips[-1] = out
+        if not os.path.exists(out):
+            d = sp["dur"]; fl = "".join(f",eq=brightness='0.9*exp(-(t-{ht})*6)*gte(t,{ht})':eval=frame" for ht, _ in sp.get("flashes", []))
+            fo = f",fade=t=out:st={d-sp['fade_out']}:d={sp['fade_out']}" if sp.get("fade_out") else ""
+            run(["ffmpeg", "-y", "-i", vid, "-an", "-vf",
+                 f"scale=1920:1080:force_original_aspect_ratio=increase:flags=lanczos,crop=1920:1080,fps={FPS},tpad=stop_mode=clone:stop_duration={d},trim=duration={d},setpts=PTS-STARTPTS{fl}{fo},format=yuv420p",
+                 "-frames:v", str(int(d * FPS)), "-c:v", "libx264", "-crf", "16", "-preset", "fast", out])
+            print("video", SHOT_IDS[k], flush=True)
+        continue
     if not os.path.exists(out): jobs.append(sp)
 with Pool(4) as pool:
     for o in pool.imap_unordered(motion.render_shot, jobs): print("clip", os.path.basename(o), flush=True)
