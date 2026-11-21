@@ -41,9 +41,9 @@ if (args.sheets) {
   const panels = await probe.evaluate(() => PANELS.map(p => [p.ep, p.tc]));
   const only = args.only ? String(args.only).split(',').map(Number) : null;
   const count = {};
-  jobs = panels.map(([ep, tc], i) => { count[ep] = (count[ep] || 0) + 1; return { i, ep, tc, file: `${out}/e${String(ep).padStart(2, '0')}_p${String(count[ep]).padStart(2, '0')}.jpg`, w: 1280, h: 720 }; })
-    .filter(j => !only || only.includes(j.ep));
-  writeFileSync(`${out}/index.json`, JSON.stringify(jobs.map(({ ep, tc, file }) => ({ ep, tc, file: file.split('/').pop() })), null, 1));
+  const all = panels.map(([ep, tc], i) => { count[ep] = (count[ep] || 0) + 1; return { i, ep, tc, file: `${out}/e${String(ep).padStart(2, '0')}_p${String(count[ep]).padStart(2, '0')}.jpg`, w: 1280, h: 720 }; });
+  writeFileSync(`${out}/index.json`, JSON.stringify(all.map(({ ep, tc, file }) => ({ ep, tc, file: file.split('/').pop() })), null, 1));
+  jobs = all.filter(j => !only || only.includes(j.ep));
 }
 await probe.close();
 const workers = +(args.workers || 4); let next = 0; const t0 = Date.now();

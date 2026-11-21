@@ -173,7 +173,7 @@ P(6, '0:57', () => { shopInterior({ dark: 40 }); person('meera', 760, 1060, 26, 
 P(6, '1:03', () => { shopInterior({ dark: 80 }); glow(960, 500, 600, '#E6EEF2', .9); paint(rectPts(780, 140, 360, 700), { wash: '#DDE6EA', ink: CP.ink, sw: 1 }); person('keeper', 960, 840, 22, { glow: .2 }); bust('arjun', 300, 700, 120, { view: 'q', expr: 'terror', look: [1, 0] }); });
 P(6, '1:08', () => { shopInterior({ dark: 60 }); person('meera', 600, 1060, 26, { pose: 'run', expr: 'terror', key: 'm' }); person('arjun', 1000, 1060, 26, { pose: 'run', expr: 'terror' }); phone(1250, 1010, 50, { glowA: .4, hand: false }); });
 P(6, '1:15', () => { full('#3A3029'); boilSeed('floor'); for (let i = 0; i < 8; i++) inkLine([[0, 140 * i], [W, 140 * i + 30]], .6, '#2A221C', 'inkfine'); phone(960, 620, 220, { text: [['Calling:', -.15, 18], ['മീര 💛', 0, 22]], hand: false });
-  for (let i = -1; i <= 1; i++) keyFinger([1500, -40], 1.25 * -1 + Math.PI + i * .12, 700, 34, 1.2); });
+  paint(ribbon([[1950, -60], [1600, 160]], 120, 90), { wash: CP.coat, ink: CP.ink, sw: 1.2 }); for (let i = -1; i <= 1; i++) keyFinger([1600, 160], -0.72 + i * .14, 470, 34, 1.2); });
 P(6, '1:25', () => endCard(5, { next: 4 }));
 
 // =====================================================================================
@@ -226,9 +226,9 @@ P(9, '0:37', () => { full('#1B1713'); boilSeed('g2'); const pts = []; for (let k
 P(9, '0:44', () => { full('#15130F'); boilSeed('stairs2'); for (let i = 0; i < 12; i++) { const y = 1080 - i * 90, x = 760 + Math.sin(i * .9) * 300; paint(rectPts(x - 160, y, 320, 34), { wash: '#4A4038', ink: CP.ink, sw: .8 }); }
   keeperShadow(1300, 1080, 34, 220); });
 P(9, '0:50', () => { gearRoom({ spin: .3 }); person('meera', 900, 1060, 28, { pose: 'fallBack', expr: 'terror', flip: true }); });
-P(9, '0:58', () => { gearRoom({ spin: .5 }); person('arjun', 1000, 1060, 28, { pose: 'reachFwd', expr: 'determined', flip: true }); person('meera', 600, 1060, 26, { pose: 'fallBack', expr: 'terror', key: 'm' }); });
+P(9, '0:58', () => { gearRoom({ spin: .5 }); person('arjun', 1000, 1060, 28, { pose: 'reachFwd', expr: 'determined' }); person('meera', 600, 1060, 26, { pose: 'fallBack', expr: 'terror', key: 'm' }); });
 P(9, '1:03', () => { gearRoom({ spin: .6, dark: 60 }); bust('arjun', 960, 460, 160, { expr: 'calm', skin: '#B08D4A' }); });
-P(9, '1:10', () => { gearRoom({ dark: 80 }); bust('meera', 960, 440, 150, { expr: 'cry', look: [0, .6] }); boilSeed('gl'); for (const x of [880, 1040]) paint(ellPts(x, 940, 62, 56, 18), { ink: CP.ink, sw: 1.4 }); inkLine([[942, 940], [978, 940]], 1, CP.ink); });
+P(9, '1:10', () => { gearRoom({ dark: 80 }); bust('meera', 960, 440, 150, { expr: 'cry', look: [0, .6] }); hand(1000, 990, 90, -.15); boilSeed('gl'); for (const x of [900, 1060]) paint(ellPts(x, 930, 62, 56, 18), { wash: '#C9D4DA', washOp: 255, ink: CP.ink, sw: 1.6 }); inkLine([[962, 930], [998, 930]], 1.4, CP.ink, 'ink', 0); inkLine([[1122, 925], [1230, 900]], 1.2, CP.ink, 'ink', 0); });
 P(9, '1:15', () => { full('#15130F'); for (let i = 0; i < 6; i++) paint(rectPts(400 + i * 60, 900 - i * 60, 320, 30), { wash: '#4A4038', ink: CP.ink, sw: .8 }); person('keeper', 1200, 1040, 30, { hands: [Math.PI * 1.75, Math.PI * 1.75], glow: .7 }); bust('meera', 320, 760, 110, { view: 'q', flip: true, expr: 'terror' }); });
 P(9, '1:25', () => { endCard(2); boilSeed('c1'); inkLine([[1500, 820], [1530, 900]], 1, '#3A3A40', 'inkfine', 0); letter('1', 1500, 880, 120, '#3A3A40', { screen: true, ink: false, font: '120px Georgia, serif' }); flushLetters(); inkLine([[1490, 820], [1515, 940]], 1.2, '#060709', 'inkfine', 0); });
 
@@ -239,14 +239,14 @@ P(10, '0:06', () => titleCard(1));
 P(10, '0:10', () => { clockBack(); person('keeper', 1400, 920, 22, { glow: .5 }); person('meera', 640, 920, 24, { pose: 'tense', flip: true, view: 'q', expr: 'scared' }); });
 P(10, '0:18', () => { clockBack(); bust('meera', 760, 460, 150, { expr: 'determined', view: 'q', flip: true }); pocketWatch(1260, 820, 70, {}); hand(1180, 860, 60, 0); });
 P(10, '0:26', () => { full('#0D0F14'); bust('keeper', 960, 440, 180, { clockFace: { expr: 'scared', skin: CP.skin }, glow: .7 }); });
-P(10, '0:34', () => { full('#0D0F14'); boilSeed('bell'); push(); translate(960, 100); rotate(-.4); paint(through([[-360, 700], [-300, 200], [-120, 40], [120, 40], [300, 200], [360, 700]], 3), { wash: CP.brassDk, ink: CP.ink, sw: 1.6 }); paint(ellPts(0, 700, 360, 60, 24), { wash: '#3A2E1E', ink: CP.ink, sw: 1.2 }); pop(); glow(960, 500, 600, CP.sick, .3); });
+P(10, '0:34', () => { full('#0D0F14'); boilSeed('bell'); push(); translate(960, 100); rotate(-.4); paint(through([[-360, 700], [-300, 200], [-120, 40], [120, 40], [300, 200], [360, 700]], 3), { wash: CP.brassDk, ink: CP.ink, sw: 1.6 }); paint(ellPts(0, 700, 360, 60, 24), { wash: '#3A2E1E', ink: CP.ink, sw: 1.2 }); inkLine([[0, 120], [20, 640]], 1.6, CP.ink, 'ink', 0); paint(ellPts(20, 680, 50, 60, 16), { wash: CP.brassDk, ink: CP.ink, sw: 1 }); inkLine([[0, 40], [0, -400]], 2, '#6B5444', 'dry', 0); pop(); glow(960, 500, 600, CP.sick, .3); });
 P(10, '0:37', () => { clockBack(); person('meera', 900, 920, 30, { pose: 'wind', flip: true, view: 'q', expr: 'determined' }); });
 P(10, '0:43', () => { clockBack(); boilSeed('dust'); for (let i = 0; i < 40; i++) paint(ellPts(hash(i) * W, (1 - frac(hash(i + 5) + .3)) * H, 3 + hash(i) * 4, 3 + hash(i) * 4, 6), { wash: '#C9C3B4', washOp: 200, ink: null });
   for (let i = 0; i < 3; i++) inkLine([[300 + i * 600, 900], [300 + i * 600, 500], [270 + i * 600, 540]], 1, CP.cream, 'inkfine'); person('meera', 900, 920, 30, { pose: 'wind', flip: true, view: 'q', expr: 'determined' }); });
 P(10, '0:52', () => { full('#0D0F14'); bust('keeper', 1100, 440, 180, { clockFace: { expr: 'calm', skin: '#A87A5E' }, glow: .4 }); for (let i = -1; i <= 1; i++) keyFinger([1500, 760], -Math.PI / 2 + i * .1, 520, 30, 1); bust('meera', 400, 520, 130, { view: 'q', flip: true, expr: 'terror', key: 'm' }); });
 P(10, '1:00', () => { clockBack({ light: .7 }); boilSeed('crumb'); for (let i = 0; i < 24; i++) { const x = 900 + hash(i) * 700, y = 200 + hash(i + 3) * 700; clockFace(x, y, 20 + hash(i + 9) * 30, { sw: .4, cracks: false }); } });
 P(10, '1:05', () => { market({ day: true, ts: 9 }); person('arjun', 520, 1010, 22, { pose: 'sit', expr: 'smile', key: 'a' }); person('neha', 1250, 990, 22, { nehaEyes: true, expr: 'smile', glitch: .3 }); person('ammachi', 1450, 1000, 22, { expr: 'smile' }); person('meera', 900, 1010, 24, { expr: 'smile', key: 'm' }); });
-P(10, '1:12', () => { market({ day: true, ts: 9 }); person('ammachi', 1010, 1040, 32, { pose: 'hug', flip: true, expr: 'cry' }); person('meera', 900, 1040, 32, { pose: 'hug', expr: 'cry', key: 'm' }); });
+P(10, '1:12', () => { market({ day: true, ts: 9 }); person('ammachi', 1040, 1040, 32, { pose: 'hug', expr: 'cry' }); person('meera', 880, 1040, 32, { pose: 'hug', flip: true, view: 'q', expr: 'cry', key: 'm' }); });
 P(10, '1:18', () => { cityRoom(); lyingHead('boy', 240, 680, 50, { expr: 'shock' }); paint([[300, 720], [1100, 700], [1100, 780], [290, 800]], { wash: '#2D4357', ink: CP.ink, sw: .9 }); });
 P(10, '1:25', () => { full('#060709'); letter('40', 960, 470, 300, '#E9E2D0', { screen: true, ink: false, font: '300px Georgia, serif' }); letter('SEASON 2', 960, 800, 80, '#B33A3A', { screen: true, ink: false, font: '80px "Permanent Marker"' }); });
 
