@@ -25,3 +25,12 @@ cd animation-base && node render_boards.mjs --w=1920 --h=1080 --out=out/panels_h
 python3 horror-series/video/tools/make_animatic.py            # all episodes   (or: make_animatic.py 3 for one)
 ```
 Camera moves and effects per panel are in the `DIRECT` table at the top of `tools/make_animatic.py`.
+
+## Instagram Reels / Shorts teasers (9:16, ~30 s)
+`tools/make_teasers.py` cuts a hook-first vertical teaser from each episode into `teasers/` (not in git):
+- **0–4 s:** the episode's scariest moment, with a big Malayalam hook line.
+- **Middle:** the key beats, with the best dialogue and the chimes.
+- **End:** the cracking countdown number, the lullaby hum and a "next chime tomorrow · Follow" prompt.
+
+They're 1080×1920, with burned-in Malayalam subtitles, the series title, loudness at −14 LUFS, and a cover image each.
+To re-cut one, edit its `CUTS` (start/end seconds in the 1:30 episode) or its `HOOK` line, then run `python3 tools/make_teasers.py 3`.
