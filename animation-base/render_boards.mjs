@@ -29,7 +29,7 @@ const grab = (page, w, h) => page.evaluate(async (w, h) => {
   await window.renderAt(.5);
   const c = document.createElement('canvas'); c.width = w; c.height = h;
   c.getContext('2d').drawImage(document.getElementById('out'), 0, 0, w, h);
-  return c.toDataURL('image/jpeg', .88);
+  return c.toDataURL('image/jpeg', w > 1280 ? .93 : .88);
 }, w, h);
 const save = (f, url) => writeFileSync(f, Buffer.from(url.slice(url.indexOf(',') + 1), 'base64'));
 
@@ -41,7 +41,7 @@ if (args.sheets) {
   const panels = await probe.evaluate(() => PANELS.map(p => [p.ep, p.tc]));
   const only = args.only ? String(args.only).split(',').map(Number) : null;
   const count = {};
-  const all = panels.map(([ep, tc], i) => { count[ep] = (count[ep] || 0) + 1; return { i, ep, tc, file: `${out}/e${String(ep).padStart(2, '0')}_p${String(count[ep]).padStart(2, '0')}.jpg`, w: 1280, h: 720 }; });
+  const all = panels.map(([ep, tc], i) => { count[ep] = (count[ep] || 0) + 1; return { i, ep, tc, file: `${out}/e${String(ep).padStart(2, '0')}_p${String(count[ep]).padStart(2, '0')}.jpg`, w: +(args.w || 1280), h: +(args.h || 720) }; });
   writeFileSync(`${out}/index.json`, JSON.stringify(all.map(({ ep, tc, file }) => ({ ep, tc, file: file.split('/').pop() })), null, 1));
   jobs = all.filter(j => !only || only.includes(j.ep));
 }
