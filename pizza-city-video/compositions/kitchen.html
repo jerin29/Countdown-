@@ -1,0 +1,96 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #FFF3DC; }
+    #k-cam { position: absolute; inset: 0; transform-origin: 50% 60%; }
+    #k-cam svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #k-sign { position: absolute; left: 50%; top: 70px; width: 980px; margin-left: -490px; text-align: center;
+      font-family: "Archivo Black", sans-serif; color: #E63A2E; font-size: 92px; line-height: 0.95;
+      letter-spacing: -0.02em; text-shadow: 6px 6px 0 #2B1B17; }
+    #k-sign small { display: block; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 40px;
+      color: #2E8B57; letter-spacing: 0.3em; text-shadow: none; margin-top: 12px; }
+  </style>
+  <div id="root" data-composition-id="kitchen" data-width="1920" data-height="1080">
+    <div id="k-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080">
+        <defs>
+          <pattern id="k-tiles" width="120" height="120" patternUnits="userSpaceOnUse">
+            <rect width="120" height="120" fill="#FFF3DC"/>
+            <rect x="0" y="0" width="60" height="60" fill="#F7E2BD"/>
+            <rect x="60" y="60" width="60" height="60" fill="#F7E2BD"/>
+          </pattern>
+        </defs>
+        <rect width="1920" height="1080" fill="url(#k-tiles)"/>
+        <!-- shelf with jars -->
+        <rect x="140" y="470" width="420" height="22" rx="6" fill="#8A4B2A"/>
+        <rect x="170" y="380" width="80" height="90" rx="14" fill="#E63A2E"/>
+        <rect x="270" y="400" width="70" height="70" rx="14" fill="#2E8B57"/>
+        <rect x="360" y="370" width="90" height="100" rx="14" fill="#FFC93C"/>
+        <rect x="1360" y="470" width="420" height="22" rx="6" fill="#8A4B2A"/>
+        <circle cx="1450" cy="420" r="48" fill="#E8A55B"/>
+        <circle cx="1560" cy="430" r="38" fill="#E63A2E"/>
+        <circle cx="1660" cy="420" r="48" fill="#E8A55B"/>
+        <!-- counter -->
+        <rect x="0" y="760" width="1920" height="320" fill="#B8693A"/>
+        <rect x="0" y="740" width="1920" height="40" fill="#8A4B2A"/>
+        <g id="k-shadow"><ellipse cx="960" cy="880" rx="380" ry="60" fill="#8A4B2A" opacity="0.55"/></g>
+      </svg>
+      <div id="k-sign" data-layout-allow-overflow>PIZZA CITY<br>EXPRESS<small>WEINGARTEN</small></div>
+      <svg viewBox="0 0 1920 1080">
+        <g id="k-pizza" transform="translate(960 860)">
+          <g id="k-pspin">
+            <ellipse id="k-dough" rx="0" ry="0" fill="#F2C68A" stroke="#E8A55B" stroke-width="22"/>
+            <ellipse id="k-sauce" rx="0" ry="0" fill="#D9342A"/>
+            <ellipse id="k-cheese" rx="0" ry="0" fill="#FFD966"/>
+            <g id="k-tops">
+              <ellipse class="k-sal" cx="-180" cy="-20" rx="44" ry="18" fill="#B3262B"/>
+              <ellipse class="k-sal" cx="-40" cy="-50" rx="44" ry="18" fill="#B3262B"/>
+              <ellipse class="k-sal" cx="120" cy="-30" rx="44" ry="18" fill="#B3262B"/>
+              <ellipse class="k-sal" cx="40" cy="40" rx="44" ry="18" fill="#B3262B"/>
+              <ellipse class="k-sal" cx="-120" cy="45" rx="44" ry="18" fill="#B3262B"/>
+              <ellipse class="k-sal" cx="200" cy="30" rx="44" ry="18" fill="#B3262B"/>
+              <g class="k-mush"><path d="M-90 -5 q30 -36 60 0 z M-68 -5 h16 v18 h-16z" fill="#E9D8C4" transform="translate(0 -10)"/></g>
+              <g class="k-mush"><path d="M70 -5 q30 -36 60 0 z M92 -5 h16 v18 h-16z" fill="#E9D8C4" transform="translate(-20 20)"/></g>
+              <g class="k-mush"><path d="M-250 -5 q30 -36 60 0 z M-228 -5 h16 v18 h-16z" fill="#E9D8C4" transform="translate(0 20)"/></g>
+              <ellipse class="k-bas" cx="-10" cy="-10" rx="26" ry="12" fill="#2E8B57"/>
+              <ellipse class="k-bas" cx="160" cy="-60" rx="26" ry="12" fill="#2E8B57"/>
+              <ellipse class="k-bas" cx="-220" cy="-50" rx="26" ry="12" fill="#2E8B57"/>
+              <ellipse class="k-bas" cx="260" cy="-10" rx="26" ry="12" fill="#2E8B57"/>
+            </g>
+          </g>
+        </g>
+        <g id="k-steam" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0">
+          <path class="k-wisp" d="M880 760 q-30 -60 0 -120 q30 -60 0 -120"/>
+          <path class="k-wisp" d="M960 740 q-30 -60 0 -120 q30 -60 0 -120"/>
+          <path class="k-wisp" d="M1040 760 q-30 -60 0 -120 q30 -60 0 -120"/>
+        </g>
+        <g id="k-ball"><circle cx="960" cy="0" r="110" fill="#F2C68A" stroke="#E8A55B" stroke-width="10"/></g>
+      </svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#k-cam", { scale: 1.0 }, { scale: 1.12, duration: 26, ease: "none" }, 0);
+    tl.fromTo("#k-sign", { scale: 0.2, rotation: -8, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.7, ease: "back.out(2.2)" }, 0.1);
+    tl.fromTo("#k-sign", { rotation: 0 }, { rotation: -3, duration: 0.25, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 1.1);
+    // dough drops on the verse groove
+    tl.fromTo("#k-ball", { y: -200 }, { y: 860, duration: 0.55, ease: "power2.in" }, 3.6);
+    tl.fromTo("#k-ball", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 4.13);
+    tl.fromTo("#k-dough", { attr: { rx: 110, ry: 110 } }, { attr: { rx: 360, ry: 120 }, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 4.13);
+    tl.fromTo("#k-pspin", { y: 0 }, { y: -260, duration: 0.45, yoyo: true, repeat: 1, ease: "power2.out" }, 5.6);
+    tl.fromTo("#k-pspin", { y: 0 }, { y: -260, duration: 0.45, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 7.6);
+    // "In Weingarten" – sign bumps
+    tl.fromTo("#k-sign", { scale: 1 }, { scale: 1.12, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 9.8);
+    // "Pizzaduft in der Luft" – steam
+    tl.fromTo("#k-steam", { opacity: 0 }, { opacity: 0.9, duration: 0.6 }, 13.6);
+    tl.fromTo(".k-wisp", { y: 40 }, { y: -80, duration: 3.6, ease: "sine.inOut", stagger: 0.3 }, 13.6);
+    tl.fromTo("#k-steam", { opacity: 0.9 }, { opacity: 0, duration: 0.6, immediateRender: false }, 17.0);
+    // "frischer Teig, Tomate rot"
+    tl.fromTo("#k-sauce", { attr: { rx: 0, ry: 0 } }, { attr: { rx: 320, ry: 102 }, duration: 0.9, ease: "back.out(1.6)" }, 19.3);
+    // "Käse drauf"
+    tl.fromTo("#k-cheese", { attr: { rx: 0, ry: 0 } }, { attr: { rx: 290, ry: 90 }, duration: 0.9, ease: "back.out(1.6)" }, 21.85);
+    tl.fromTo(".k-sal", { y: -900, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out", stagger: 0.25 }, 23.1);
+    tl.fromTo(".k-mush", { y: -900, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out", stagger: 0.25 }, 24.6);
+    tl.fromTo(".k-bas", { y: -900, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out", stagger: 0.15 }, 25.2);
+    window.__timelines["kitchen"] = tl;
+  </script>
+</template>

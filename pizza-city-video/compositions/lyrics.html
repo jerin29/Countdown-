@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .ly-line { position: absolute; left: 0; right: 0; bottom: 80px; text-align: center; }
+    .ly-pill { display: inline-block; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 56px; color: #2B1B17;
+      background: #FFF3DC; border: 6px solid #2B1B17; border-radius: 60px; padding: 10px 44px; box-shadow: 8px 8px 0 #2B1B17; }
+    .ly-ch .ly-pill { background: #E63A2E; color: #FFF3DC; font-size: 62px; }
+  </style>
+  <div id="root" data-composition-id="lyrics" data-width="1920" data-height="1080">
+    <div id="ly0" class="clip ly-line ly-ch" data-start="0.1" data-duration="3.5" data-track-index="0"><span id="ly0t" class="ly-pill">Pizza! Pizza! Pizza City!</span></div>
+    <div id="ly1" class="clip ly-line" data-start="9.76" data-duration="3.84" data-track-index="0"><span id="ly1t" class="ly-pill">In Weingarten, wenn der Hunger ruft,</span></div>
+    <div id="ly2" class="clip ly-line" data-start="13.62" data-duration="3.68" data-track-index="0"><span id="ly2t" class="ly-pill">liegt schon Pizzaduft in der Luft!</span></div>
+    <div id="ly3" class="clip ly-line" data-start="17.34" data-duration="4.16" data-track-index="0"><span id="ly3t" class="ly-pill">Frischer Teig, Tomate rot,</span></div>
+    <div id="ly4" class="clip ly-line" data-start="21.84" data-duration="3.96" data-track-index="0"><span id="ly4t" class="ly-pill">Käse drauf – das ist unser Gebot!</span></div>
+    <div id="ly5" class="clip ly-line ly-ch" data-start="30.0" data-duration="3.95" data-track-index="0"><span id="ly5t" class="ly-pill">Pizza City Express – heiß und schnell zu dir!</span></div>
+    <div id="ly6" class="clip ly-line ly-ch" data-start="34.0" data-duration="3.95" data-track-index="0"><span id="ly6t" class="ly-pill">Pizza City Express – die beste Pizza hier!</span></div>
+    <div id="ly7" class="clip ly-line ly-ch" data-start="38.0" data-duration="3.6" data-track-index="0"><span id="ly7t" class="ly-pill">Ob Salami, ob Funghi, ob Margherita,</span></div>
+    <div id="ly8" class="clip ly-line ly-ch" data-start="41.64" data-duration="4.86" data-track-index="0"><span id="ly8t" class="ly-pill">Pizza City Express – Weingarten, bis gleich!</span></div>
+    <div id="ly9" class="clip ly-line" data-start="49.12" data-duration="4.08" data-track-index="0"><span id="ly9t" class="ly-pill">Der Ofen glüht, die Box geht zu,</span></div>
+    <div id="ly10" class="clip ly-line" data-start="53.24" data-duration="4.06" data-track-index="0"><span id="ly10t" class="ly-pill">der Roller startet, schon bist du</span></div>
+    <div id="ly11" class="clip ly-line" data-start="57.34" data-duration="3.66" data-track-index="0"><span id="ly11t" class="ly-pill">an der Basilika vorbei,</span></div>
+    <div id="ly12" class="clip ly-line" data-start="61.06" data-duration="4.84" data-track-index="0"><span id="ly12t" class="ly-pill">durch die Altstadt – eins, zwei, drei!</span></div>
+    <div id="ly13" class="clip ly-line" data-start="69.08" data-duration="2.8" data-track-index="0"><span id="ly13t" class="ly-pill">Ding-dong, die Tür geht auf,</span></div>
+    <div id="ly14" class="clip ly-line" data-start="71.9" data-duration="1.96" data-track-index="0"><span id="ly14t" class="ly-pill">alle lachen, alle freuen sich drauf!</span></div>
+    <div id="ly15" class="clip ly-line ly-ch" data-start="73.88" data-duration="3.48" data-track-index="0"><span id="ly15t" class="ly-pill">Pizza City Express – heiß und schnell zu dir!</span></div>
+    <div id="ly16" class="clip ly-line ly-ch" data-start="77.38" data-duration="2.26" data-track-index="0"><span id="ly16t" class="ly-pill">Pizza City Express!</span></div>
+    <div id="ly17" class="clip ly-line ly-ch" data-start="79.66" data-duration="1.96" data-track-index="0"><span id="ly17t" class="ly-pill">… ob Margherita!</span></div>
+    <div id="ly18" class="clip ly-line ly-ch" data-start="81.64" data-duration="2.66" data-track-index="0"><span id="ly18t" class="ly-pill">Pizza City Express!</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ly0t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.1);
+    tl.fromTo("#ly0t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 3.43);
+    tl.fromTo("#ly1t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 9.76);
+    tl.fromTo("#ly1t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 13.43);
+    tl.fromTo("#ly2t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 13.62);
+    tl.fromTo("#ly2t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 17.13);
+    tl.fromTo("#ly3t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 17.34);
+    tl.fromTo("#ly3t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 21.33);
+    tl.fromTo("#ly4t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 21.84);
+    tl.fromTo("#ly4t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 25.63);
+    tl.fromTo("#ly5t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 30.0);
+    tl.fromTo("#ly5t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 33.78);
+    tl.fromTo("#ly6t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 34.0);
+    tl.fromTo("#ly6t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 37.78);
+    tl.fromTo("#ly7t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 38.0);
+    tl.fromTo("#ly7t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 41.43);
+    tl.fromTo("#ly8t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 41.64);
+    tl.fromTo("#ly8t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 46.33);
+    tl.fromTo("#ly9t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 49.12);
+    tl.fromTo("#ly9t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 53.03);
+    tl.fromTo("#ly10t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 53.24);
+    tl.fromTo("#ly10t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 57.13);
+    tl.fromTo("#ly11t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 57.34);
+    tl.fromTo("#ly11t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 60.83);
+    tl.fromTo("#ly12t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 61.06);
+    tl.fromTo("#ly12t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 65.73);
+    tl.fromTo("#ly13t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 69.08);
+    tl.fromTo("#ly13t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 71.71);
+    tl.fromTo("#ly14t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 71.9);
+    tl.fromTo("#ly14t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 73.69);
+    tl.fromTo("#ly15t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 73.88);
+    tl.fromTo("#ly15t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 77.19);
+    tl.fromTo("#ly16t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 77.38);
+    tl.fromTo("#ly16t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 79.47);
+    tl.fromTo("#ly17t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 79.66);
+    tl.fromTo("#ly17t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 81.45);
+    tl.fromTo("#ly18t", { y: 50, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 81.64);
+    tl.fromTo("#ly18t", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 84.13);
+    window.__timelines["lyrics"] = tl;
+  </script>
+</template>

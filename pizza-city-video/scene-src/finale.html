@@ -1,0 +1,70 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #FFF3DC; }
+    #f-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #f-card { position: absolute; inset: 0; background: #E63A2E; }
+    #f-logo { position: absolute; left: 0; right: 0; top: 230px; text-align: center; font-family: "Archivo Black", sans-serif;
+      font-size: 150px; line-height: 0.92; color: #FFF3DC; text-shadow: 9px 9px 0 #2B1B17; letter-spacing: -0.02em; }
+    #f-tag { position: absolute; left: 0; right: 0; top: 590px; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900;
+      font-size: 64px; color: #FFC93C; letter-spacing: 0.04em; }
+    #f-city { position: absolute; left: 50%; top: 700px; width: 560px; margin-left: -280px; text-align: center; font-family: "Nunito", sans-serif;
+      font-weight: 900; font-size: 40px; color: #2B1B17; background: #FFF3DC; border-radius: 40px; padding: 10px 0; letter-spacing: 0.25em; }
+    #f-cardsvg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  </style>
+  <div id="root" data-composition-id="finale" data-width="1920" data-height="1080">
+    <svg id="f-svg" viewBox="0 0 1920 1080">
+      <rect width="1920" height="1080" fill="#FFF3DC"/>
+      <rect x="0" y="0" width="1920" height="620" fill="#FBE3B8"/>
+      <rect x="760" y="110" width="400" height="300" rx="16" fill="#8FD3F5" stroke="#2B1B17" stroke-width="10"/>
+      <path d="M760 260 H1160 M960 110 V410" stroke="#2B1B17" stroke-width="8"/>
+      <!-- family behind the table -->
+      <g id="f-fam">
+        <g class="f-p" transform="translate(520 640)"><g class="f-pi"><rect x="-90" y="-300" width="180" height="320" rx="60" fill="#2E8B57" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-370" r="80" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-80 -400 Q0 -490 80 -400 Z" fill="#6B3A22"/><circle cx="-28" cy="-375" r="8" fill="#2B1B17"/><circle cx="28" cy="-375" r="8" fill="#2B1B17"/><path d="M-34 -335 Q0 -300 34 -335" stroke="#2B1B17" stroke-width="7" fill="#E63A2E"/></g></g>
+        <g class="f-p" transform="translate(960 640)"><g class="f-pi"><rect x="-70" y="-200" width="140" height="220" rx="50" fill="#FFC93C" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-260" r="66" fill="#F2C9A0" stroke="#2B1B17" stroke-width="7"/><path d="M-66 -270 Q0 -350 66 -270 Z" fill="#C0472E"/><circle cx="-22" cy="-265" r="7" fill="#2B1B17"/><circle cx="22" cy="-265" r="7" fill="#2B1B17"/><path d="M-28 -232 Q0 -205 28 -232" stroke="#2B1B17" stroke-width="6" fill="#E63A2E"/></g></g>
+        <g class="f-p" transform="translate(1400 640)"><g class="f-pi"><rect x="-90" y="-290" width="180" height="310" rx="60" fill="#E63A2E" stroke="#2B1B17" stroke-width="7"/><circle cx="0" cy="-360" r="80" fill="#C98F6A" stroke="#2B1B17" stroke-width="7"/><path d="M-90 -370 Q0 -480 90 -370 L90 -300 L68 -370 Q0 -420 -68 -370 L-90 -300 Z" fill="#2B1B17"/><circle cx="-28" cy="-365" r="8" fill="#2B1B17"/><circle cx="28" cy="-365" r="8" fill="#2B1B17"/><path d="M-34 -325 Q0 -290 34 -325" stroke="#2B1B17" stroke-width="7" fill="#FFF3DC"/></g></g>
+      </g>
+      <rect x="160" y="620" width="1600" height="60" rx="20" fill="#8A4B2A"/>
+      <rect x="200" y="680" width="1520" height="400" fill="#B8693A"/>
+      <!-- pizza on the table -->
+      <g transform="translate(960 640)">
+        <ellipse rx="360" ry="70" fill="#F4E4C8" stroke="#2B1B17" stroke-width="8"/>
+        <ellipse rx="300" ry="54" fill="#F2C68A" stroke="#E8A55B" stroke-width="12"/>
+        <ellipse rx="262" ry="44" fill="#FFD966"/>
+        <ellipse cx="-120" cy="-6" rx="30" ry="10" fill="#B3262B"/><ellipse cx="60" cy="10" rx="30" ry="10" fill="#B3262B"/><ellipse cx="160" cy="-12" rx="30" ry="10" fill="#B3262B"/><ellipse cx="-30" cy="-20" rx="30" ry="10" fill="#B3262B"/>
+      </g>
+      <!-- slices lifted, with cheese strings -->
+      <g class="f-slice" id="f-s1"><path d="M560 640 Q560 590 600 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M560 560 L700 520 L640 420 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="640" cy="500" r="14" fill="#B3262B"/></g>
+      <g class="f-slice" id="f-s2"><path d="M960 640 Q960 600 960 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M900 540 L1020 540 L960 430 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="960" cy="510" r="12" fill="#B3262B"/></g>
+      <g class="f-slice" id="f-s3"><path d="M1360 640 Q1360 590 1320 560" stroke="#FFD966" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M1360 560 L1220 520 L1280 420 Z" fill="#FFD966" stroke="#E8A55B" stroke-width="10" stroke-linejoin="round"/><circle cx="1280" cy="500" r="14" fill="#B3262B"/></g>
+    </svg>
+    <div id="f-card" data-layout-allow-overflow>
+      <svg id="f-cardsvg" viewBox="0 0 1920 1080">
+        <g fill="#D9342A"><circle cx="160" cy="140" r="110"/><circle cx="1780" cy="200" r="140"/><circle cx="1700" cy="960" r="120"/><circle cx="220" cy="940" r="90"/></g>
+        <g id="f-scoot" transform="translate(-400 1060) scale(0.7)">{{SCOOTER:f}}</g>
+      </svg>
+      <div id="f-logo">PIZZA CITY<br>EXPRESS</div>
+      <div id="f-tag">heiß &amp; schnell – bis gleich!</div>
+      <div id="f-city">WEINGARTEN</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // chorus: everyone grabs a slice, cheese stretches, the family bounces on the beat
+    tl.fromTo(".f-slice", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(1.8)", stagger: 0.5 }, 0.2);
+    tl.fromTo(".f-slice", { y: 0 }, { y: -40, duration: 0.5, yoyo: true, repeat: 15, ease: "sine.inOut", immediateRender: false }, 1.8);
+    tl.fromTo(".f-pi", { y: 0 }, { y: -26, duration: 0.25, yoyo: true, repeat: 39, ease: "power2.out", stagger: 0.12 }, 0.5);
+    // 10.6 end card slides up
+    tl.fromTo("#f-card", { y: 1080 }, { y: 0, duration: 0.6, ease: "power3.out" }, 10.4);
+    tl.fromTo("#f-logo", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2)" }, 10.8);
+    tl.fromTo("#f-tag", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 11.2);
+    tl.fromTo("#f-city", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.5)" }, 11.5);
+    tl.fromTo("#f-scoot", { x: -400 }, { x: 2400, duration: 2.4, ease: "power1.inOut" }, 11.0);
+    tl.fromTo(".f-wheel", { rotation: 0 }, { rotation: 2520, duration: 2.4, ease: "power1.inOut", transformOrigin: "50% 50%" }, 11.0);
+    // last "Pizza City Express!" — logo punch
+    tl.fromTo("#f-logo", { scale: 1 }, { scale: 1.1, duration: 0.2, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 12.45);
+    window.__timelines["finale"] = tl;
+  </script>
+</template>
