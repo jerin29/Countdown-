@@ -4,14 +4,21 @@ const PANELS = [];
 const P = (ep, tc, fn) => PANELS.push({ ep, tc, fn });
 // language of the on-screen text: ?lang=hi renders the Hindi version of the panels that show words
 const LANG = new URLSearchParams(location.search).get('lang') || 'ml';
-const ML = LANG === 'hi' ? '"Noto Sans Devanagari", sans-serif' : '"Noto Sans Malayalam", sans-serif';
+const ML = LANG === 'hi' ? '"Noto Sans Devanagari", sans-serif' : LANG === 'ta' ? '"Noto Sans Tamil", sans-serif' : '"Noto Sans Malayalam", sans-serif';
 const HI = {
   'എണ്ണരുത്': 'गिनना मत', 'നേഹ തോമസ് — 1986': 'नेहा थॉमस — 1986', 'സാം മാത്യു — 2026': 'सैम मैथ्यू — 2026',
   'മീര ജോസഫ്': 'मीरा जोसफ़', 'അർജുൻ നായർ': 'अर्जुन नायर', 'റോസ ജോസഫ് — 1986': 'रोज़ा जोसफ़ — 1986', 'മീര 💛': 'मीरा 💛',
   'അർജുൻ': 'अर्जुन', 'പിന്നോട്ട് ചുറ്റണം': 'उल्टा घुमाओ', 'ഞാനും കേട്ടു.': 'मैंने भी सुना।', 'ഞാനും നിന്റെ': 'मैं तुम्हारे',
   'കൂടെ വരുന്നു.': 'साथ आ रहा हूँ।',
 };
-const L = t => (LANG === 'hi' && HI[t]) || t;
+const TA = {
+  'എണ്ണരുത്': 'எண்ணாதே', 'നേഹ തോമസ് — 1986': 'நேஹா தாமஸ் — 1986', 'സാം മാത്യു — 2026': 'சாம் மேத்யூ — 2026',
+  'മീര ജോസഫ്': 'மீரா ஜோசப்', 'അർജുൻ നായർ': 'அர்ஜுன் நாயர்', 'റോസ ജോസഫ് — 1986': 'ரோஸா ஜோசப் — 1986', 'മീര 💛': 'மீரா 💛',
+  'അർജുൻ': 'அர்ஜுன்', 'പിന്നോട്ട് ചുറ്റണം': 'பின்னோக்கி சுற்று', 'ഞാനും കേട്ടു.': 'நானும் கேட்டேன்.', 'ഞാനും നിന്റെ': 'நானும் உன்கூட',
+  'കൂടെ വരുന്നു.': 'வர்றேன்.',
+};
+const L = t => (LANG === 'hi' && HI[t]) || (LANG === 'ta' && TA[t]) || t;
+const TSCALE = LANG === 'ta' ? .74 : 1;   // Tamil words run wider
 
 // ---------- close-up helpers ----------
 function bust(name, x, y, r, o = {}) {
@@ -40,7 +47,7 @@ function phone(x, y, w, o = {}) {   // a phone held in a hand; o.text lines show
   if (o.glowA !== 0) glow(x, y, w * 2.2, '#9FC3E8', o.glowA ?? .7);
   paint(rrPts(x - w / 2, y - h / 2, w, h, w * .12), { wash: '#15171C', ink: CP.ink, sw });
   paint(rrPts(x - w * .44, y - h * .44, w * .88, h * .88, w * .06), { wash: o.screen || '#2F4766', ink: null });
-  (o.text || []).forEach(([t, dy, size, col], i) => letter(t, x, y + dy * h, size * w / 100, col || '#EAF2F8', { screen: true, ink: false, font: `${Math.round(size * w / 100)}px ${o.font || ML}` }));
+  (o.text || []).forEach(([t, dy, size, col], i) => letter(t, x, y + dy * h, size * TSCALE * w / 100, col || '#EAF2F8', { screen: true, ink: false, font: `${Math.round(size * TSCALE * w / 100)}px ${o.font || ML}` }));
   if (o.hand !== false) paint(through([[x - w * .7, y + h * .55], [x - w * .62, y + h * .05], [x - w * .45, y + h * .2], [x - w * .1, y + h * .62], [x - w * .5, y + h * .9]], 3), { wash: CP.skin, ink: CP.ink, sw });
 }
 function watchCU(x, y, r, o = {}) {   // Meera's father's watch on her wrist, stopped at 3:00
@@ -55,7 +62,7 @@ function pocketWatch(x, y, r, o = {}) {
   boilSeed('pw');
   inkLine([[x, y - r * 1.1], [x - r * .5, y - r * 2.5], [x - r * 1.5, y - r * 3.5]], 1.4, CP.brassDk, 'ink');
   if (o.open) { paint(ellPts(x, y - r * 2.15, r * 1.05, r * .95, 30), { wash: CP.brass, ink: CP.ink, sw: 1.2 }); paint(ellPts(x, y - r * 2.15, r * .85, r * .75, 30), { wash: '#C9A866', ink: CP.ink, sw: .8 });
-    if (o.engrave) { glow(x, y - r * 2.15, r * 1.6, '#FFE2A8', .8); letter(o.engrave, x, y - r * 2.15, r * .2, '#5A3E14', { screen: true, ink: false, font: `${Math.round(r * .2)}px ${ML}` }); } }
+    if (o.engrave) { glow(x, y - r * 2.15, r * 1.6, '#FFE2A8', .8); letter(o.engrave, x, y - r * 2.15, r * .2 * TSCALE, '#5A3E14', { screen: true, ink: false, font: `${Math.round(r * .2 * TSCALE)}px ${ML}` }); } }
   paint(ellPts(x, y, r * 1.1, r * 1.1, 30), { wash: CP.brass, ink: CP.ink, sw: 1.2 });
   clockFace(x, y, r * .9, { sw: 1, rim: CP.brassDk, hands: o.hands || [Math.PI / 2, 0], col: '#EFE8D6', cracks: false });
 }
