@@ -104,7 +104,7 @@ def subtitles(ep):
 # ---- film look (precomputed) ----
 yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
 VIG = (1 - .55 * np.clip(((xx - W / 2) / (W * .62)) ** 2 + ((yy - H / 2) / (H * .62)) ** 2, 0, 1) ** 1.3)[..., None]
-GRAIN = [(rng.standard_normal((H // 2, W // 2)) * 9).astype(np.float32) for _ in range(8)]
+GRAIN = [(rng.standard_normal((H // 2, W // 2)) * 5.5).astype(np.float32) for _ in range(8)]
 GRAIN = [cv2.resize(g, (W, H), interpolation=cv2.INTER_LINEAR)[..., None] for g in GRAIN]
 LUT = np.clip(255 * (np.linspace(0, 1, 256) ** 1.08 * 1.04 - .015), 0, 255).astype(np.uint8)   # gentle crush + lift
 
@@ -118,7 +118,7 @@ def grade(img, t, fx, flash, frame):
     else:
         f[..., 0] += 6; f[..., 2] -= 4                                     # cold shadows (BGR)
     flick = 1 + .018 * math.sin(t * 37.1) * math.sin(t * 11.3) + (.06 * (rng.random() - .5) if fx in ('sepia', 'flicker') else 0)
-    f = f * VIG * flick + GRAIN[frame % 8] * (1.6 if fx == 'sepia' else 1.0)
+    f = f * VIG * flick + GRAIN[(frame // 2) % 8] * (1.6 if fx == 'sepia' else 1.0)
     if flash > 0:
         f = f + (255 - f) * min(.85, flash)
     out = cv2.LUT(np.clip(f, 0, 255).astype(np.uint8), LUT)
@@ -157,9 +157,9 @@ def render(ep):
     out = os.path.join(OUT, f"COUNTDOWN_ep{ep:02d}_cinematic_ml.mp4")
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                            "-i", audio, "-i", srt, "-map", "0:v", "-map", "1:a", "-map", "2:s",
-                           "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+                           "-c:v", "libx264", "-preset", "medium", "-crf", "25", "-x264-params", "aq-mode=3:deblock=1,1", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
                            "-c:s", "mov_text", "-metadata:s:s:0", "language=mal", "-metadata:s:s:0", "title=മലയാളം",
-                           "-movflags", "+faststart", "-shortest", out], stdin=subprocess.PIPE)
+                           "-movflags", "+faststart", "-t", str(DUR), out], stdin=subprocess.PIPE)
     n = int(DUR * FPS)
     for fr in range(n):
         t = fr / FPS
