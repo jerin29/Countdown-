@@ -66,3 +66,8 @@ This time the clock doesn't chime ten times. It counts down from **forty**, and 
 - Captions, hashtags, bios, YouTube titles and descriptions × 3 languages.
 
 **Estimated vidIQ credits:** about 600–700 (voices for 15 episodes × 3 languages, plus 3 songs). You currently have about 1,680.
+
+## Visual upgrades (agreed after Season 1 results)
+- **Hook-first openings:** every episode opens on its scariest moment in the first 2 seconds, then the headphone warning, then the story. No slow fog/title intro.
+- **Real motion for the scares:** the 2–3 scariest shots in every episode are animated (Kling image-to-video from the storyboard panels), with the rest as cinematic motion-comic panels.
+- **Why:** Season 1 data showed the story and sound work (Ep 1: 10 shares, 8 saves per ~1,000 plays) but more than half of viewers swiped away in the first 2 seconds.
