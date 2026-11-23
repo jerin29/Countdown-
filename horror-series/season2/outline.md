@@ -69,7 +69,7 @@ This time the clock doesn't chime ten times. It counts down from **forty**, and 
 
 ## Visual upgrades (agreed after Season 1 results)
 - **Hook-first openings:** every episode opens on its scariest moment in the first 2 seconds, then the headphone warning, then the story. No slow fog/title intro.
-- **Style:** same as Season 1: cinematic motion-comic panels with camera moves, effects and full sound design. No AI video clips (decided to keep credits for voices and songs; about 700 credits total).
+- **Style: one seamless long take per episode** (inspired by Cinemagic's single-take 2D science film). No hard cuts: the camera glides continuously through one big painted world, and each scene flows into the next through doors, mirrors, clock faces, darkness and match-moves. Layered parallax (foreground, characters, background), slow drifting camera, light and fog moving, characters' small motions (breathing, blinking, head turns, hands) done with the 2D rig. Built with our own tools, so no AI video credits (about 700 credits total for voices and songs).
 - **Why:** Season 1 data showed the story and sound work (Ep 1: 10 shares, 8 saves per ~1,000 plays) but more than half of viewers swiped away in the first 2 seconds.
 
 ## End credits (every episode, after the cliffhanger)
