@@ -30,7 +30,23 @@
 - Finding her address and sending gifts is shown as the **mistake** that scared her, not as romance. Stepping back is the real act of love.
 - Ending A leaves a small door open for a possible Part 2.
 
-## Still to decide
-- Episode length: 1:30 (like COUNTDOWN) or 45–60 s.
-- A love theme song (like COUNTDOWN's title song).
-- Visual style (warm night-time colours, phone-screen UI moments).
+## Format (decided)
+- **10 episodes × 1:30**, in **Malayalam, Hindi and Tamil** (Hindi/Tamil with English subtitles).
+- **Feel-good romantic title song** in all 3 languages (full song, promo cut, lyric video, like COUNTDOWN).
+- **Style B, hybrid:** about **5 key moments per episode are real animated video** (AI image-to-video from the storyboard panels); the rest are cinematic panels with camera moves, warm night-time colours and phone-screen UI.
+  - Key moments, for example: the 2:14 AM reel, the reply notification, the parcel being opened, the deleted letter, the final "liked your reel".
+  - Animated clips carry no dialogue, so one set serves all three languages. Voices come as thoughts, voice notes and phone moments to avoid lip-sync problems.
+
+## Credits (estimate)
+| Part | Credits |
+|---|---|
+| ~50 animated clips (5 s each, ~40 credits) + retries | ~2,400 |
+| Voices, 10 episodes × 3 languages | ~450 |
+| Romantic title song × 3 languages | ~100 |
+| **Total** | **~3,000** |
+Scripts, storyboards, art, music score, editing, subtitles and captions are free.
+
+## Timeline
+- **Alongside Season 2 (free):** 10 scripts, character designs, storyboards, title-song lyrics.
+- **After the 21 Dec refill:** title song × 3, first animated moments.
+- **January refill:** remaining animation and voices. Target release: mid to late January, after COUNTDOWN Season 2.
