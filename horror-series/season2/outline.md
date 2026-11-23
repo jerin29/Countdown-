@@ -65,9 +65,9 @@ This time the clock doesn't chime ten times. It counts down from **forty**, and 
 - Dark title song × 3 · promo × 3 · lyric video × 3 · 30-second teasers × 15 per language.
 - Captions, hashtags, bios, YouTube titles and descriptions × 3 languages.
 
-**Estimated vidIQ credits:** about 600–700 (voices for 15 episodes × 3 languages, plus 3 songs). You currently have about 1,680.
+**Estimated vidIQ credits:** about 700 (voices for 15 episodes × 3 languages, plus 3 songs). You currently have about 1,680.
 
 ## Visual upgrades (agreed after Season 1 results)
 - **Hook-first openings:** every episode opens on its scariest moment in the first 2 seconds, then the headphone warning, then the story. No slow fog/title intro.
-- **Real motion for the scares:** the 2–3 scariest shots in every episode are animated (Kling image-to-video from the storyboard panels), with the rest as cinematic motion-comic panels.
+- **Style:** same as Season 1: cinematic motion-comic panels with camera moves, effects and full sound design. No AI video clips (decided to keep credits for voices and songs; about 700 credits total).
 - **Why:** Season 1 data showed the story and sound work (Ep 1: 10 shares, 8 saves per ~1,000 plays) but more than half of viewers swiped away in the first 2 seconds.
