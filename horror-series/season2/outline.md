@@ -85,3 +85,13 @@ A 4–5 second black card with soft text and the last bell fading:
 - **9 Dec:** dark title song promos released (Malayalam 9:00 PM, Hindi 9:20 PM, Tamil 9:40 PM).
 - **10 Dec → 24 Dec:** Episodes 1–15, one per night per language at the same times. Season finale (Ep 15 "Zero") on **24 Dec**.
 - All posts scheduled with descriptions via vidIQ once the episodes are ready (target 3–5 Dec).
+
+## Sound & score: scarier than Season 1 (user requirement)
+Goal: everyone is afraid, on headphones **and** on phone speakers.
+- **Real recorded sounds** instead of Season 1's code-synthesised effects where possible: real creaks, metal, breath, whispers, footsteps, clock mechanisms (licensed/royalty-free libraries), layered with the synthesised tones.
+- **Score:** a full dark orchestral-horror bed per episode: low strings and drones, detuned music box (the lullaby motif reversed), choir pads, heartbeat-tempo percussion that speeds up toward each scare, string screeches on the stingers.
+- **Dynamics:** long quiet build → 0.8–1.2 s of near-silence → sharp hit (−1 dBTP peak, −14 LUFS overall).
+- **Phone-speaker scares:** key scare sounds focused in 1–5 kHz (scrapes, child's breath, ratchet clicks, distorted bells, violin scream).
+- **Headphone scares:** whispers moving ear to ear, ticking circling the listener, sub-bass rumble.
+- **Signature sound:** the old bell slowed, reversed, ending in a breath.
+- **Listening check:** the user listens to the Episode 1 test on headphones and on a phone speaker before the other 14 are made.
