@@ -71,3 +71,9 @@ This time the clock doesn't chime ten times. It counts down from **forty**, and 
 - **Hook-first openings:** every episode opens on its scariest moment in the first 2 seconds, then the headphone warning, then the story. No slow fog/title intro.
 - **Style:** same as Season 1: cinematic motion-comic panels with camera moves, effects and full sound design. No AI video clips (decided to keep credits for voices and songs; about 700 credits total).
 - **Why:** Season 1 data showed the story and sound work (Ep 1: 10 shares, 8 saves per ~1,000 plays) but more than half of viewers swiped away in the first 2 seconds.
+
+## End credits (every episode, after the cliffhanger)
+A 4–5 second black card with soft text and the last bell fading:
+> Story by **Jerin Joseph Sebastian**
+> Created by **Claude AI** & **vidIQ**
+> Thank you for watching 🕰️
