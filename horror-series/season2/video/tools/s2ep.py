@@ -4,7 +4,7 @@ Episode timelines are in eps.py; painted plates come from animation-base/src/s2/
 import os, sys, math, argparse, subprocess
 import numpy as np, cv2
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import ep01 as B, horrorfx as HFX
+import ep01 as B, horrorfx as HFX, subs as SUBS
 from eps import EPS
 
 W, H, FPS, DUR = 1920, 1080, 24, 90.0
@@ -26,11 +26,12 @@ def auto_events(E):
 
 
 class Ep:
-    def __init__(self, n, P):
-        self.n, self.E, self.P = n, EPS[n], P
+    def __init__(self, n, P, lang='ml'):
+        self.n, self.E, self.P, self.lang = n, EPS[n], P, lang
+        self.cues = SUBS.cues(n, lang) if lang != 'ml' else []
         self.ev = auto_events(self.E)
         self.cache = {}
-        self.warn = cv2.imread(os.path.join(P, 'e1_warn', 't0_00.png')).astype(np.float32) / 255
+        self.warn = cv2.imread(os.path.join(P, 'e1_warn' if lang == 'ml' else f's2_warn_{lang}', 't0_00.png')).astype(np.float32) / 255
         self.credits = [cv2.imread(os.path.join(P, 'e1_credits', f)).astype(np.float32) / 255 for f in sorted(os.listdir(os.path.join(P, 'e1_credits')))]
         d = os.path.join(P, f"s2_count_{self.E['count']}")
         self.count = [cv2.imread(os.path.join(d, f)).astype(np.float32) / 255 for f in sorted(os.listdir(d))]
@@ -40,7 +41,10 @@ class Ep:
 
     def plate(self, scene, v):
         k = (scene, v)
-        if k not in self.cache: self.cache[k] = B.Plate(B.stitch(os.path.join(self.P, f's2e{self.n}_{scene}_{v}'), 2, 2), 0, 0, 2)
+        if k not in self.cache:
+            d = os.path.join(self.P, f's2e{self.n}_{scene}_{v}')
+            if self.lang != 'ml' and os.path.isdir(d + '_' + self.lang): d += '_' + self.lang
+            self.cache[k] = B.Plate(B.stitch(d, 2, 2), 0, 0, 2)
         return self.cache[k]
 
     def variants(self, sched, t):
@@ -94,6 +98,7 @@ class Ep:
             img = a * (1 - seg(lt, .7, 1.4)) + b * seg(lt, .7, 1.4) * (1 - seg(lt, 1.6, 2.3)) + c3 * seg(lt, 1.6, 2.3)
             fr = img * seg(lt, .2, .9) * (1 - seg(lt, 4.4, 5))
         fr = HFX.apply(fr, t, self.ev, self.scares)
+        if self.cues: fr = SUBS.burn(fr, t, self.cues)
         fr = np.clip(fr, 0, 1) * B.VIGN + B.GRAIN[int(t * 24) % 6][..., None] * .022
         return np.clip(fr, 0, 1)
 
@@ -108,7 +113,7 @@ class Ep:
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('n', type=int); ap.add_argument('plates')
     ap.add_argument('--lang', default='ml'); ap.add_argument('--sheet'); ap.add_argument('--out')
-    a = ap.parse_args(); ep = Ep(a.n, a.plates)
+    a = ap.parse_args(); ep = Ep(a.n, a.plates, a.lang)
     if a.sheet:
         ts = [float(x) for x in a.sheet.split(',')]
         cells = [cv2.resize((ep.frame(t) * 255).astype(np.uint8), (480, 270)) for t in ts]

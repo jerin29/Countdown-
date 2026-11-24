@@ -1,0 +1,206 @@
+{
+ "cast": {
+  "aadi": "IC6fkbI5BN65xFmhUCbY",
+  "clara": "IypOXKDlkcNuR6IFgGCU",
+  "meera": "9Run4mn2ZwrNmeT7XXmm",
+  "arjun": "fWV01zF465JcQcwuvCln",
+  "ammachi": "1bCdXnQOUBJffF7ZnYfS",
+  "neha": "ZlBDYHEGOiRFvRY6BAQW",
+  "mother": "lxGVYeWFAWomEw3a1LyP",
+  "reflection": "msoKpYddp2Iy2G7DJ3dc"
+ },
+ "lines": {
+  "e01_clara_hook": [
+   "clara",
+   "[whispers] நாற்பது."
+  ],
+  "e01_clara_warn": [
+   "clara",
+   "[whispers] ஹெட்ஃபோன் போடுங்க..."
+  ],
+  "e01_aadi_wake": [
+   "aadi",
+   "[scared] [whispers] அம்மா...?"
+  ],
+  "e01_aadi_count1": [
+   "aadi",
+   "[scared] [whispers] ஒன்று... இரண்டு... மூன்று..."
+  ],
+  "e01_aadi_count2": [
+   "aadi",
+   "[scared] பன்னிரண்டு... இருபது... இது நிக்கவே இல்ல..."
+  ],
+  "e01_aadi_count3": [
+   "aadi",
+   "[terrified] [whispers] முப்பத்தொன்பது... நாற்பது."
+  ],
+  "e01_clara_line": [
+   "clara",
+   "[whispers] இந்த முறை பத்து இல்ல, ஆதி."
+  ],
+  "e02_meera_1": [
+   "meera",
+   "[whispers] இது என் இதயத்துடிப்பு இல்ல."
+  ],
+  "e02_aadi_vn": [
+   "aadi",
+   "[scared] [whispers] அக்கா... என் ரூம் கடிகாரம் நாற்பது தடவை அடிச்சுது."
+  ],
+  "e02_clara_1": [
+   "clara",
+   "[whispers] டிக்... டிக்... மீரா."
+  ],
+  "e03_aadi_1": [
+   "aadi",
+   "[scared] [whispers] அம்மா...?"
+  ],
+  "e03_thomas_1": [
+   "mother",
+   "[whispers] முப்பத்தொன்பது."
+  ],
+  "e03_mother_1": [
+   "mother",
+   "[whispers] முப்பத்தெட்டு."
+  ],
+  "e04_arjun_1": [
+   "arjun",
+   "[scared] யாரு... யாரு அங்க?"
+  ],
+  "e04_refl_1": [
+   "reflection",
+   "[whispers] உன்ன திருப்பி அனுப்பினது நான். இப்போ நான் திரும்பிப் போகணும்."
+  ],
+  "e05_ammachi_1": [
+   "ammachi",
+   "1946-ல மணிக்கூண்டுல அவங்க ஒருத்தரை மட்டும் பூட்டல."
+  ],
+  "e05_meera_1": [
+   "meera",
+   "[whispers] வேற யாரை, அம்மாச்சி?"
+  ],
+  "e05_ammachi_2": [
+   "ammachi",
+   "[whispers] அவ இன்னும் எண்ணிக்கிட்டு இருக்கா, கண்ணு."
+  ],
+  "e06_aadi_1": [
+   "aadi",
+   "[scared] [whispers] கண் சிமிட்டாதே... கண் சிமிட்டாதே..."
+  ],
+  "e06_clara_1": [
+   "clara",
+   "[whispers] கண் சிமிட்டு, ஆதி."
+  ],
+  "e07_neha_1": [
+   "neha",
+   "[whispers] நீ அவனை ஜெயிக்கல. நீ அவனுக்கு சாப்பாடு போட்டுக்கிட்டு இருந்த."
+  ],
+  "e07_meera_1": [
+   "meera",
+   "[scared] நான் கடிகாரத்தை பின்னால சுத்தினேனே..."
+  ],
+  "e07_neha_2": [
+   "neha",
+   "[whispers] ஒவ்வொரு சுத்தலும் அவளுக்கு இன்னொரு வருஷம் கொடுத்துச்சு."
+  ],
+  "e08_aadi_1": [
+   "aadi",
+   "[whispers] அக்கா... இங்கயும் டிக் டிக் சத்தம்."
+  ],
+  "e08_meera_1": [
+   "meera",
+   "[whispers] இது... ரெண்டாவது மணிக்கூண்டு."
+  ],
+  "e08_aadi_2": [
+   "aadi",
+   "[scared] அக்கா... இது நம்ம பேருங்க."
+  ],
+  "e09_meera_1": [
+   "meera",
+   "[scared] [whispers] பின்னால... இன்னும் ஒரு தடவை..."
+  ],
+  "e09_arjun_1": [
+   "arjun",
+   "[shouting] நிறுத்து, மீரா! ஒவ்வொரு தடவையும் ஒருத்தரை கூட்டிட்டுப் போகுது!"
+  ],
+  "e09_clara_1": [
+   "clara",
+   "[whispers] சுத்து... சுத்து..."
+  ],
+  "e10_ammachi_1": [
+   "ammachi",
+   "1986-ல நான் ஒளிஞ்சுக்கிட்டேன். இந்த தடவை நான் போவேன், அவங்களுக்குப் பதிலா."
+  ],
+  "e10_ammachi_2": [
+   "ammachi",
+   "[whispers] என்னை எடுத்துக்கோ."
+  ],
+  "e10_meera_1": [
+   "meera",
+   "[crying] அம்மாச்சி!"
+  ],
+  "e11_arjun_1": [
+   "arjun",
+   "[pained] மீரா... என் இதயம் இப்போ அவளோட கடிகாரம்."
+  ],
+  "e11_arjun_2": [
+   "arjun",
+   "[pained] [whispers] என்னை நிறுத்து. அவ என் வழியா கேக்கறா."
+  ],
+  "e11_meera_1": [
+   "meera",
+   "[crying] இல்ல... நான் உன்னை விட மாட்டேன்."
+  ],
+  "e12_meera_1": [
+   "meera",
+   "[softly] தூங்கு ஆதி... தூங்கு..."
+  ],
+  "e12_clara_1": [
+   "clara",
+   "[whispers] இது தாலாட்டு இல்ல... அழைப்பு..."
+  ],
+  "e12_meera_2": [
+   "meera",
+   "[whispers] நாம ஒவ்வொரு தடவை பாடினப்பவும்... அவளைக் கூப்பிட்டோம்."
+  ],
+  "e13_meera_1": [
+   "meera",
+   "[whispers] எல்லாம் நின்னுடுச்சு... நாம மட்டும்."
+  ],
+  "e13_aadi_1": [
+   "aadi",
+   "[scared] அக்கா, மழை மேல போகுது!"
+  ],
+  "e13_clara_1": [
+   "clara",
+   "[whispers] மூணு..."
+  ],
+  "e14_meera_1": [
+   "meera",
+   "[softly] உன் பேரு என்ன?"
+  ],
+  "e14_clara_1": [
+   "clara",
+   "[sad] [whispers] யாருமே கேட்டதில்ல."
+  ],
+  "e14_clara_2": [
+   "clara",
+   "[whispers] என்னை நினைவில் வைக்க யாருமே இல்லன்னா... எல்லாரும் என்கூட இருக்கணும்."
+  ],
+  "e15_clara_1": [
+   "clara",
+   "[whispers] எலியாஸோட மகள்... கிளாரா."
+  ],
+  "e15_meera_1": [
+   "meera",
+   "[softly] கிளாரா. இனி நாங்க நினைவில் வைப்போம்."
+  ],
+  "e15_clara_2": [
+   "clara",
+   "[whispers] நன்றி..."
+  ],
+  "e15_aadi_1": [
+   "aadi",
+   "[laughs] அக்கா, பாரு... மூணு மணி தாண்டிடுச்சு!"
+  ]
+ }
+}

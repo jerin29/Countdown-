@@ -107,3 +107,25 @@ Goal: everyone is afraid, on headphones **and** on phone speakers.
 - **The girl's face is never shown** in the song videos (only from behind or behind her hair), to keep the Ep 14 reveal.
 - Built around 5–6 Dec, after the episode art exists.
 - Malayalam song: **v2** (`song/naalpathu-ml-v2_master.mp3`).
+
+## Posting schedule (user's final schedule, 24 Nov) — replaces the release plan above
+| Date | Malayalam 9:00 PM | Hindi 9:20 PM | Tamil 9:40 PM |
+|---|---|---|---|
+| 9 Dec | Title song | – | – |
+| 10 Dec | Ep 1 | Title song | Title song |
+| 11 Dec | Ep 2 | Ep 1 | Ep 1 |
+| 12 Dec | Ep 3 | Ep 2 | Ep 2 |
+| 13 Dec | Ep 4 | Ep 3 | Ep 3 |
+| 14 Dec | Ep 5 | Ep 4 | Ep 4 |
+| 15 Dec | Ep 6 | Ep 5 | Ep 5 |
+| 16 Dec | Ep 7 | Ep 6 | Ep 6 |
+| 17 Dec | Ep 8 | Ep 7 | Ep 7 |
+| 18 Dec | Ep 9 | Ep 8 | Ep 8 |
+| 19 Dec | Ep 10 | Ep 9 | Ep 9 |
+| 20 Dec | Ep 11 | Ep 10 | Ep 10 |
+| 21 Dec | Ep 12 | Ep 11 | Ep 11 |
+| 22 Dec | Ep 13 | Ep 12 | Ep 12 |
+| 23 Dec | Ep 14 | Ep 13 | Ep 13 |
+| 24 Dec | Ep 15 (finale) | Ep 14 | Ep 14 |
+| 25 Dec | – | Ep 15 (finale) | Ep 15 (finale) |
+All times India (IST). 48 posts, scheduled through vidIQ once the videos are final and the user approves.

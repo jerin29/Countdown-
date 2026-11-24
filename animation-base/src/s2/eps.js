@@ -24,6 +24,10 @@ function darkRoomBase(col = '#14171F') { full(col); boilSeed('drb'); paint(rectP
 
 // ---------- per-episode pictures ----------
 const S2 = {};
+let S2LANG = 'ml';
+const S2T = { 'ആദി': { hi: 'आदि', ta: 'ஆதி' }, 'ക്ലാര': { hi: 'क्लारा', ta: 'கிளாரா' }, 'മീര': { hi: 'मीरा', ta: 'மீரா' }, 'അർജുൻ': { hi: 'अर्जुन', ta: 'அர்ஜுன்' }, 'നേഹ': { hi: 'नेहा', ta: 'நேஹா' }, 'സാം': { hi: 'सैम', ta: 'சாம்' }, 'റോസ': { hi: 'रोज़ा', ta: 'ரோஸா' }, 'ഏലിയാസ്': { hi: 'एलियास', ta: 'எலியாஸ்' }, 'ആമ്മച്ചി': { hi: 'अम्माची', ta: 'அம்மாச்சி' } };
+const TL = w => (S2LANG !== 'ml' && S2T[w]?.[S2LANG]) || w;
+const TF = px => `${px}px "${S2LANG === 'hi' ? 'Noto Sans Devanagari' : S2LANG === 'ta' ? 'Noto Sans Tamil' : 'Noto Sans Malayalam'}"`;
 // Ep 2 · The Ticking Wrist
 function wristCU(a) {
   full('#0E0F14'); boilSeed('wrist');
@@ -75,7 +79,7 @@ function shopMirror(o = {}) {
   for (let i = 0; i < 3; i++) glow(500 + i * 460, 120, 240, '#F2D49A', .4);
   if (o.refl) person('arjun', o.reflX ?? 980, 720, 20, { pose: o.reflPose || 'walk', view: 'front', expr: o.reflExpr || 'neutral', key: 'rf' });
   paint(rectPts(270, 150, 1380, 580), { fill: '#A8B6C2', fillOp: 30, bleed: .2, ink: null });
-  if (o.fog) { paint(rectPts(270, 150, 1380, 580), { fill: '#C4CCD3', fillOp: 150, bleed: .2, tex: .5, ink: null }); letter('ആദി', 960, 430, 190, '#3A4450', { ink: false, font: 'bold 190px "Noto Sans Malayalam"' }); }
+  if (o.fog) { paint(rectPts(270, 150, 1380, 580), { fill: '#C4CCD3', fillOp: 150, bleed: .2, tex: .5, ink: null }); letter(TL('ആദി'), 960, 430, 190, '#3A4450', { ink: false, font: 'bold ' + TF(S2LANG === 'ta' ? 150 : 190) }); }
   if (o.arjun) person('arjun', 1000, 1090, 30, { pose: o.pose || 'walk', view: 'back', key: 'ar' });
   for (const x of [380, 1540]) paint(rectPts(x - 60, 790, 120, 30), { wash: '#5A4A3A', ink: CP.ink, sw: .6 });
 }
@@ -127,7 +131,7 @@ function invTower(names) {
   push(); translate(960, 120); rotate(Math.PI); tower(0, 0, 22, { col: '#262A34', dk: '#1A1D26', hands: [-Math.PI / 2, Math.PI] }); pop();
   glow(960, 120 + 27 * 22, 420, CP.sickGlow, .5);
   if (names) { const c = [960, 120 + 27 * 22], N = ['മീര', 'ആദി', 'അർജുൻ', 'നേഹ', 'സാം', 'റോസ', 'ഏലിയാസ്', 'ആമ്മച്ചി'];
-    N.forEach((n, i) => { const a = i / N.length * TAU; letter(n, c[0] + Math.cos(a) * 140, c[1] + Math.sin(a) * 140, i < 2 ? 34 : 24, i < 2 ? '#E9E2D0' : '#8C9686', { ink: false, font: `${i < 2 ? 34 : 24}px "Noto Sans Malayalam"`, rot: a + Math.PI / 2 }); }); }
+    N.forEach((n, i) => { const a = i / N.length * TAU; letter(TL(n), c[0] + Math.cos(a) * 140, c[1] + Math.sin(a) * 140, i < 2 ? 34 : 24, i < 2 ? '#E9E2D0' : '#8C9686', { ink: false, font: TF(i < 2 ? 34 : 24), rot: a + Math.PI / 2 }); }); }
 }
 S2[8] = { tunnel: { a: () => tunnel({ kids: 1 }), b: () => tunnel({ crack: 1, kids: 1 }) }, tower: { a: () => invTower(0), b: () => invTower(1) } };
 // Ep 9 · Don't Wind It
@@ -204,7 +208,7 @@ S2[14] = { stairs: { a: () => spiral({ kids: 1 }) },
 // Ep 15 · Zero
 S2[15] = {
   room: { a: () => { clockBack({}); clara(1060, 960, 34, { key: 'c15' }); person('meera', 800, 1000, 30, { pose: 'kneel', view: 'q', expr: 'calm', key: 'm15' }); },
-          b: () => { clockBack({ light: .5 }); boilSeed('nm'); letter('ക്ലാര', 960, 500, 120, '#3A2A1A', { ink: false, font: 'bold 120px "Noto Sans Malayalam"' }); person('meera', 800, 1000, 30, { pose: 'kneel', view: 'q', expr: 'cry', key: 'm15' }); glow(1060, 700, 400, '#FFF1C8', .8); } },
+          b: () => { clockBack({ light: .5 }); boilSeed('nm'); letter(TL('ക്ലാര'), 960, 500, 120, '#3A2A1A', { ink: false, font: 'bold ' + TF(120) }); person('meera', 800, 1000, 30, { pose: 'kneel', view: 'q', expr: 'cry', key: 'm15' }); glow(1060, 700, 400, '#FFF1C8', .8); } },
   dawn: { a: () => { full('#C9A48A'); boilSeed('dawn'); glow(960, 700, 900, '#FFD8A8', .9); paint(ellPts(960, 300, 1200, 400, 30, 20), { fill: '#E8B88A', fillOp: 120, bleed: .4, ink: null });
             tower(1300, 900, 12, { col: '#6A5A5A', hands: [Math.PI / 2 + .03, .3] }); paint(rectPts(-60, 880, W + 120, 300), { wash: '#4A3A3A', ink: null });
             person('meera', 760, 1040, 28, { view: 'q', expr: 'smile', key: 'm15d' }); person('boy', 960, 1045, 23, { view: 'q', flip: true, expr: 'smile', key: 'a15d' }); } },
@@ -223,3 +227,12 @@ for (const [n, scenes] of Object.entries(S2)) for (const [sc, vars] of Object.en
 // count cards 0–15 (two stages each: clean, cracked)
 for (let n = 0; n <= 15; n++) { LOOPS['s2_count_' + n] = t => { if (!window._ng) { const c = grainC.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, W, H); window._ng = 1; } BOILN = 0; countCard(n, Math.round(t * 10) ? 1 : .3); }; LOOPS['s2_count_' + n].len = 1; }
 window.S2_PLATES = () => { const out = []; for (const [n, scenes] of Object.entries(S2)) for (const [sc, vars] of Object.entries(scenes)) for (const v of Object.keys(vars)) out.push(`s2e${n}_${sc}_${v}`); return out; };
+
+// language versions of the few pictures with words (Hindi / Tamil)
+for (const L of ['hi', 'ta']) for (const name of ['s2e4_shop_c', 's2e8_tower_b', 's2e15_room_b']) {
+  const base = LOOPS[name]; LOOPS[name + '_' + L] = t => { S2LANG = L; base(t); S2LANG = 'ml'; }; LOOPS[name + '_' + L].len = 1;
+}
+const WARN = { hi: ['हेडफ़ोन लगाएँ', 'Noto Sans Devanagari'], ta: ['ஹெட்ஃபோன் பயன்படுத்துங்கள்', 'Noto Sans Tamil'] };
+for (const L of ['hi', 'ta']) { LOOPS['s2_warn_' + L] = () => { if (!window._ng) { const c = grainC.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, W, H); window._ng = 1; } BOILN = 0;
+  full('#050609'); headphones(960, 400, 70, 1); letter(WARN[L][0], 960, 560, L === 'ta' ? 54 : 64, '#E9E2D0', { screen: true, ink: false, font: `${L === 'ta' ? 54 : 64}px "${WARN[L][1]}"` });
+  letter('USE HEADPHONES', 960, 640, 28, '#8C97A6', { screen: true, ink: false, font: '28px Georgia, serif', alpha: .9 }); }; LOOPS['s2_warn_' + L].len = 1; }

@@ -76,7 +76,7 @@ def mix_episode(n, lang='ml'):
     if E['count'] > 0: beats += HFX.heartbeats(70.5, 76.8, 118, 150)[::2]
     for bt in beats: place(one, bt, -9)
     # ---- special beds ----
-    song = load(os.path.join(A, '..', 'song', 'naalpathu-ml-v2_master.mp3'))
+    song = load(os.path.join(A, '..', 'song', {'ml': 'naalpathu-ml-v2_master.mp3', 'hi': 'chaalis-hi_master.mp3', 'ta': 'naarpathu-ta_master.mp3'}[lang]))
     for t0, t1, db in E.get('music', []): place(song[:int((t1 - t0) * SR)], t0, db, fade_in=2, fade_out=2)
     for t0, t1 in E.get('dawn_music', []):
         p = os.path.join(A, '..', '..', 'audio', 'songs', 'wind-it-back-ml.mp3')

@@ -4,7 +4,8 @@ Plates come from animation-base/src/s2/ep01.js (rendered as 1920x1080 tiles). Us
 """
 import os, sys, json, math, subprocess, argparse
 import numpy as np, cv2
-import horrorfx as HFX
+import horrorfx as HFX, subs as SUBS
+LANG, CUES = 'ml', []
 
 W, H, FPS, DUR = 1920, 1080, 24, 90.0
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -249,6 +250,7 @@ def frame_at(t, pl):
         img = a * (1 - seg(lt, .7, 1.4)) + b * seg(lt, .7, 1.4) * (1 - seg(lt, 1.6, 2.3)) + c3 * seg(lt, 1.6, 2.3)
         fr = img * seg(lt, .2, .9) * (1 - seg(lt, 4.4, 5))
     fr = HFX.apply(fr, t, EV, SCARES)
+    if LANG != 'ml': fr = SUBS.burn(fr, t, CUES)
     # grade: cold, contrasty, grain, vignette
     fr = np.clip(fr, 0, 1)
     fr = fr * VIGN
@@ -263,7 +265,9 @@ def main():
     ap.add_argument("--out")
     a = ap.parse_args()
     pl = load_plates(a.plates)
-    global SCARES; SCARES = HFX.load_scares(a.plates)
+    global SCARES, LANG, CUES; SCARES = HFX.load_scares(a.plates); LANG = a.lang
+    if LANG != 'ml':
+        CUES = SUBS.cues(1, LANG); pl['warn'] = [cv2.imread(os.path.join(a.plates, f's2_warn_{LANG}', 't0_00.png')).astype(np.float32) / 255]
     if a.sheet:
         ts = [float(x) for x in a.sheet.split(",")]
         cells = [cv2.resize((frame_at(t, pl) * 255).astype(np.uint8), (480, 270)) for t in ts]

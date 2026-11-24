@@ -8,7 +8,8 @@ import numpy as np
 SR = 48000
 HERE = os.path.dirname(os.path.abspath(__file__))
 A = os.path.dirname(HERE)
-VO, FX, OUT = os.path.join(A, "voice_ml"), os.path.join(A, "sfx_el"), os.path.join(A, "mix")
+LANG = os.environ.get("S2LANG", "ml")
+VO, FX, OUT = os.path.join(A, f"voice_{LANG}"), os.path.join(A, "sfx_el"), os.path.join(A, "mix")
 DUR = 90.0
 CHIMES = [36 + 28.5 * (1 - (1 - i / 39) ** 1.6) for i in range(40)]
 
@@ -97,7 +98,7 @@ place(fx["impact_hit"], 78.38, 0)
 # ---- 80–85 count card: one deep bell; 85–90 the title song's ending under the credits ----
 place(bells[3], 80.0, -2)
 place(fx["impact_hit"], 80.35, -6)
-song = load(os.path.join(A, "..", "song", "naalpathu-ml-v2_master.mp3"))
+song = load(os.path.join(A, "..", "song", {"ml": "naalpathu-ml-v2_master.mp3", "hi": "chaalis-hi_master.mp3", "ta": "naarpathu-ta_master.mp3"}[LANG]))
 place(song[-int(6.0 * SR):], 84.6, -6, fade_in=0.6, fade_out=1.2)
 
 # ---- extra horror layer ----
@@ -127,7 +128,7 @@ place(fx["water_drip"], 72.0, -20, pan=-0.5, length=5.0, fade_out=1.0)
 mix = mix[: int(DUR * SR)]
 peak = np.abs(mix).max(); mix = np.tanh(mix / max(peak, 1e-6) * 1.6) / np.tanh(1.6)
 os.makedirs(OUT, exist_ok=True)
-raw = os.path.join(OUT, "ep01_ml_raw.wav"); fin = os.path.join(OUT, "ep01_ml.wav")
+raw = os.path.join(OUT, f"ep01_{LANG}_raw.wav"); fin = os.path.join(OUT, f"ep01_{LANG}.wav")
 import soundfile as sf
 sf.write(raw, mix, SR, subtype="FLOAT")
 m = subprocess.run(["ffmpeg", "-hide_banner", "-i", raw, "-af", "loudnorm=I=-14:TP=-1:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
