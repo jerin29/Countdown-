@@ -100,3 +100,10 @@ Goal: everyone is afraid, on headphones **and** on phone speakers.
 - Plan: **Starter**, 40,000 credits/month, resets 24 Dec. Supports Malayalam, Hindi and Tamil (eleven_v3 / eleven_v4), including expressive tags like whispers for horror.
 - Season 1 dialogue was ~2,600 characters per language for 10 episodes; Season 2 (15 darker episodes) estimate ~6,000 per language → ~18,000 for 3 languages, ~27,000 with retakes. Fits the monthly allowance; the rest can go to ElevenLabs sound effects.
 - vidIQ credits are then needed mainly for the 3 dark title songs (~75–100).
+
+## Title song videos (agreed 24 Nov)
+- **Song promo (~1:30)** for the 9 Dec post and a **full lyric video (~3:00)**, in Malayalam, Hindi and Tamil (Hindi/Tamil with English lyrics underneath). Free.
+- Made from Season 2's own art in the long-take style, cut to the song's bells and silence-then-hit moments; promo ends on "10 Dec · 9 PM".
+- **The girl's face is never shown** in the song videos (only from behind or behind her hair), to keep the Ep 14 reveal.
+- Built around 5–6 Dec, after the episode art exists.
+- Malayalam song: **v2** (`song/naalpathu-ml-v2_master.mp3`).
