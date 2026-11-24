@@ -52,5 +52,5 @@ Scripts, storyboards, art, music score, editing, subtitles and captions are free
 - **January refill:** remaining animation and voices. Target release: mid to late January, after COUNTDOWN Season 2.
 
 ## Status (23 Nov)
-- **Malayalam title song: combined version chosen** (`song/oru-reply-ml-v1v2_combo.mp3`): version 1 up to chorus 2, then version 2 from the bridge (key lift C → E at ~2:04). Lyrics: `song/oru-reply-ml-lyrics.md`. Version 3 is kept as an alternative.
-- **Paused until COUNTDOWN Season 2 ends.** Next: Hindi and Tamil songs in the same style, built the same way (version-1 feel for the verses, version-2 lift for the bridge and final chorus; ~50–100 credits), then scripts, designs and storyboards.
+- **Malayalam title song: version 1 + 3 combined (final choice)** (`song/oru-reply-ml-v1v3_combo.mp3`, 3:02): version 1 up to chorus 2 (hope; lyrics `song/oru-reply-ml-lyrics.md`), then at ~2:03 version 3's "ഹേ… ഒരു റിപ്ലൈ!" chant, bridge and final chorus (joy; lyrics `song/oru-reply-ml-v3-lyrics.md`); key lift C → E. Other takes kept as alternatives: 1+2, 1→2→3, version 4.
+- **Paused until COUNTDOWN Season 2 ends.** Next: Hindi and Tamil songs built the same way (soft version-1 feel up to chorus 2, then the joyful version-3 chant, bridge and final chorus; ~50–100 credits), then scripts, designs and storyboards.
