@@ -95,3 +95,8 @@ Goal: everyone is afraid, on headphones **and** on phone speakers.
 - **Headphone scares:** whispers moving ear to ear, ticking circling the listener, sub-bass rumble.
 - **Signature sound:** the old bell slowed, reversed, ending in a breath.
 - **Listening check:** the user listens to the Episode 1 test on headphones and on a phone speaker before the other 14 are made.
+
+## Voices via ElevenLabs (connected 24 Nov)
+- Plan: **Starter**, 40,000 credits/month, resets 24 Dec. Supports Malayalam, Hindi and Tamil (eleven_v3 / eleven_v4), including expressive tags like whispers for horror.
+- Season 1 dialogue was ~2,600 characters per language for 10 episodes; Season 2 (15 darker episodes) estimate ~6,000 per language → ~18,000 for 3 languages, ~27,000 with retakes. Fits the monthly allowance; the rest can go to ElevenLabs sound effects.
+- vidIQ credits are then needed mainly for the 3 dark title songs (~75–100).
