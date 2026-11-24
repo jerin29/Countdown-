@@ -44,21 +44,26 @@ def quote(n, lang):
     return clean(LINES[lang].get(QUOTE[n], [None, ''])[1])
 
 
-posts = []
-for lang, start, tm in (('ml', dt.date(2026, 12, 9), '21:00'), ('hi', dt.date(2026, 12, 10), '21:20'), ('ta', dt.date(2026, 12, 10), '21:40')):
-    t = T[lang]; a, b, en = SONG[lang]
-    posts.append(dict(lang=lang, kind='song', date=str(start), time=tm, file=f'song/video/out/COUNTDOWN_S2_title_song_promo_{lang}.mp4',
-                      caption=f"{a}\n\n{b}\n\n{t['hp']}\n{t['fol']}\n\n{en}\n{CRED}\n\n{t['tags']} #titlesong"))
-    for n in range(1, 16):
-        d = start + dt.timedelta(days=n); q = quote(n, lang); ti = TITLES[n]
-        enq = (EN3 if n == 3 else EN[QUOTE[n]]).replace("Chechi", {"hi": "Didi", "ta": "Akka"}.get(lang, "Chechi"))
-        cap = (f"🕰️ COUNTDOWN S2 · {t['ep']} {n}/15 · {ti[LI[lang]]}\n\n“{q}”\n\n{t['fin'] if n == 15 else t['next']}\n{t['hp']}\n{t['fol']}\n\n"
-               f"Ep {n}/15 · {ti[3]} · “{enq}”\n{CRED}\n\n{t['tags']}")
-        posts.append(dict(lang=lang, kind='episode', ep=n, date=str(d), time=tm, file=f'video/COUNTDOWN_S2_ep{n:02d}_{lang}.mp4', caption=cap))
-posts.sort(key=lambda p: (p['date'], p['time']))
-json.dump(posts, open(os.path.join(HERE, 'captions.json'), 'w'), ensure_ascii=False, indent=1)
-with open(os.path.join(HERE, 'captions.md'), 'w') as f:
-    f.write('# COUNTDOWN Season 2 · Instagram posts (48) · times in IST\n\n')
-    for p in posts:
-        f.write(f"## {p['date']} {p['time']} · {p['lang'].upper()} · {'Title song' if p['kind'] == 'song' else 'Ep ' + str(p['ep'])}\n`{p['file']}`\n```\n{p['caption']}\n```\n\n")
-print(len(posts)); missing = [p['file'] for p in posts if not os.path.exists(os.path.join(S2, p['file']))]; print('missing', missing)
+def main():
+    posts = []
+    for lang, start, tm in (('ml', dt.date(2026, 12, 9), '21:00'), ('hi', dt.date(2026, 12, 10), '21:20'), ('ta', dt.date(2026, 12, 10), '21:40')):
+        t = T[lang]; a, b, en = SONG[lang]
+        posts.append(dict(lang=lang, kind='song', date=str(start), time=tm, file=f'song/video/out/COUNTDOWN_S2_title_song_promo_{lang}.mp4',
+                          caption=f"{a}\n\n{b}\n\n{t['hp']}\n{t['fol']}\n\n{en}\n{CRED}\n\n{t['tags']} #titlesong"))
+        for n in range(1, 16):
+            d = start + dt.timedelta(days=n); q = quote(n, lang); ti = TITLES[n]
+            enq = (EN3 if n == 3 else EN[QUOTE[n]]).replace("Chechi", {"hi": "Didi", "ta": "Akka"}.get(lang, "Chechi"))
+            cap = (f"🕰️ COUNTDOWN S2 · {t['ep']} {n}/15 · {ti[LI[lang]]}\n\n“{q}”\n\n{t['fin'] if n == 15 else t['next']}\n{t['hp']}\n{t['fol']}\n\n"
+                   f"Ep {n}/15 · {ti[3]} · “{enq}”\n{CRED}\n\n{t['tags']}")
+            posts.append(dict(lang=lang, kind='episode', ep=n, date=str(d), time=tm, file=f'video/COUNTDOWN_S2_ep{n:02d}_{lang}.mp4', caption=cap))
+    posts.sort(key=lambda p: (p['date'], p['time']))
+    json.dump(posts, open(os.path.join(HERE, 'captions.json'), 'w'), ensure_ascii=False, indent=1)
+    with open(os.path.join(HERE, 'captions.md'), 'w') as f:
+        f.write('# COUNTDOWN Season 2 · Instagram posts (48) · times in IST\n\n')
+        for p in posts:
+            f.write(f"## {p['date']} {p['time']} · {p['lang'].upper()} · {'Title song' if p['kind'] == 'song' else 'Ep ' + str(p['ep'])}\n`{p['file']}`\n```\n{p['caption']}\n```\n\n")
+    print(len(posts)); missing = [p['file'] for p in posts if not os.path.exists(os.path.join(S2, p['file']))]; print('missing', missing)
+
+
+if __name__ == "__main__":
+    main()
