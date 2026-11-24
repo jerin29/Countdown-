@@ -269,7 +269,7 @@ function person(name, x, y, u, o = {}) {
   if (!C.clock) paint(ribbon([sh, headC], u * .75, u * .7), { wash: C.skin, ink: C.silhouette ? null : CP.ink, sw: sw * .7 });
   if (C.silhouette) paint(ellPts(headC[0], headC[1], headR * .92, headR, 18), { wash: C.skin, ink: null });
   else if (C.clock) clockFace(headC[0], headC[1] - u * .4, headR * 1.15, { sw, hands: o.hands || null, glow: o.glow ?? .35, face: o.clockFace || null, col: o.clockCol });
-  else head(name, headC[0], headC[1], headR, { view, flip: o.flip, sw, skin: C.skin, skinDk: name === 'neha' ? CP.nehaDk : CP.skinDk,
+  else head(name, headC[0], headC[1], headR, { view: o.headView || view, flip: o.flip, sw, skin: C.skin, skinDk: name === 'neha' ? CP.nehaDk : CP.skinDk,
     expr: o.expr || 'neutral', look: o.look, darkCircles: name === 'meera' && o.expr !== 'smile', glasses: name === 'arjun' || name === 'ammachi',
     shadowEyes: name === 'neha' && !o.nehaEyes, pin: name === 'neha', tears: o.tears });
   if (name === 'neha') { // dripping water

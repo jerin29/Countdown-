@@ -7,3 +7,6 @@ horror-series/video/promo/
 horror-series/video/lyric/
 horror-series/video/hi/*.mp4
 horror-series/video/ta/*.mp4
+horror-series/season2/video/*.mp4
+horror-series/season2/audio/mix/*.wav
+horror-series/season2/audio/tests/
