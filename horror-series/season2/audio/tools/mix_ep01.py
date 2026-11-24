@@ -100,6 +100,29 @@ place(fx["impact_hit"], 80.35, -6)
 song = load(os.path.join(A, "..", "song", "naalpathu-ml-v2_master.mp3"))
 place(song[-int(6.0 * SR):], 84.6, -6, fade_in=0.6, fade_out=1.2)
 
+# ---- extra horror layer ----
+import sys; sys.path.insert(0, os.path.join(A, "..", "video", "tools")); import horrorfx as HFX
+hb = fx["heartbeat"]
+def thumps(times, db):
+    one = hb[: int(.42 * SR)] * np.hanning(int(.42 * SR))[:, None]
+    for i, b in enumerate(times[::2]): place(one, b, db, pan=0.0)
+thumps(HFX.heartbeats(12, 19.2, 62, 118), -8)
+thumps(HFX.heartbeats(36.5, 64.4, 84, 112), -12)
+thumps(HFX.heartbeats(70.5, 79.2, 120, 150), -6)
+for t0 in (2.12, 27.4, 71.0, 75.2): place(fx["screech"], t0, -7, pan=0.3 if t0 % 2 > 1 else -0.3)
+for t0 in (2.05, 18.0, 27.3, 32.9, 50.2, 64.5, 70.9, 78.38, 80.0): place(fx["static_glitch"], t0, -14, length=0.5, fade_out=0.15)
+for t0 in (2.04, 33.0, 64.5, 78.38): place(fx["sub_drop"], t0, -4)
+place(fx["rev_whisper"], 3.2, -15, pan=0.9, pan_to=-0.9, fade_in=0.5, fade_out=0.8)
+place(fx["rev_whisper"], 65.4, -16, pan=-0.9, pan_to=0.9, fade_in=0.4, fade_out=0.6)
+place(fx["steps_behind"], 20.4, -13, pan=0.75, fade_out=0.5)
+place(fx["door_creak"], 24.6, -14, pan=-0.6)
+place(loop_to(fx["wind_howl"], 27.0, 1.5), 33.0, -16, fade_in=2.0, fade_out=2.0)
+place(loop_to(fx["clock_gears"], 28.0, 1.0), 36.0, -18, fade_in=3.0, fade_out=1.0)
+place(loop_to(fx["low_choir"], 24.0, 2.0), 40.5, -17, fade_in=6.0, fade_out=1.5)
+place(fx["scream_far"], 52.0, -17, pan=0.7)
+place(fx["crowd_murmur"], 56.5, -18, fade_in=1.5, fade_out=1.0)
+place(fx["water_drip"], 72.0, -20, pan=-0.5, length=5.0, fade_out=1.0)
+
 # master: gentle limiting, -14 LUFS / -1 dBTP
 mix = mix[: int(DUR * SR)]
 peak = np.abs(mix).max(); mix = np.tanh(mix / max(peak, 1e-6) * 1.6) / np.tanh(1.6)

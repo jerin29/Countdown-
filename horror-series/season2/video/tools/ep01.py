@@ -4,6 +4,7 @@ Plates come from animation-base/src/s2/ep01.js (rendered as 1920x1080 tiles). Us
 """
 import os, sys, json, math, subprocess, argparse
 import numpy as np, cv2
+import horrorfx as HFX
 
 W, H, FPS, DUR = 1920, 1080, 24, 90.0
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -42,9 +43,20 @@ EX_KEYS = [(T_X, ex_from_room(T_X)), (38, (3150, 1080, 1.05)), (46, (4150, 1010,
            (60, (HWC[0] - 40, HWC[1] + 10, 1.9)), (66, (HWC[0], HWC[1], 3.0)), (T_C, (HWC[0], HWC[1], H / HW['h'] * 1.02))]
 ex_cam = lambda t: kf(t, EX_KEYS)
 close_from_ex = lambda e: ((e[0] - HW['x']) / SC, (e[1] - HW['y']) / SC, e[2] * SC)
+SCARES = {}
 EYE = (804, 528)
 CLOSE_KEYS = [(T_C, close_from_ex(ex_cam(T_C))), (76, (900, 505, 1.45)), (78.4, (860, 520, 2.3)), (T_CARD, (EYE[0], EYE[1], 5.0))]
 close_cam = lambda t: kf(t, CLOSE_KEYS, ease_in)
+
+# ---- horror effects (times in seconds) ----
+EV = {
+    'flash': [(2.12, 2, 'cu'), (27.4, 2, 'far'), (50.3, 2, 'far'), (64.62, 3, 'cu'), (75.2, 2, 'cu'), (79.45, 3, 'cu')],
+    'glitch': [(2.05, .25), (18.0, .3), (27.3, .35), (32.9, .45), (50.2, .3), (64.5, .45), (70.9, .5), (78.38, .6), (80.0, .3)],
+    'red': [2.05, 64.5, 78.4, 80.35],
+    'chroma': [2.05, 33.0, 71.0, 78.4],
+    'flicker': [(19.0, 22.6), (68.0, 71.0)],
+    'heart': HFX.heartbeats(12, 19.2, 62, 118) + HFX.heartbeats(36.5, 64.4, 84, 112) + HFX.heartbeats(70.5, 79.2, 120, 150),
+}
 
 
 def chime_k(t, k=4.0): return sum(math.exp(-(t - c) * k) for c in CHIMES if t >= c)
@@ -236,6 +248,7 @@ def frame_at(t, pl):
         a, b, c3 = pl["credits"]
         img = a * (1 - seg(lt, .7, 1.4)) + b * seg(lt, .7, 1.4) * (1 - seg(lt, 1.6, 2.3)) + c3 * seg(lt, 1.6, 2.3)
         fr = img * seg(lt, .2, .9) * (1 - seg(lt, 4.4, 5))
+    fr = HFX.apply(fr, t, EV, SCARES)
     # grade: cold, contrasty, grain, vignette
     fr = np.clip(fr, 0, 1)
     fr = fr * VIGN
@@ -250,6 +263,7 @@ def main():
     ap.add_argument("--out")
     a = ap.parse_args()
     pl = load_plates(a.plates)
+    global SCARES; SCARES = HFX.load_scares(a.plates)
     if a.sheet:
         ts = [float(x) for x in a.sheet.split(",")]
         cells = [cv2.resize((frame_at(t, pl) * 255).astype(np.uint8), (480, 270)) for t in ts]

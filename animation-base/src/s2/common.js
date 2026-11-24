@@ -71,3 +71,19 @@ function headphoneWarning(lt, dur) {
   letter('ഹെഡ്‌ഫോൺ ഉപയോഗിക്കുക', 960, 560, 64, '#E9E2D0', { screen: true, ink: false, font: '64px "Noto Sans Malayalam"', alpha: a });
   letter('USE HEADPHONES', 960, 640, 28, '#8C97A6', { screen: true, ink: false, font: '28px Georgia, serif', alpha: a * .9 });
 }
+
+// ---------- shared scare plates (rendered once, used by every episode) ----------
+LOOPS.s2_clara_cu = () => {          // the girl, very close, hair over her face (subliminal flashes)
+  if (!window._ng) { const c = grainC.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, W, H); window._ng = 1; }
+  BOILN = 0; full('#050608');
+  glow(960, 420, 700, '#3B4A3A', .6);
+  clara(960, 2350, 150, { key: 'cu', rig: { aL: [.5, 1.2], aR: [-.5, -1.2] } });
+};
+LOOPS.s2_clara_cu.len = 1;
+LOOPS.s2_clara_far = () => {         // the girl standing far down a dark corridor-like void
+  if (!window._ng) { const c = grainC.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, W, H); window._ng = 1; }
+  BOILN = 0; full('#07080B');
+  glow(960, 620, 380, '#2E3A44', .7);
+  clara(960, 820, 22, { key: 'far' });
+};
+LOOPS.s2_clara_far.len = 1;
