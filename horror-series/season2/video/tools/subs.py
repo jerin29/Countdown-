@@ -39,7 +39,8 @@ def cues(n, lang):
     else:
         from eps import EPS
         items = [(v[0], v[1]) for v in EPS[n].get("voice", [])]
-    return [(t, t + max(1.6, dur(lang, k)) + .3, EN[k]) for t, k in items if k in EN]
+    sis = {"hi": "Didi", "ta": "Akka"}.get(lang, "Chechi")
+    return [(t, t + max(1.6, dur(lang, k)) + .3, EN[k].replace("Chechi", sis)) for t, k in items if k in EN]
 
 
 @functools.lru_cache(None)
