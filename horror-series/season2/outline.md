@@ -79,7 +79,7 @@ A 4–5 second black card with soft text and the last bell fading:
 > Thank you for watching 🕰️
 
 ## Release plan (agreed 23 Nov)
-- **Production:** starts 26 Nov; all 15 episodes × 3 languages, title songs and promos ready around 3–5 Dec.
+- **Production:** started 24 Nov (moved up from 26 Nov at the user's request); all 15 episodes × 3 languages, title songs and promos ready around 3–5 Dec.
 - **Break:** 4–5 days after Season 1 ends (2 Dec), with a Season 2 teaser and promo posted during the break.
 - **Posting:** one episode per night per language, same times as Season 1: Malayalam 9:00 PM, Hindi 9:20 PM, Tamil 9:40 PM (India time).
 - **9 Dec:** dark title song promos released (Malayalam 9:00 PM, Hindi 9:20 PM, Tamil 9:40 PM).
