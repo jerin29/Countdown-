@@ -10,3 +10,4 @@ ml	S1E7 short	81cf6c6d-e319-4278-9224-c88d26ef29a0	236e1507-e2c8-4ff6-8fec-20fd1
 ml	S1E8 short	64bf4ec1-7308-41b7-be52-d606fd994064	40e29e9b-f401-42f0-9589-54824c75ca77	2026-11-29T15:30:00Z	scheduled
 ml	S1E9 short	e2e3db7c-4f24-432b-afe5-b28f6594f844	5ed49352-58c3-41e0-b21f-d36e6b2bde80	2026-11-30T15:30:00Z	scheduled
 ml	S1E10 short	705f2b01-83a0-492b-81ed-ec7af274f2bf	fdb8b0a2-7e24-4699-a521-25ac64efa0cb	2026-12-01T15:30:00Z	scheduled
+ml	S1E6-10	reverted to full 90 s hook versions (ee8f46cf, 12332166, 4e59a11c, c027e05c, e1fbd1da) at user's request		27 Nov-1 Dec	scheduled
