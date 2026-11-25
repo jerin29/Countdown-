@@ -5,10 +5,12 @@ S1V = R + '/horror-series/video/vertical_clean'; S2V = R + '/horror-series/seaso
 cap1 = json.load(open(OUT + '/s1_captions.json'))
 P = json.load(open(R + '/horror-series/season2/social/captions.json'))
 TIME = {'hi': ('21:20', '9:20 PM'), 'ta': ('21:40', '9:40 PM')}
-S1DATES = {'hi': {4: '2026-11-26', 5: '2026-11-27', 6: '2026-11-28', 7: '2026-11-29', 8: '2026-11-30', 9: '2026-12-01', 10: '2026-12-02'},
-           'ta': {6: '2026-11-28', 7: '2026-11-29', 8: '2026-11-30', 9: '2026-12-01', 10: '2026-12-02'}}
+import datetime as _d
+S1DATES = {L: {n: (_d.date(2026, 11, 25) + _d.timedelta(days=n)).isoformat() for n in range(1, 11)} for L in ('hi', 'ta')}
 for L, folder in (('hi', 'hindi'), ('ta', 'tamil')):
     d = os.path.join(OUT, folder); os.makedirs(d, exist_ok=True)
+    for f in os.listdir(d):
+        if f.endswith(('.mp4', '.txt')): os.remove(os.path.join(d, f))
     items = []
     for ep, date in S1DATES[L].items():
         items.append((date, f'S1 Ep{ep}', f'{S1V}/COUNTDOWN_S1_ep{ep:02d}_{L}_9x16_hook.mp4', cap1[f'{L}{ep}']))
