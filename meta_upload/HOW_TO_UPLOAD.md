@@ -1,6 +1,6 @@
 # How to schedule Hindi & Tamil in Meta Business Suite
 
-Folders: `hindi/` (23 posts, 9:20 PM IST) and `tamil/` (21 posts, 9:40 PM IST).
+Folders: `hindi/` (26 posts, 9:20 PM IST) and `tamil/` (26 posts, 9:40 PM IST).
 Each post = one `.mp4` + one `.txt` with the same number. `SCHEDULE.md` in each folder lists every date.
 
 For each post:
