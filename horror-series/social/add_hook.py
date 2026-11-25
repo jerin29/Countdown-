@@ -26,7 +26,7 @@ def make(src, out, at=None):
     at = pick(src) if at is None else at
     fc = (f"[0:v]setpts=PTS-STARTPTS,fade=t=out:st={HOOK - 0.12}:d=0.12:color=white[hv];"
           f"[0:a]asetpts=PTS-STARTPTS,afade=t=out:st={HOOK - 0.15}:d=0.15[ha];"
-          f"[hv][ha][1:v][1:a]concat=n=2:v=1:a=1[v][a]")
+          f"[hv][ha][1:v][1:a]concat=n=2:v=1:a=1[vc][a];[vc]format=yuv420p[v]")
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(at), '-t', str(HOOK), '-i', src, '-i', src,
                     '-filter_complex', fc, '-map', '[v]', '-map', '[a]', '-threads', '4',
                     '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-maxrate', '7000k', '-bufsize', '14000k', '-r', '24',
