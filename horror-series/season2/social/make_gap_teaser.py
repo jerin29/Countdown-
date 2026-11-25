@@ -2,14 +2,17 @@
 
 Cuts 11 shots from S2 Ep1-8 (no late-season spoilers) and builds a fresh sound bed:
 drone + ticking + heartbeat + bell, with the characters' own whispered Malayalam lines.
-Usage: python3 make_gap_teaser.py [OUT]
+Usage: python3 make_gap_teaser.py [ml|hi|ta] [OUT]
 """
 import subprocess, sys, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V = os.path.join(ROOT, 'video', 'vertical_clean', 'COUNTDOWN_S2_ep{:02d}_ml_9x16.mp4')
+LANG = sys.argv[1] if len(sys.argv) > 1 else 'ml'
+V = os.path.join(ROOT, 'video', 'vertical_clean', 'COUNTDOWN_S2_ep{:02d}_' + LANG + '_9x16.mp4')
 A = os.path.join(ROOT, 'audio')
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'video', 'vertical_clean', 'COUNTDOWN_S2_gap_teaser_ml_9x16.mp4')
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(ROOT, 'video', 'vertical_clean', f'COUNTDOWN_S2_gap_teaser_{LANG}_9x16.mp4')
+# per-language start-time overrides where a line runs longer (Hindi first line is 5.7 s)
+SHIFT = {'hi': {'e03_thomas_1': 8.1, 'e03_mother_1': 10.6}}
 
 # (episode, start seconds, length) — chosen by eye from 3 s thumbnail grids
 SHOTS = [
@@ -30,18 +33,18 @@ TAIL = 3.0  # black ending for the final whisper
 # (file, start time in teaser, volume)
 CUES = [
     ('sfx_el/impact_hit.mp3', 0.0, 1.0),
-    ('voice_ml/e02_aadi_vn.mp3', 2.3, 1.6),     # "Chechi... the clock in my room struck forty."
-    ('voice_ml/e03_thomas_1.mp3', 7.3, 1.6),    # "Thirty-nine."
-    ('voice_ml/e03_mother_1.mp3', 9.7, 1.6),    # "Thirty-eight."
+    ('voice_LL/e02_aadi_vn.mp3', 2.3, 1.6),     # "Chechi... the clock in my room struck forty."
+    ('voice_LL/e03_thomas_1.mp3', 7.3, 1.6),    # "Thirty-nine."
+    ('voice_LL/e03_mother_1.mp3', 9.7, 1.6),    # "Thirty-eight."
     ('sfx_el/rev_whisper.mp3', 11.5, 0.6),
-    ('voice_ml/e02_clara_1.mp3', 13.8, 1.7),    # "Tick... tick... Meera."
+    ('voice_LL/e02_clara_1.mp3', 13.8, 1.7),    # "Tick... tick... Meera."
     ('sfx_el/water_drip.mp3', 16.0, 0.7),
     ('sfx_el/static_glitch.mp3', 18.0, 0.7),
     ('sfx_el/scream_far.mp3', 20.0, 0.6),
     ('sfx_el/heartbeat.mp3', 19.5, 0.9),
     ('sfx_el/clock_gears.mp3', 21.5, 0.7),
     ('sfx_el/bell_toll.mp3', 24.5, 1.0),
-    ('voice_ml/e06_clara_1.mp3', 25.6, 1.8),    # "Blink, Aadi."
+    ('voice_LL/e06_clara_1.mp3', 25.6, 1.8),    # "Blink, Aadi."
 ]
 
 
@@ -53,7 +56,12 @@ def main():
     n = len(SHOTS)
     cmd += ['-stream_loop', '-1', '-i', os.path.join(A, 'sfx_el/drone_dark.mp3')]
     cmd += ['-stream_loop', '-1', '-i', os.path.join(A, 'sfx_el/tick_loop.mp3')]
-    for f, _, _ in CUES:
+    cues = []
+    for f, t, vol in CUES:
+        f = f.replace('voice_LL', 'voice_' + LANG)
+        key = os.path.splitext(os.path.basename(f))[0]
+        cues.append((f, SHIFT.get(LANG, {}).get(key, t), vol))
+    for f, _, _ in cues:
         cmd += ['-i', os.path.join(A, f)]
 
     fc = []
@@ -69,7 +77,7 @@ def main():
     fc.append(f'[{tick}:a]atrim=0:22.5,asetpts=PTS-STARTPTS,volume=0.45,'
               f'afade=t=in:d=1,afade=t=out:st=21.8:d=0.7,adelay=2000|2000[tk]')
     mix = ['[dr]', '[tk]']
-    for k, (_, t, vol) in enumerate(CUES):
+    for k, (_, t, vol) in enumerate(cues):
         ms = int(t * 1000)
         fc.append(f'[{n + 2 + k}:a]aresample=48000,volume={vol},adelay={ms}|{ms}[c{k}]')
         mix.append(f'[c{k}]')
