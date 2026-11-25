@@ -10,7 +10,8 @@ S1DATES = {L: {n: (_d.date(2026, 11, 25) + _d.timedelta(days=n)).isoformat() for
 for L, folder in (('hi', 'hindi'), ('ta', 'tamil')):
     d = os.path.join(OUT, folder); os.makedirs(d, exist_ok=True)
     for f in os.listdir(d):
-        if f.endswith(('.mp4', '.txt')): os.remove(os.path.join(d, f))
+        # only remove the numbered schedule files; keep extras (teaser, combined captions)
+        if f[:2].isdigit() and f[2] == '_' and f.endswith(('.mp4', '.txt')): os.remove(os.path.join(d, f))
     items = []
     for ep, date in S1DATES[L].items():
         items.append((date, f'S1 Ep{ep}', f'{S1V}/COUNTDOWN_S1_ep{ep:02d}_{L}_9x16_hook.mp4', cap1[f'{L}{ep}']))
