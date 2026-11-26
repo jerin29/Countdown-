@@ -494,7 +494,8 @@ def mix(out):
     full = load(A + '/' + SCORE)
     sc = np.zeros((int(DUR * SR), 2), np.float32)
     place(sc, full[:int(72.2 * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
-    place(sc, full[int(18.0 * SR):int(25.4 * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
+    _e = float(os.environ.get('OR_END', '18.0'))
+    place(sc, full[int(_e * SR):int((_e + 7.4) * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
     env = np.ones(len(sc), np.float32)
     for k, at in VO:
         d = len(load(f'{A}/{k}.mp3')) / SR
