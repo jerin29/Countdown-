@@ -1,0 +1,14 @@
+{
+ "positive_global_styles": ["modern Malayalam romantic acoustic pop background score, 2010s Malayalam love song feel", "92 BPM, 4/4, bright major key, I-V-vi-IV progression", "warm acoustic guitar fingerpicking and gentle strumming", "soft finger snaps, light handclaps, shaker, soft cajon, warm bass guitar", "glockenspiel twinkles, flute melody, mandolin/ukulele picking", "warm synth pads, string swells on the big moments", "airy wordless humming harmonies (oohs and hmms, no words)", "light, airy, breezy, innocent new love, feel-good romance, intimate"],
+ "negative_global_styles": ["lyrics", "words", "singing words", "heavy drums", "EDM", "orchestral epic", "dark", "sad", "horror", "rock"],
+ "sections": [
+  {"section_name": "Intro", "positive_local_styles": ["ambient synth pads swell gently", "airy soft humming harmonies", "soft plucked acoustic guitar", "dreamy, intimate, night"], "negative_local_styles": ["drums", "percussion"], "duration_ms": 15000, "lines": ["Hmm... hmm hmm...", "Ooh..."]},
+  {"section_name": "Build when he sees her", "positive_local_styles": ["glockenspiel twinkling counter-melody", "rising string pads", "acoustic rhythm fills in, snaps start", "anticipation, heart starting to race, sweet"], "negative_local_styles": ["heavy"], "duration_ms": 14000, "lines": []},
+  {"section_name": "Chorus groove", "positive_local_styles": ["full light acoustic pop groove", "strumming guitars, shaker, claps, bass, lush string swells", "flute plays the catchy romantic hook", "joyful, smiling, falling in love"], "negative_local_styles": ["heavy drums"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Flute interlude", "positive_local_styles": ["sweet melodic flute solo", "light acoustic guitar picking and soft pads", "admiring, sweet"], "negative_local_styles": ["drums"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Second verse", "positive_local_styles": ["sparse: guitar picking, snaps, bass", "delicate mandolin or ukulele picking a cute counter-melody", "shy, playful, sweet"], "negative_local_styles": ["strings"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Chorus 2", "positive_local_styles": ["the hook returns, glockenspiel and strings swell, warm groove", "soft humming harmonies on top", "dreamy, glowing, in love"], "negative_local_styles": ["heavy drums"], "duration_ms": 10000, "lines": ["Ooh... ooh..."]},
+  {"section_name": "Stop", "positive_local_styles": ["band stops, only a soft synth pad holds", "held breath", "fade to near silence"], "negative_local_styles": ["percussion", "melody"], "duration_ms": 4600, "lines": []},
+  {"section_name": "Outro", "positive_local_styles": ["lone acoustic guitar plucks the progression, lingering soft humming, synth tail", "warm, sweet ending"], "negative_local_styles": ["drums"], "duration_ms": 6400, "lines": ["Hmm..."]}
+ ]
+}

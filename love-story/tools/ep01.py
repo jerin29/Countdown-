@@ -493,7 +493,8 @@ def mix(out):
     # score (skip its 1.9 s silent intro), ducked under the voice
     full = load(A + '/' + SCORE)
     sc = np.zeros((int(DUR * SR), 2), np.float32)
-    place(sc, full[:int(72.2 * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
+    _o = float(os.environ.get('OR_OFF', '0'))
+    place(sc, full[int(_o * SR):int((_o + 72.2) * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
     _e = float(os.environ.get('OR_END', '18.0'))
     place(sc, full[int(_e * SR):int((_e + 7.4) * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
     env = np.ones(len(sc), np.float32)
