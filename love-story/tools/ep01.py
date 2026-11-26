@@ -413,7 +413,7 @@ def frame(t):
         following = t >= 48.6
         fr = over(np.zeros((H, W, 3), np.float32), profile_ui(following))
         y = int(260 * ease(seg(t, 44.8, 46.6)) * (1 - ease(seg(t, 47.4, 48.1))))   # scroll down to her grid, back up to Follow
-        if y > 0: fr = np.concatenate([fr[y:], np.repeat(fr[-1:], y, 0)], 0)
+        if y > 0: fr = np.concatenate([fr[y:], np.full((y, W, 3), np.float32(12 / 255))], 0)
         fr = tap(fr, 290, 805, seg(t, 48.4, 48.9))
         fr = tap(fr, 780, 805, seg(t, 50.6, 51.0))
     elif t < 60.0:
