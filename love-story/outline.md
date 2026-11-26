@@ -82,3 +82,14 @@ Scripts, storyboards, art, music score, editing, subtitles and captions are free
 3. **No dead air**: music + sound always playing, scenes change every 2–4 s.
 4. Phone-screen moments (DMs, notification, "seen") as the visual hook, because everyone has felt them.
 5. Each episode ~1:30 max, with a recap feel only through visuals, not text overlays.
+
+## Music decision (26 Nov): trial Ep1 version 9 approved ✅
+Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/audio/score_v9.mp3`, plan `trial/audio/score_plan_v9.json`).
+**Series sound recipe** (from analysing "Muthuchippi", Thattathin Marayathu, and 90s Malayalam romantic melodies):
+- Modern Malayalam romantic acoustic background score, ~84 BPM, 4/4, warm major key (I–V–vi–IV).
+- **Soft wordless humming throughout**: female humming opens, male humming joins in harmony on the big romantic moments.
+- **Bansuri flute leads the love melody**; long flute solo for admiring moments.
+- Warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass; glockenspiel sparkle; strings swell only at the peaks.
+- Music stops on the cliffhanger beat; humming + flute return on the title card.
+- Mix: score at -2.5 dB under the voice (ducked 5 dB during lines), final -13 to -14 LUFS.
+- What did NOT work (v1–v8): sad/dark piano, western film-score strings, "feel-good" without humming, using the title song with vocals under the scenes.

@@ -484,7 +484,7 @@ def place(buf, x, at, gain=1.0, fin=0.0, fout=0.0):
 def db(x): return 10 ** (x / 20)
 
 
-SCORE, SCORE_DB = os.environ.get('OR_SCORE', 'score_v9.mp3'), float(os.environ.get('OR_DB', '-4'))   # v5: one romantic melody piece (v5a violin+piano, v5b flute+santoor); v4: score_v4.mp3
+SCORE, SCORE_DB = os.environ.get('OR_SCORE', 'score_v9.mp3'), float(os.environ.get('OR_DB', '-2.5'))   # v5: one romantic melody piece (v5a violin+piano, v5b flute+santoor); v4: score_v4.mp3
 VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v04', 21.6), ('v05', 29.6), ('v06', 41.2), ('v07', 44.6), ('v08', 55.9), ('v09', 64.0)]
 
 
@@ -495,7 +495,7 @@ def mix(out):
     sc = np.zeros((int(DUR * SR), 2), np.float32)
     _o = float(os.environ.get('OR_OFF', '0'))
     place(sc, full[int(_o * SR):int((_o + 72.2) * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
-    _e = float(os.environ.get('OR_END', '18.0'))
+    _e = float(os.environ.get('OR_END', '0.5'))
     place(sc, full[int(_e * SR):int((_e + 7.4) * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
     env = np.ones(len(sc), np.float32)
     for k, at in VO:
