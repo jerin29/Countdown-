@@ -93,3 +93,9 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - Music stops on the cliffhanger beat; humming + flute return on the title card.
 - Mix: score at -2.5 dB under the voice (ducked 5 dB during lines), final -13 to -14 LUFS.
 - What did NOT work (v1–v8): sad/dark piano, western film-score strings, "feel-good" without humming, using the title song with vocals under the scenes.
+
+## Release plan (decided 27 Nov)
+- **31 Dec 2026:** title song "ഒരു റിപ്ലൈ" release (Instagram reel cut + full song).
+- **1 Jan 2027:** Episode 1 "2:14 AM" (trial Ep1, version 9 sound).
+- Then one episode a night (Ep2–Ep10, 2–10 Jan), same 9 PM slot as COUNTDOWN.
+- COUNTDOWN Season 2 ends 24 Dec, so 25–30 Dec is free for a One Reply teaser and production.
