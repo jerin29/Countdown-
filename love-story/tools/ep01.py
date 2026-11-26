@@ -484,11 +484,8 @@ def place(buf, x, at, gain=1.0, fin=0.0, fout=0.0):
 def db(x): return 10 ** (x / 20)
 
 
-SCORE, SCORE_OFF, SCORE_DB = 'score_v3.mp3', 0.0, -5   # v3: lush romantic score (v2: score_v2.mp3 0.6 -4; v1: score_raw.mp3 1.9 -2)
-# v3: the title song's verse 1 + pre-chorus plays under her reel and the replays (film 14.6-41.6, song 11.6-38.6);
-# the two voice lines it would cover (v04, v05) are dropped because the lyrics say the same thing.
-SONG_IN = (14.6, 11.6, 38.6)
-VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v06', 41.8), ('v07', 45.0), ('v08', 55.9), ('v09', 64.0)]
+SCORE, SCORE_DB = 'score_v4.mp3', -4   # v4: one feel-good romantic score for the whole episode, no song (v3 used the title song)
+VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v04', 21.6), ('v05', 29.6), ('v06', 41.2), ('v07', 44.6), ('v08', 55.9), ('v09', 64.0)]
 
 
 def mix(out):
@@ -496,9 +493,8 @@ def mix(out):
     # score (skip its 1.9 s silent intro), ducked under the voice
     full = load(A + '/' + SCORE)
     sc = np.zeros((int(DUR * SR), 2), np.float32)
-    place(sc, full[:int(15.6 * SR)], 0, 1.0, fin=.3, fout=1.0)                  # love theme intro, out as the song comes in
-    place(sc, full[int(43.0 * SR):], 40.0, 1.0, fin=1.4, fout=2.0)              # back for the profile, typing, the night
-    sc = sc[:int(76.8 * SR)]
+    place(sc, full[:int(72.2 * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
+    place(sc, full[int(15.0 * SR):int(22.4 * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
     env = np.ones(len(sc), np.float32)
     for k, at in VO:
         d = len(load(f'{A}/{k}.mp3')) / SR
@@ -507,8 +503,6 @@ def mix(out):
     env = np.convolve(env, np.ones(int(.25 * SR)) / int(.25 * SR), mode='same').astype(np.float32)
     sc = sc * env[:, None]
     place(buf, sc, 0, db(SCORE_DB))
-    f0, s0, s1 = SONG_IN
-    place(buf, load(SONG)[int(s0 * SR):int(s1 * SR)], f0, db(-5), fin=.8, fout=1.4)
     # voice
     for k, at in VO: place(buf, load(f'{A}/{k}.mp3'), at, db(1))
     # rain under the room shots
@@ -529,9 +523,6 @@ def mix(out):
         for i in range(n): place(buf, key, t0 + (t1 - t0) * i / max(1, n - 1), db(-23))
     place(buf, S('tap.wav'), 71.65, db(-14)); place(buf, S('send.wav'), 71.8, db(-12)); place(buf, S('err.wav'), 72.6, db(-10))
     hb = S('heartbeat.mp3'); place(buf, hb[:int(4.0 * SR)], 72.8, db(-6), fin=.3, fout=.8)
-    # end card: the title song's hook "ഒരു റിപ്ലൈ… ഒരു വരി മതി"
-    song = load(SONG)[int(45.3 * SR):int(52.3 * SR)]
-    place(buf, song, 76.7, db(-3), fin=.25, fout=1.6)
     wav = out.replace('.mp4', '.wav')
     sf = (np.clip(buf, -1, 1) * 32767).astype(np.int16)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 's16le', '-ar', str(SR), '-ac', '2', '-i', '-', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', str(SR), wav],
