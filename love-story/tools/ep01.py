@@ -149,8 +149,8 @@ def profile_ui(following):
     im = Image.new('RGBA', (W, H), (12, 12, 14, 255)); d = ImageDraw.Draw(im)
     d.text((60, 38), '2:16', font=font('SemiBold', 34), fill=(255, 255, 255, 255))
     d.line([(60, 150), (84, 126), (60, 150), (84, 174)], fill=(255, 255, 255, 255), width=6)
-    d.text((120, 150), 'nila.dances', font=font('Bold', 46), fill=(255, 255, 255, 255), anchor='lm')
-    tw = d.textlength('nila.dances', font=font('Bold', 46))
+    d.text((120, 150), 'manjusha.dances', font=font('Bold', 46), fill=(255, 255, 255, 255), anchor='lm')
+    tw = d.textlength('manjusha.dances', font=font('Bold', 46))
     d.ellipse([120 + tw + 16, 134, 120 + tw + 50, 168], fill=(56, 151, 240, 255))
     d.line([(120 + tw + 24, 151), (120 + tw + 31, 159), (120 + tw + 43, 143)], fill=(255, 255, 255, 255), width=4)
     # avatar with story ring
@@ -160,7 +160,7 @@ def profile_ui(following):
         cx = 470 + i * 210
         d.text((cx, 322), n, font=font('Bold', 46), fill=(255, 255, 255, 255), anchor='mm')
         d.text((cx, 380), lab, font=font('Regular', 30), fill=(220, 220, 220, 255), anchor='mm')
-    d.text((60, 520), 'Nila', font=font('SemiBold', 38), fill=(255, 255, 255, 255))
+    d.text((60, 520), 'Manjusha', font=font('SemiBold', 38), fill=(255, 255, 255, 255))
     d.text((60, 574), 'Dancer', font=font('Regular', 32), fill=(160, 160, 165, 255))
     d.text((60, 622), 'Classical x contemporary  ·  Kochi', font=font('Regular', 34), fill=(255, 255, 255, 255))
     d.text((60, 670), 'collabs: mail in bio', font=font('Regular', 34), fill=(255, 255, 255, 255))
@@ -199,13 +199,13 @@ def dm_ui(text, cursor, bubble, failed, toast):
     d.text((60, 38), '2:17' if not failed else '3:41', font=font('SemiBold', 34), fill=(255, 255, 255, 255))
     d.line([(60, 160), (84, 136), (60, 160), (84, 184)], fill=(255, 255, 255, 255), width=6)
     im.alpha_composite(avatar('nila', 80), (110, 120)); d = ImageDraw.Draw(im)
-    d.text((210, 138), 'Nila', font=font('SemiBold', 38), fill=(255, 255, 255, 255))
-    d.text((210, 186), 'nila.dances', font=font('Regular', 28), fill=(160, 160, 165, 255))
+    d.text((210, 138), 'Manjusha', font=font('SemiBold', 38), fill=(255, 255, 255, 255))
+    d.text((210, 186), 'manjusha.dances', font=font('Regular', 28), fill=(160, 160, 165, 255))
     d.line([(0, 240), (W, 240)], fill=(32, 32, 36, 255), width=2)
     if not bubble:
         im.alpha_composite(avatar('nila', 220), (430, 420)); d = ImageDraw.Draw(im)
-        d.text((540, 690), 'Nila', font=font('Bold', 44), fill=(255, 255, 255, 255), anchor='mm')
-        d.text((540, 744), 'nila.dances · Instagram', font=font('Regular', 30), fill=(160, 160, 165, 255), anchor='mm')
+        d.text((540, 690), 'Manjusha', font=font('Bold', 44), fill=(255, 255, 255, 255), anchor='mm')
+        d.text((540, 744), 'manjusha.dances · Instagram', font=font('Regular', 30), fill=(160, 160, 165, 255), anchor='mm')
         d.text((540, 790), '500K followers · 312 posts', font=font('Regular', 30), fill=(160, 160, 165, 255), anchor='mm')
         d.rounded_rectangle([420, 840, 660, 910], 16, fill=(54, 54, 58, 255))
         d.text((540, 875), 'View profile', font=font('SemiBold', 30), fill=(255, 255, 255, 255), anchor='mm')
@@ -281,7 +281,7 @@ def nila_content(t, zoom=1.0):
 
 def reel(t, lt, progress, follow=False, liked=False, zoom=1.0):
     fr = nila_content(t, zoom)
-    fr = over(fr, reel_ui('nila.dances', follow, liked, 'terrace nights & old songs', '48.2K' if not liked else '48.2K', '1,204', 'nila'))
+    fr = over(fr, reel_ui('manjusha.dances', follow, liked, 'terrace nights & old songs', '48.2K' if not liked else '48.2K', '1,204', 'nila'))
     return progbar(fr, progress)
 
 
