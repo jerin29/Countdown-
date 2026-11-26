@@ -60,3 +60,25 @@ Scripts, storyboards, art, music score, editing, subtitles and captions are free
 - **Style changed:** instead of Style B (AI image-to-video clips, ~3,000 credits), use **simple flat 2D animation made in code**, the same pipeline as COUNTDOWN, in the style of fast Malayalam animated YouTube stories (quick scenes, phone-screen UI, chapter-like beats, light humour early, then the emotional turn).
 - **Credits:** only voices (~150–200 for Malayalam). Title song already done (v1+v3 combo).
 - **Start date:** after COUNTDOWN Season 2 finishes (**24 Dec**). Then: scripts → character designs → animation → voices → Instagram (vertical) + YouTube.
+
+## Music and "no-skip" plan (26 Nov)
+**Full romantic background score under every second**, never silent or dry.
+- **One main theme**, taken from the title song "ഒരു റിപ്ലൈ" melody, so the series sounds like one film. It comes back in different moods:
+  | Cue | Mood | Used in |
+  |---|---|---|
+  | 2 AM Alone | soft piano + rain, lonely | Ep1–2, late-night scrolling |
+  | Hope | guitar + light strings | Ep3, sending the message |
+  | **The Reply** | full theme, warm strings, joyful | Ep4 notification, happy montage (song chorus) |
+  | Falling | piano + cello, sweet but uneasy | Ep5–6 |
+  | Fear (her side) | low strings, heartbeat | Ep6–7 parcel, police case |
+  | Letting Go | solo piano, slow | Ep8 deleted letter |
+  | New Dawn | theme returns, bright, hopeful | Ep9–10, ending |
+- **Sound design:** phone notification pings, typing sounds, rain, night city, heartbeat at key moments, so it feels real.
+- Credits: score cues ~100–200 (generated music) or free (built from the song's own stems/melody).
+
+**Retention rules (so people don't skip):**
+1. **First 2 seconds = strongest moment** of the episode (the notification, the parcel, the "liked your reel"), then the story.
+2. Every episode **ends on a cliffhanger** + the theme swelling.
+3. **No dead air**: music + sound always playing, scenes change every 2–4 s.
+4. Phone-screen moments (DMs, notification, "seen") as the visual hook, because everyone has felt them.
+5. Each episode ~1:30 max, with a recap feel only through visuals, not text overlays.
