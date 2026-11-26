@@ -484,7 +484,7 @@ def place(buf, x, at, gain=1.0, fin=0.0, fout=0.0):
 def db(x): return 10 ** (x / 20)
 
 
-SCORE, SCORE_DB = 'score_v4.mp3', -4   # v4: one feel-good romantic score for the whole episode, no song (v3 used the title song)
+SCORE, SCORE_DB = os.environ.get('OR_SCORE', 'score_v5a.mp3'), -4   # v5: one romantic melody piece (v5a violin+piano, v5b flute+santoor); v4: score_v4.mp3
 VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v04', 21.6), ('v05', 29.6), ('v06', 41.2), ('v07', 44.6), ('v08', 55.9), ('v09', 64.0)]
 
 
@@ -494,7 +494,7 @@ def mix(out):
     full = load(A + '/' + SCORE)
     sc = np.zeros((int(DUR * SR), 2), np.float32)
     place(sc, full[:int(72.2 * SR)], 0, 1.0, fin=.3, fout=1.2)                 # fades out as he taps Send
-    place(sc, full[int(15.0 * SR):int(22.4 * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
+    place(sc, full[int(18.0 * SR):int(25.4 * SR)], 76.4, 1.0, fin=.5, fout=2.0)  # the love theme returns on the title card
     env = np.ones(len(sc), np.float32)
     for k, at in VO:
         d = len(load(f'{A}/{k}.mp3')) / SR
