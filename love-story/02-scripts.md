@@ -48,18 +48,21 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 ---
 
 ## Episode 3 · കൊളാബ് പേജ് (The Collab Page)
-**Hook:** his thumb over **Send** on a long message to *kochi.dance.collective*.
+**Based on the real message the creator sent** (personal details changed: name, college and place).
+**Hook:** his thumb over **Send** on a long, nervous Manglish message to *kochi.dance.collective*.
 | Time | Picture | Voice / sound |
 |---|---|---|
-| 0:02 | Aadhi at his desk at night, typing, deleting, typing | AADHI: "എത്ര എഴുതിയിട്ടും ശരിയാവുന്നില്ല." *(However much I write, it isn't right.)* |
-| 0:12 | Screen: a long message, then he deletes all of it | Flute, hesitant. |
-| 0:20 | He writes one simple line instead: *"Please tell her: her dance made someone's lonely nights better. That's all. Thank you."* | AADHI: "ഇത്ര മതി. അവൾ അറിയണമെന്നു പോലുമില്ല." *(This is enough. She doesn't even need to know it's me.)* |
-| 0:32 | Sends. *Delivered.* He throws the phone on the bed, covers his face | Snap, sweet groove. |
-| 0:40 | Montage: one day, two days, three — no answer; he checks the phone at class, at lunch, at night | Light humming, ticking. |
-| 0:58 | Kiran: "ഇനി അത് മറന്നേക്ക്." *(Just forget it now.)* · Aadhi nods, sad smile | |
-| 1:06 | Night. Phone face down. It **buzzes** | Music stops. |
-| 1:12 | **CLIFF:** notification: *kochi.dance.collective: "We showed her your message 🙂"* | Aadhi's eyes widen — humming bursts in, cut. |
-**Images (8):** desk at night (2) · face hopeful · throwing phone / covering face · class daydream · lunch with Kiran · bed with buzzing phone · eyes wide. **Clip:** phone buzzing on the bed.
+| 0:02 | Aadhi on his bed at night, typing slowly with both thumbs, biting his lip | AADHI: "എന്താ എഴുതുക... ചേച്ചി എന്നു വിളിക്കണോ? അതോ പേര്?" *(What do I write... call her chechi? Or her name?)* |
+| 0:10 | The phone screen fills, line by line (real DM UI, typed live): | Shy flute, soft snaps. |
+| | *"Hai* · *I am Aadhi* · *Shorts oke kollaam chechi 🙂* · *Chechi aano atho same age aano ennu ariyilla* · *Instagramil aayalum YouTubeil aayalum njan message um comment um ittu, onnum kandilla* · *Enthenkilum kaanum ennu vishwasathode…* · *A good friend, Aadhi* · *An anonymous person* · *A big fan* · *Meet cheyyan thaalparyam und* · *You treat me 😁😁* · *I want appreciate you. If you see message plz reply me"* | AADHI (reading parts aloud, smiling at himself): "...You treat me? ഹ്ഹ്... ഇതെന്തുവാ ഞാൻ എഴുതുന്നേ." *(...You treat me? Heh... what am I even writing.)* |
+| 0:34 | He almost deletes it all. Stops. Reads it once more | "പക്ഷേ ഇതാണ് ഞാൻ." *(But this is me.)* |
+| 0:40 | Sends. *Delivered.* He throws the phone on the bed and hides his face in the pillow | Humming bursts in, playful groove. |
+| 0:48 | Montage: one day, two days, three — he checks the phone in class, at lunch, at night. Nothing | Light humming, a ticking clock. |
+| 1:00 | Kiran reads the sent message over his shoulder and bursts out laughing | KIRAN: "'You treat me'?! എടാ, നീ അവളോട് ട്രീറ്റ് ചോദിച്ചോ?" *('You treat me'?! Da, did you ask her for a treat?)* · AADHI (embarrassed): "പോടാ!" *(Get lost!)* |
+| 1:08 | Night. Phone face down. It **buzzes** | Music stops. |
+| 1:14 | **CLIFF:** notification: *kochi.dance.collective: "We showed her your message 🙂"* | Aadhi's eyes widen — humming bursts in, cut. |
+**Note:** the line "Meet cheyyan thaalparyam und" quietly plants the wish to meet her, which turns into the mistake in Ep5–6.
+**Images (8):** typing on bed · biting lip close-up · almost deleting · face in pillow · class daydream · lunch with Kiran laughing · buzzing phone on bed · eyes wide. **Clip:** phone buzzing on the bed.
 
 ---
 
