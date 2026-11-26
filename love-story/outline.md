@@ -54,3 +54,9 @@ Scripts, storyboards, art, music score, editing, subtitles and captions are free
 ## Status (23 Nov)
 - **Malayalam title song: version 1 + 3 combined (final choice)** (`song/oru-reply-ml-v1v3_combo.mp3`, 3:02): version 1 up to chorus 2 (hope; lyrics `song/oru-reply-ml-lyrics.md`), then at ~2:03 version 3's "ഹേ… ഒരു റിപ്ലൈ!" chant, bridge and final chorus (joy; lyrics `song/oru-reply-ml-v3-lyrics.md`); key lift C → E. Other takes kept as alternatives: 1+2, 1→2→3, version 4.
 - **Paused until COUNTDOWN Season 2 ends.** Next: Hindi and Tamil songs built the same way (soft version-1 feel up to chorus 2, then the joyful version-3 chant, bridge and final chorus; ~50–100 credits), then scripts, designs and storyboards.
+
+## Decision (26 Nov): simple 2D animation style
+- **Format kept:** 10 episodes × ~1:30, Malayalam first (Hindi/Tamil later).
+- **Style changed:** instead of Style B (AI image-to-video clips, ~3,000 credits), use **simple flat 2D animation made in code**, the same pipeline as COUNTDOWN, in the style of fast Malayalam animated YouTube stories (quick scenes, phone-screen UI, chapter-like beats, light humour early, then the emotional turn).
+- **Credits:** only voices (~150–200 for Malayalam). Title song already done (v1+v3 combo).
+- **Start date:** after COUNTDOWN Season 2 finishes (**24 Dec**). Then: scripts → character designs → animation → voices → Instagram (vertical) + YouTube.
