@@ -101,3 +101,6 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - **1 Jan 2027:** Episode 1 "2:14 AM" (trial Ep1, version 9 sound).
 - Then one episode a night (Ep2–Ep10, 2–10 Jan), same 9 PM slot as COUNTDOWN.
 - COUNTDOWN Season 2 ends 24 Dec, so 25–30 Dec is free for a One Reply teaser and production.
+
+## Pending (when ElevenLabs billing is fixed)
+- Re-record Ep1 line v06 as "മഞ്ജുഷ. അഞ്ചു ലക്ഷം ഫോളോവേഴ്സ്." (text already in `trial/audio/lines.json`), then re-render trial Ep1 so the phone UI shows manjusha.dances / Manjusha.
