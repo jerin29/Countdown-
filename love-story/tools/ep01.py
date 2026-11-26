@@ -484,7 +484,7 @@ def place(buf, x, at, gain=1.0, fin=0.0, fout=0.0):
 def db(x): return 10 ** (x / 20)
 
 
-SCORE, SCORE_DB = os.environ.get('OR_SCORE', 'score_v5a.mp3'), -4   # v5: one romantic melody piece (v5a violin+piano, v5b flute+santoor); v4: score_v4.mp3
+SCORE, SCORE_DB = os.environ.get('OR_SCORE', 'score_v9.mp3'), float(os.environ.get('OR_DB', '-4'))   # v5: one romantic melody piece (v5a violin+piano, v5b flute+santoor); v4: score_v4.mp3
 VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v04', 21.6), ('v05', 29.6), ('v06', 41.2), ('v07', 44.6), ('v08', 55.9), ('v09', 64.0)]
 
 
