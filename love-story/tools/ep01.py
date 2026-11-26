@@ -484,13 +484,14 @@ def place(buf, x, at, gain=1.0, fin=0.0, fout=0.0):
 def db(x): return 10 ** (x / 20)
 
 
+SCORE, SCORE_OFF, SCORE_DB = 'score_v2.mp3', 0.6, -4   # v2: lighter romantic score (v1: score_raw.mp3, 1.9, -2)
 VO = [('v01', .25), ('v02', 4.0), ('v03', 9.0), ('v04', 21.6), ('v05', 29.6), ('v06', 41.2), ('v07', 44.6), ('v08', 55.9), ('v09', 64.0)]
 
 
 def mix(out):
     N = int(DUR * SR); buf = np.zeros((N, 2), np.float32)
     # score (skip its 1.9 s silent intro), ducked under the voice
-    sc = load(A + '/score_raw.mp3')[int(1.9 * SR):]
+    sc = load(A + '/' + SCORE)[int(SCORE_OFF * SR):]
     sc = sc[:int(76.8 * SR)]
     env = np.ones(len(sc), np.float32)
     for k, at in VO:
@@ -499,7 +500,7 @@ def mix(out):
         env[max(0, a):min(len(env), b)] = np.minimum(env[max(0, a):min(len(env), b)], db(-5))
     env = np.convolve(env, np.ones(int(.25 * SR)) / int(.25 * SR), mode='same').astype(np.float32)
     sc = sc * env[:, None]
-    place(buf, sc, 0, db(-2), fin=.1, fout=2.0)
+    place(buf, sc, 0, db(SCORE_DB), fin=.3, fout=2.0)
     # voice
     for k, at in VO: place(buf, load(f'{A}/{k}.mp3'), at, db(1))
     # rain under the room shots

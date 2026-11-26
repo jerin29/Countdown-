@@ -1,0 +1,12 @@
+{
+ "positive_global_styles": ["light romantic background music", "soft feel-good love story score", "airy and warm", "fingerpicked acoustic guitar, soft felt piano, gentle strings, light glockenspiel sparkle", "Malayalam romantic film BGM", "C major", "sweet, dreamy, smiling", "low dynamics, never heavy"],
+ "negative_global_styles": ["vocals", "singing", "choir", "sad minor key", "dark", "heavy drums", "dramatic", "horror", "EDM", "deep bass"],
+ "sections": [
+  {"section_name": "Late night soft", "positive_local_styles": ["gentle solo piano melody", "airy, calm, cozy", "light and tender"], "negative_local_styles": ["drums"], "duration_ms": 9000, "lines": []},
+  {"section_name": "Scrolling", "positive_local_styles": ["light plucked guitar ostinato", "soft finger snaps", "easy, breezy"], "negative_local_styles": ["strings swell"], "duration_ms": 8000, "lines": []},
+  {"section_name": "Her reel", "positive_local_styles": ["romantic theme blooms", "warm acoustic guitar + soft strings + glockenspiel", "butterflies, sweet, magical"], "negative_local_styles": ["sad", "dark"], "duration_ms": 16000, "lines": []},
+  {"section_name": "Replay again and again", "positive_local_styles": ["light happy romantic groove", "ukulele-like guitar strums, soft shaker, piano", "playful, smiling, in love"], "negative_local_styles": ["heavy drums"], "duration_ms": 22000, "lines": []},
+  {"section_name": "Shy hesitation", "positive_local_styles": ["soft piano and light strings", "shy, sweet, gentle longing", "still warm and light"], "negative_local_styles": ["percussion", "minor key"], "duration_ms": 19000, "lines": []},
+  {"section_name": "Sent", "positive_local_styles": ["music softly pauses to a single sustained light piano note", "held breath", "fade to near silence"], "negative_local_styles": ["melody", "percussion"], "duration_ms": 6000, "lines": []}
+ ]
+}
