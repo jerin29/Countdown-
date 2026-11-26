@@ -128,7 +128,7 @@ def reel_ui(user, follow, liked, caption, likes, comments, ava_key=None):
         d.rounded_rectangle([bx, 1652, bx + bw, 1710], 14, outline=(255, 255, 255, 255), width=3)
         d.text((bx + bw / 2, 1681), lab, font=font('SemiBold', 30), fill=(255, 255, 255, 255), anchor='mm')
     shadow_text(d, (56, 1746), caption, font('Regular', 32))
-    shadow_text(d, (56, 1800), '♫  Original audio', font('Regular', 28), fill=(235, 235, 235, 255))
+    shadow_text(d, (56, 1800), 'Original audio', font('Regular', 28), fill=(235, 235, 235, 255))
     return im
 
 
@@ -364,7 +364,8 @@ def endcard_ui(stage):
     if stage >= 0:
         d.text((540, 820), 'ഒരു റിപ്ലൈ', font=mlfont('Bold', 150), fill=(244, 226, 196, 255), anchor='mm')
         heart(d, 540, 990, 36, fill=(237, 233, 222, 255), outline=(237, 233, 222, 255), w=2)
-        d.text((540, 1100), 'എപ്പിസോഡ് 1  ·  2:14 AM', font=mlfont('Regular', 52), fill=(200, 190, 175, 255), anchor='mm')
+        d.text((540, 1100), 'എപ്പിസോഡ് 1', font=mlfont('Regular', 56), fill=(200, 190, 175, 255), anchor='mm')
+        d.text((540, 1180), '2:14 AM', font=font('Medium', 44), fill=(170, 160, 146, 255), anchor='mm')
     if stage >= 1:
         d.text((540, 1460), 'Story by Jerin Joseph Sebastian', font=font('Regular', 38), fill=(220, 214, 200, 255), anchor='mm')
         d.text((540, 1520), 'Created with Claude AI & vidIQ', font=font('Regular', 32), fill=(160, 154, 140, 255), anchor='mm')
