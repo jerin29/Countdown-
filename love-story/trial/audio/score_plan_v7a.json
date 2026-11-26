@@ -1,0 +1,115 @@
+{
+ "positive_global_styles": [
+  "instrumental background score in the style of 1990s-2000s Malayalam romantic film songs (Vidyasagar era)",
+  "one sweet raga-inflected romantic melody that returns throughout",
+  "lead bansuri flute and solo violin answering each other in call-and-response",
+  "warm lush keyboard synth pads",
+  "gentle acoustic guitar arpeggios",
+  "soft tabla and mridangam ballad groove",
+  "sweeping violin section on the climax",
+  "nostalgic, dreamy, deeply romantic, tender longing",
+  "minor-to-major emotional lift",
+  "slow 6/8 ballad feel, about 68 BPM",
+  "slow tempo"
+ ],
+ "negative_global_styles": [
+  "vocals",
+  "singing",
+  "lyrics",
+  "western cinematic trailer",
+  "EDM",
+  "heavy drums",
+  "horror",
+  "rock guitar"
+ ],
+ "sections": [
+  {
+   "section_name": "Prelude",
+   "positive_local_styles": [
+    "bansuri flute solo introduces the romantic melody over warm synth pads",
+    "sparse, intimate, night"
+   ],
+   "negative_local_styles": [
+    "percussion"
+   ],
+   "duration_ms": 15000,
+   "lines": []
+  },
+  {
+   "section_name": "First sight",
+   "positive_local_styles": [
+    "lush violin section sweeps in and takes the melody",
+    "soft tabla groove starts",
+    "heart melting, magical"
+   ],
+   "negative_local_styles": [],
+   "duration_ms": 14000,
+   "lines": []
+  },
+  {
+   "section_name": "Again and again",
+   "positive_local_styles": [
+    "flute and violin call-and-response on the melody",
+    "mandolin and santoor sparkle",
+    "tabla groove, sweet and smiling"
+   ],
+   "negative_local_styles": [],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "Her world",
+   "positive_local_styles": [
+    "solo violin plays the melody tenderly over guitar arpeggios and pads",
+    "admiring, longing"
+   ],
+   "negative_local_styles": [],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "Shy",
+   "positive_local_styles": [
+    "soft flute phrases and gentle guitar, light tabla",
+    "shy, sweet, hesitant"
+   ],
+   "negative_local_styles": [],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "In love",
+   "positive_local_styles": [
+    "full arrangement, sweeping violins and flute together on the melody, tabla",
+    "the most romantic emotional climax"
+   ],
+   "negative_local_styles": [],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "Pause",
+   "positive_local_styles": [
+    "music stops, one soft flute note held over a pad",
+    "fade to near silence"
+   ],
+   "negative_local_styles": [
+    "percussion",
+    "melody"
+   ],
+   "duration_ms": 4600,
+   "lines": []
+  },
+  {
+   "section_name": "Ending",
+   "positive_local_styles": [
+    "bansuri plays the romantic melody once more over pads, warm resolution"
+   ],
+   "negative_local_styles": [
+    "percussion"
+   ],
+   "duration_ms": 6400,
+   "lines": []
+  }
+ ]
+}
