@@ -7,7 +7,8 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - **Plus Two:** makes the main team, then junior selection, then **selected for the state team**, then the state-team selection coaching camp.
 - Then he learns the match is in **Malappuram**. There his sir takes his documents, then a problem between the sirs means **he isn't allowed to play**. In tears, he **can't even eat**; he watches the others from the bench.
 - Back home, in front of the mirror: "ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്."
-- **College (engineering):** first and second year pass. **Third year: a new sir** joins (real name changed on screen), active in sports; the college team starts.
+- **College (engineering), years 1–2 (~1.5 years):** trains for the **Army**: early-morning runs, workouts, physical fitness every day. In between, a **selection comes up, but the sir isn't active and tells them only the night before**, so they miss it / don't get it. He keeps training anyway.
+-  **Third year: a new sir** joins (real name changed on screen), active in sports; the college team starts.
 - **Open selection at an inter-zone meet**: he goes on his own effort and makes the **district team**. Not selected for state, but happy.
 - **Leaving college, he starts the college handball team, a boys' team AND a girls' team**, still there; new students keep joining.
 
@@ -20,7 +21,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 | 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram" |
 | 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; watches from the bench |
 | 6 | കണ്ണാടി | Back home, the mirror scene (midpoint) |
-| 7 | എൻജിനീയറിങ് | College years 1–2; 2:14 AM One Reply cameo |
+| 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs and workouts for 1.5 years; a selection missed because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
 | 8 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
 | 9 | ഓപ്പൺ സെലക്ഷൻ | Inter-zone meet open selection, on his own: district team |
 | 10 | ചിരി | Not selected for state, and he smiles |
