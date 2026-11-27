@@ -36,3 +36,9 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - **Final: version 1** — `song/again-ml-v1_master.mp3` (2:55, 120 BPM anthem; lyrics `song/again-ml-lyrics.md`). Chosen by the creator.
 - v2 (high-energy, 136 BPM, long intro) kept as an alternative: `song/again-ml-v2_master.mp3`.
 - Timings in v1: chorus 0:44 · bench verse 1:04 · mirror bridge 1:36 · final chorus 2:20.
+
+## Release plan (agreed 27 Nov)
+- 21 Dec: vidIQ refill → make One Reply Ep10 (finale) → user approves → schedule 10 Jan 9 PM IST.
+- ~12–13 Jan: AGAIN teaser with title song v1.
+- ~15 Jan: AGAIN Episode 1 "പന്ത്" (script draft in again-scripts.md; waiting for the creator's real details).
+- Then one episode per night at 9 PM IST (same slot).
