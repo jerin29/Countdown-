@@ -60,3 +60,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - He calls his father **Pappa** (use "പപ്പ" everywhere, not "Achan").
 - **The two benches (real, 27 Nov):** Ep5, alone on the Malappuram bench, nobody beside him. Ep6, the home sit-out bench, Pappa beside him holding his hand. Frame them the same way; the second one has someone in the empty seat.
 - Pappa's words lead straight into the mirror promise: "ചെറിയൊരു അധ്യായം മാത്രം" becomes "എല്ലാത്തിനും തുടക്കമാണ്".
+- **How Pappa is shown (creator's direction, 27 Nov): ONLY from behind, never his face.** About 60, no shirt, only a kaili (lungi), a thorthu over his shoulder.
+  - Ep6 call: **morning, 8–9 AM**, Pappa at home (sit-out / yard), back shot, phone to his ear: "എത്തിയോ? കളിക്കാൻ ഇറങ്ങിയോ?" Intercut with Aadhi at the venue.
+  - Ep6 sit-out bench: from behind both of them on the bench, or a close-up of Pappa's hand holding Aadhi's. His voice carries the scene.
+  - Ep1: Pappa also only from behind (reading the newspaper on the sit-out); his silence is the reaction, no face.

@@ -18,7 +18,7 @@ Names of schools, coaches and teammates are changed. No school name, crest or pl
 | 0:21 | Days pass: three quick shots of him every evening at the same spot, bag on his shoulder, watching alone. | Light guitar; the whistle again and again. |
 | 0:26 | One evening he gathers courage and walks across the ground to the PE sir (**Mathew sir**: whistle, moustache, tracksuit). | AADHI (nervous): "സാർ… എനിക്കും ടീമിൽ ചേരാൻ പറ്റുമോ?" · MATHEW SIR: "മുമ്പ് കളിച്ചിട്ടുണ്ടോ?" |
 | 0:31 | He shakes his head, then looks up. Sir studies him for a moment. | AADHI: "ഇല്ല സാർ… പക്ഷേ പഠിക്കാം." · MATHEW SIR (half a smile): "നാളെ രാവിലെ ആറു മണിക്ക് ഗ്രൗണ്ടിൽ വാ." |
-| 0:35 | Home, evening. Amma at the stove. Pappa with the newspaper. | AMMA: "ഹാൻഡ്‌ബോളോ? അതൊക്കെ എന്തിനാ? മര്യാദയ്ക്ക് പഠിക്ക്." · Pappa says nothing; over the paper, a small smile. |
+| 0:35 | Home, evening. Amma at the stove. Pappa on the sit-out with the newspaper, seen only from behind (kaili, thorthu on his shoulder). | AMMA: "ഹാൻഡ്‌ബോളോ? അതൊക്കെ എന്തിനാ? മര്യാദയ്ക്ക് പഠിക്ക്." · Pappa says nothing; from behind, he slowly turns a page, a pause. |
 | 0:45 | Night. He watches handball videos on an old phone under the blanket, then throws a rolled-up sock at the wall, again and again. | NARRATOR: "അന്ന് വരെ ആ കളിയുടെ പേര് പോലും ഞാൻ ശരിക്ക് കേട്ടിട്ടില്ല." · soft thuds of the sock |
 | 0:55 | 5:40 AM. Alarm. Dark. He ties his shoes quietly and slips out. | Alarm beep, birds before dawn. |
 | 1:00 | The ground at 6 AM, mist. Mathew sir and six seniors. One senior laughs. | SENIOR: "ഇവനോ? ഇവൻ എന്ത് കളിക്കാനാ!" · laughter |
@@ -26,7 +26,7 @@ Names of schools, coaches and teammates are changed. No school name, crest or pl
 | 1:16 | **CLIFF:** he runs, jumps for a shot — freeze mid-air, the goal ahead. | Music rises… cut on the whistle. "Again!" chant sting. |
 | 1:20 | End card: AGAIN · എപ്പിസോഡ് 1 · പന്ത് · credits | Title-song instrumental |
 
-**Images (9):** state-court bench flash-forward · rainy school ground (seniors playing) · Aadhi watching from the edge (x2, different days) · walking up to Mathew sir · home: Amma + Pappa · night under the blanket with phone · misty 6 AM ground with seniors laughing · his hands on the ball / mid-air jump.
+**Images (9):** state-court bench flash-forward · rainy school ground (seniors playing) · Aadhi watching from the edge (x2, different days) · walking up to Mathew sir · home: Amma + Pappa (from behind) · night under the blanket with phone · misty 6 AM ground with seniors laughing · his hands on the ball / mid-air jump.
 **Voices:** adult Aadhi (narrator), young Aadhi, Mathew sir, a senior, Amma.
 **Cost estimate:** ~9 images (≈110 vidIQ credits) + voices (ElevenLabs, ~400 characters) + score.
 
