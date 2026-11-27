@@ -111,3 +111,7 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - **1 Jan 2027, 9:00 PM IST** — Episode 1 (anime, with Manjusha line). postId 57d1bc6d-a422-4505-8812-5ec36a3ca14c, upload 1a2bf70f-112e-45fa-9c02-d27dcc938d29.
 - **2 Jan 2027, 9:00 PM IST** — Episode 2 "ചുവര്" (anime). postId b9e5589e-6c1b-4abb-8f4b-cfc502489695, upload 899fec15-e2e5-4d8d-8334-302c6ae84541.
 - Style decision: One Reply = anime; COUNTDOWN keeps its flat 2D painted style.
+
+## Language focus (decided 27 Nov)
+- Malayalam only for now (COUNTDOWN and One Reply). Hindi and Tamil are paused because they get no reach; pick them back up once the ML page reaches a good audience.
+- Covers: `tools/covers.py` makes `covers/ONE_REPLY_cover_{song,ep01,ep02,ep03}.jpg` (title text kept inside the 3:4 grid crop).
