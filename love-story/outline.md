@@ -114,6 +114,7 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - **4 Jan 2027, 9:00 PM IST** — Episode 4 "ഒരു റിപ്ലൈ" (anime, real voice-message reply, AI voice "Amara"). postId 697e84c8-53d2-4634-ad2f-b1ffb484f614, upload b87abe7f-e3ca-4028-9f52-5f88b409bc22. Caption promises Ep5 on 5 Jan.
 - **5 Jan 2027, 9:00 PM IST** — Episode 5 "അടുത്തേക്ക്" (anime). postId 9de6efb4-a5fe-4b8b-8d32-70db1316f51c, upload 54d2b7f3-a276-4da2-b57b-56729a75d6cb. Caption promises Ep6 (her side) on 6 Jan.
 - **6 Jan 2027, 9:00 PM IST** — Episode 6 "സമ്മാനം" (anime, her side). postId eee4efc1-8f25-47b9-847b-2610dd762a2c, upload cb0a49ab-e13d-4d3b-835c-e46f0d9596da. Caption promises Ep7 on 7 Jan.
+- **7 Jan 2027, 9:00 PM IST** — Episode 7 "മുന്നറിയിപ്പ്" (anime). postId c93d1bc6-24f6-4f8a-beed-97403cd19de8, upload 36b7c66c-82e4-4f13-b595-0b1172ce8f00. Caption promises Ep8 on 8 Jan. Ep8–10 to be made after the 21 Dec vidIQ refill.
 - Style decision: One Reply = anime; COUNTDOWN keeps its flat 2D painted style.
 
 ## Language focus (decided 27 Nov)
