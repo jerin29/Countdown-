@@ -16,3 +16,7 @@ Built like love-story/tools/song_video.py (shots mapped to the song's timings). 
 
 Credits: ~12 new pictures (≈145) + 4 clips (≈160) ≈ **300**. Many pictures are shared with AGAIN Ep1–6, so make them together after the 21 Dec refill.
 Release: ~12–13 Jan as the AGAIN launch (title song + teaser), Ep1 ~15 Jan.
+
+## Status (27 Nov)
+- **v1 lite made (no lyrics):** `out/AGAIN_title_song_v1_ml_9x16.mp4`, 5 pictures (posters A/B + g_edge, g_bench, g_mirror), camera moves, flashes, heartbeat pulse. Builder: `tools/again_song_video.py`.
+- After the 21 Dec refill: upgrade to the full plan (≈12 pictures + 4 clips) and make the lyrics version. Cover: Poster A.
