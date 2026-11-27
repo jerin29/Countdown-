@@ -20,7 +20,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 | 3 | മെയിൻ ടീം | Plus Two: main team; junior selection |
 | 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram"; a first hint of tension between the sirs |
 | 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; tears on the bench. **Then Pappa calls on his Samsung keypad phone: "എത്തിയോ? കളിക്കാൻ ഇറങ്ങിയോ?" Heart pounding, he can't say it. He looks into the washroom mirror, eyes full, and says: "ഇറങ്ങാൻ പോവാ പപ്പാ."** (real) |
-| 6 | കണ്ണാടി | Back home, the mirror scene (midpoint) |
+| 6 | കണ്ണാടി | Back home he tells Pappa the truth. On the sit-out bench Pappa holds his hand: "പോട്ടെടാ, വിഷമിക്കണ്ട. നമുക്ക് അടുത്തത് ശരിയാക്കാം. ഇങ്ങനെ ഡൗൺ ആവരുത്. ലൈഫ് ഇനി ഒരുപാടുണ്ട്… അതിലെ ചെറിയൊരു അധ്യായം മാത്രമാണിത്." (real) That night, the mirror: "ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്." (midpoint) |
 | 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs; a handball selection he can't go to because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
 | 8 | ഒരു സെക്കൻഡ് | The Army test after 1.5 years of training: he misses it by **one second**. He doesn't break. |
 | 9 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
@@ -58,3 +58,5 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - **Posters (27 Nov, creator's choice):** Poster A (jump shot, `poster/AGAIN_poster_A_jump.jpg`) = **title song cover**. Poster B (dawn, `poster/AGAIN_poster_B_dawn.jpg`) = **episode cover style** (each episode's cover uses B's look: same title block, episode number and name).
 - **The two mirrors (real, 27 Nov):** Ep5, at the venue, he looks into a mirror and hides the truth from Pappa ("ഇറങ്ങാൻ പോവാ പപ്പാ"). Ep6, at home, he looks into a mirror and tells himself the truth ("ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്"). Same framing for both shots. 2019 details: Samsung keypad phone, no internet, the old ringtone.
 - He calls his father **Pappa** (use "പപ്പ" everywhere, not "Achan").
+- **The two benches (real, 27 Nov):** Ep5, alone on the Malappuram bench, nobody beside him. Ep6, the home sit-out bench, Pappa beside him holding his hand. Frame them the same way; the second one has someone in the empty seat.
+- Pappa's words lead straight into the mirror promise: "ചെറിയൊരു അധ്യായം മാത്രം" becomes "എല്ലാത്തിനും തുടക്കമാണ്".
