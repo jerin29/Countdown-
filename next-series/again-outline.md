@@ -19,7 +19,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 | 2 | വിയർപ്പ് | A whole year of practice, not in the main team yet |
 | 3 | മെയിൻ ടീം | Plus Two: main team; junior selection |
 | 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram"; a first hint of tension between the sirs |
-| 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; tears on the bench |
+| 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; tears on the bench. **Then Pappa calls on his Samsung keypad phone: "എത്തിയോ? കളിക്കാൻ ഇറങ്ങിയോ?" Heart pounding, he can't say it. He looks into the washroom mirror, eyes full, and says: "ഇറങ്ങാൻ പോവാ പപ്പാ."** (real) |
 | 6 | കണ്ണാടി | Back home, the mirror scene (midpoint) |
 | 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs; a handball selection he can't go to because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
 | 8 | ഒരു സെക്കൻഡ് | The Army test after 1.5 years of training: he misses it by **one second**. He doesn't break. |
@@ -56,3 +56,5 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
   - Ep12: team bonding: the new team crammed around one phone watching a movie after practice.
 - **Aadhi's jersey number: 23** (the creator's real number). Use it on every jersey (school and college), in the Ep5 bench close-up, and on the AGAIN poster/cover.
 - **Posters (27 Nov, creator's choice):** Poster A (jump shot, `poster/AGAIN_poster_A_jump.jpg`) = **title song cover**. Poster B (dawn, `poster/AGAIN_poster_B_dawn.jpg`) = **episode cover style** (each episode's cover uses B's look: same title block, episode number and name).
+- **The two mirrors (real, 27 Nov):** Ep5, at the venue, he looks into a mirror and hides the truth from Pappa ("ഇറങ്ങാൻ പോവാ പപ്പാ"). Ep6, at home, he looks into a mirror and tells himself the truth ("ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്"). Same framing for both shots. 2019 details: Samsung keypad phone, no internet, the old ringtone.
+- He calls his father **Pappa** (use "പപ്പ" everywhere, not "Achan").
