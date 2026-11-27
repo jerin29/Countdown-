@@ -116,3 +116,4 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 ## Language focus (decided 27 Nov)
 - Malayalam only for now (COUNTDOWN and One Reply). Hindi and Tamil are paused because they get no reach; pick them back up once the ML page reaches a good audience.
 - Covers: `tools/covers.py` makes `covers/ONE_REPLY_cover_{song,ep01,ep02,ep03}.jpg` (title text kept inside the 3:4 grid crop).
+- Heroine name: the creator confirmed (27 Nov) to keep **Manjusha**, knowing it matches the real person's name.
