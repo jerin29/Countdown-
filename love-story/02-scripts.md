@@ -66,20 +66,20 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 4 · ഒരു റിപ്ലൈ (One Reply) 🤍 — the happiest episode
-**Hook:** the notification: *manjusha.dances: "Thank you so much for the support 🤍"*
+## Episode 4 · ഒരു റിപ്ലൈ (One Reply) 🤍 — the happiest episode ✅ (made)
+**Based on the real reply:** a 9-second voice message, the day after (15 Jan). Manjusha's voice is an AI voice (ElevenLabs "Amara"), never the real recording.
+**Hook:** lock screen 2:14 AM: *manjusha.dances sent you a voice message*.
 | Time | Picture | Voice / sound |
 |---|---|---|
-| 0:02 | 2:14 AM. The notification arrives. He freezes | AADHI (whisper): "...അവൾ." *(...her.)* |
-| 0:08 | He reads it. Again. Again. Screenshot. Again. | "ഒരു വരി. ഏഴു വാക്ക്." *(One line. Seven words.)* |
-| 0:16 | He gets out of bed, does a silly happy dance in the dark room | Full love theme, flute + humming, claps. |
-| 0:26 | Calls Kiran at 2 AM, Kiran half asleep | KIRAN: "എടാ, രണ്ടു മണിയാ!" · AADHI: "അവൾ റിപ്ലൈ ചെയ്തു!" *(Da, it's 2 AM! / She replied!)* |
-| 0:36 | Morning montage: everything is bright — the bus, the rain, the tea, strangers smiling | "അന്ന് ലോകം മുഴുവൻ മാറിയത് പോലെ." *(That day the whole world felt different.)* |
-| 0:50 | He reads the message "100 times" (counter in his head, shown as his smile growing) | Humming duet. |
-| 1:00 | He replies: *"Thank you for replying! You don't know what it means 🙏"* → *Seen* | Music softens. |
-| 1:08 | No reply. He's still smiling | "സാരമില്ല. ഒരു റിപ്ലൈ മതി." *(It's okay. One reply is enough.)* |
-| 1:14 | **CLIFF:** her new story pops up: *"Birthday week 🎂 · 25 on the 12th!"* — his thumb stops | Music lifts on a question. |
-**Images (9):** notification moment · reading wide-eyed · happy dance (clip) · Kiran sleepy on call · bright morning montage (2) · smiling at phone · her birthday story (Manjusha image) · his thumb pausing. **Clip:** the happy dance.
+| 0:02 | He freezes (heartbeat) | AADHI (whisper): "...അവൾ." |
+| 0:07 | Her chat: his long message, then her voice note. He taps play | MANJUSHA: "Thank you, thank you so much... അറിഞ്ഞതിൽ ഒരുപാട് സന്തോഷം, സപ്പോർട്ട് ചെയ്യുന്നതിനൊക്കെ. ഇപ്പോഴാ കണ്ടത്, ആ പേജിൽ അയച്ചത്. Thank you, God bless you!" |
+| 0:18 | He plays it again; smiling | AADHI: "ഒമ്പത് സെക്കൻഡ്... അവളുടെ ശബ്ദം." |
+| 0:25 | Happy dance in the dark (clip), then a play counter x2 → x100 | Full love theme. |
+| 0:36 | 2 AM call | KIRAN: "എടാ... രണ്ടു മണിയാ!" · AADHI: "അവൾ റിപ്ലൈ ചെയ്തു!" · KIRAN: "ഏഹ്?! അവൾ റിപ്ലൈ ചെയ്തോ?!" |
+| 0:47 | Bright morning: bus, rainbow street, tea shop | AADHI: "അന്ന് ലോകം മുഴുവൻ മാറിയത് പോലെ." |
+| 1:06 | He replies "Thank you for replying! You don't know what it means :)" → Seen | Music softens. |
+| 1:12 | Rooftop, night | "സാരമില്ല. ഒരു റിപ്ലൈ മതി." |
+| 1:18 | **CLIFF:** her story: *Birthday week! · 25 on the 12th* — his thumb holds | Music lifts on a question. |
 
 ---
 
