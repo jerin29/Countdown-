@@ -83,7 +83,7 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 5 · അടുത്തേക്ക് (Getting Closer)
+## Episode 5 · അടുത്തേക്ക് (Getting Closer) ✅ (made)
 **Hook:** a video paused on her face; he zooms into the background.
 | Time | Picture | Voice / sound |
 |---|---|---|
