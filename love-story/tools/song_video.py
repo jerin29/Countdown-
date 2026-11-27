@@ -112,6 +112,44 @@ def over(fr, layer, a):
     return fr * (1 - al) + layer[..., [2, 1, 0]] * al
 
 
+# lyric lines (start, end, text) from the song's speech-to-text, spelled as in the lyrics sheet
+LYRICS = [
+    (12.3, 20.3, 'രാത്രി രണ്ടു മണിക്ക് സ്ക്രീനിൻ വെളിച്ചം\nഒരു റീലിൽ നിന്നെ കണ്ടു ഞാൻ'),
+    (21.3, 26.3, 'ഒരു ചിരിയിൽ നിന്നുപോയി എൻ ലോകം'), (26.7, 30.0, 'വീണ്ടും വീണ്ടും കണ്ടു ഞാൻ'),
+    (31.5, 37.2, 'ആയിരം പേർ നോക്കും നിന്നെ\nഅതിലൊരാൾ മാത്രം ഞാൻ'),
+    (38.7, 45.1, 'എങ്കിലും എൻ മനസ്സു പറഞ്ഞു\nഒന്ന് പറഞ്ഞു നോക്കാം'),
+    (45.3, 53.8, 'ഒരു റിപ്ലൈ… ഒരു വരി മതി\nഎൻ രാവുകൾ പൂത്തു വിടരാൻ'),
+    (54.9, 61.3, 'ഒരു റിപ്ലൈ… നിൻ ഒരു വാക്ക്\nഎൻ ഹൃദയം പാടി നടക്കാൻ'), (62.1, 65.0, 'ഒരു റിപ്ലൈ… ഒരു റിപ്ലൈ…'),
+    (69.6, 78.2, 'നന്ദി എന്ന ചെറിയൊരു വാക്ക്\nനൂറു വട്ടം വായിച്ചു ഞാൻ'),
+    (78.9, 87.2, 'ഒരു മെസ്സേജിൽ ഒരു മഴവില്ല്\nഇന്നലെ വരെ ഇല്ലാത്തൊരു ഞാൻ'),
+    (89.2, 96.1, 'ദൂരെ ദൂരെ നീ നിൽക്കുമ്പോഴും\nഅരികിലാണെന്നു തോന്നും'),
+    (96.3, 102.8, 'ഒരു നോട്ടിഫിക്കേഷൻ കേട്ടാൽ മതി\nഉള്ളിൽ പൂക്കൾ വിടരും'),
+    (103.2, 111.5, 'ഒരു റിപ്ലൈ… ഒരു വരി മതി\nഎൻ രാവുകൾ പൂത്തു വിടരാൻ'),
+    (112.8, 119.3, 'ഒരു റിപ്ലൈ… നിൻ ഒരു വാക്ക്\nഎൻ ഹൃദയം പാടി നടക്കാൻ'), (120.0, 122.8, 'ഒരു റിപ്ലൈ… ഒരു റിപ്ലൈ…'),
+    (127.2, 135.0, 'ചില ഇഷ്ടങ്ങൾ പറയേണ്ട\nചില ഇഷ്ടങ്ങൾ കാക്കേണ്ട'),
+    (137.1, 145.3, 'ദൂരെ നിന്നു നീ ചിരിച്ചാൽ മതി\nഅതു മതി… അതു മതി…'),
+    (146.6, 154.8, 'ഒരു റിപ്ലൈ… ഒരു വരി മതി\nഎൻ രാവുകൾ പൂത്തു വിടരാൻ'),
+    (156.1, 161.0, 'ഒരു റിപ്ലൈ… നിൻ ഒരു വാക്ക്\nഎൻ ഹൃദയം പാടി നടക്കാൻ'),
+    (161.0, 166.0, 'ചില ഇഷ്ടങ്ങൾ… ഒരു റിപ്ലൈയിൽ പൂർണം'), (168.0, 174.6, 'ഒരു റിപ്ലൈ… ഒരു റിപ്ലൈ…'),
+]
+SHOW_LYRICS = False
+
+
+@functools.lru_cache(maxsize=None)
+def lyric_layer(text):
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    f = ImageFont.truetype(F_ML.format('Bold'), 50, layout_engine=ImageFont.Layout.RAQM)
+    lines = text.split('\n'); y0 = 1560 - (len(lines) - 1) * 40
+    d.rounded_rectangle([60, y0 - 52, W - 60, y0 + len(lines) * 80 - 28], 26, fill=(0, 0, 0, 105))
+    for i, ln in enumerate(lines):
+        y = y0 + i * 80; fs = 50
+        while fs > 34 and d.textlength(ln, font=ImageFont.truetype(F_ML.format('Bold'), fs, layout_engine=ImageFont.Layout.RAQM)) > W - 170: fs -= 2
+        fl = ImageFont.truetype(F_ML.format('Bold'), fs, layout_engine=ImageFont.Layout.RAQM)
+        for dx, dy in [(0, 3), (2, 2), (-2, 2)]: d.text((540 + dx, y + dy), ln, font=fl, fill=(0, 0, 0, 170), anchor='mm')
+        d.text((540, y), ln, font=fl, fill=(255, 246, 228, 255), anchor='mm')
+    return np.asarray(im, np.float32) / 255
+
+
 def frame(t):
     cur = [i for i, s in enumerate(SHOTS) if s[0] <= t < s[1]] or [len(SHOTS) - 1]
     i = cur[0]
@@ -123,13 +161,20 @@ def frame(t):
     # title + release cards
     if t < 12.4: fr = over(fr, card('title'), ease((t - 2.0) / 1.2) * (1 - ease((t - 10.4) / 1.4)))
     if t > 168.4: fr = over(fr, card('end'), ease((t - 169.0) / 1.2))
+    if SHOW_LYRICS:
+        for a, b, txt in LYRICS:
+            if a - .3 <= t < b + .3: fr = over(fr, lyric_layer(txt), ease((t - a + .3) / .35) * (1 - ease((t - b) / .3)))
     # fade in/out
     fr = fr * ease(t / 1.2) * (1 - ease((t - (DUR - 2.0)) / 2.0))
     return np.clip(fr, 0, 1)
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('--sheet'); ap.add_argument('--out', default=OUT); a = ap.parse_args()
+    global SHOW_LYRICS
+    ap = argparse.ArgumentParser(); ap.add_argument('--sheet'); ap.add_argument('--out', default=OUT)
+    ap.add_argument('--lyrics', action='store_true'); ap.add_argument('--teaser', action='store_true'); a = ap.parse_args()
+    SHOW_LYRICS = a.lyrics
+    if a.teaser: return teaser(a.out)
     if a.sheet:
         ts = [float(x) for x in a.sheet.split(',')]
         cells = [cv2.resize((frame(t) * 255).astype(np.uint8), (216, 384)) for t in ts]
@@ -144,6 +189,39 @@ def main():
     for n in range(int(DUR * FPS)):
         ff.stdin.write((frame(n / FPS) * 255).astype(np.uint8).tobytes())
     ff.stdin.close(); ff.wait(); print('wrote', a.out)
+
+
+@functools.lru_cache(maxsize=None)
+def teaser_card():
+    im = Image.new('RGBA', (W, H), (8, 10, 22, 235)); d = ImageDraw.Draw(im)
+    ml = lambda w, sz: ImageFont.truetype(F_ML.format(w), sz, layout_engine=ImageFont.Layout.RAQM)
+    en = lambda w, sz: ImageFont.truetype(F_IN.format(w), sz)
+    d.text((540, 760), 'ഒരു റിപ്ലൈ', font=ml('Bold', 150), fill=(250, 236, 210, 255), anchor='mm')
+    d.text((540, 920), 'ടൈറ്റിൽ സോങ്', font=ml('Regular', 60), fill=(235, 225, 210, 255), anchor='mm')
+    d.text((540, 1010), 'December 31 · 9 PM', font=en('SemiBold', 52), fill=(245, 205, 140, 255), anchor='mm')
+    d.text((540, 1120), 'എപ്പിസോഡ് 1 · January 1', font=ml('Regular', 46), fill=(210, 204, 192, 255), anchor='mm')
+    return np.asarray(im, np.float32) / 255
+
+
+def teaser(out):
+    """60 s teaser: verse 1 → first chorus (song 12.0–66.0), then a 'December 31' card."""
+    global SHOW_LYRICS
+    SHOW_LYRICS = True
+    s0, s1, CARD = 12.0, 66.0, 5.0
+    T = (s1 - s0) + CARD
+    wav = out.replace('.mp4', '.wav')
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(s0), '-t', str(s1 - s0 + CARD), '-i', SONG,
+                    '-af', f'afade=t=in:d=.6,afade=t=out:st={s1 - s0 - .5}:d={CARD + .4},loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', wav], check=True)
+    ff = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-', '-i', wav,
+                           '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
+                           '-level', '4.0', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', out], stdin=subprocess.PIPE)
+    for n in range(int(T * FPS)):
+        lt = n / FPS; t = s0 + min(lt, s1 - s0 - .01)
+        fr = frame(t) if lt > .1 else frame(t) * 0
+        fr = fr * ease(lt / .4)
+        if lt > s1 - s0 - .6: fr = over(fr, teaser_card(), ease((lt - (s1 - s0 - .6)) / .8))
+        ff.stdin.write((np.clip(fr, 0, 1) * 255).astype(np.uint8).tobytes())
+    ff.stdin.close(); ff.wait(); print('wrote', out)
 
 
 if __name__ == '__main__':
