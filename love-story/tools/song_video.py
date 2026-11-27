@@ -211,7 +211,7 @@ def teaser(out):
     T = (s1 - s0) + CARD
     wav = out.replace('.mp4', '.wav')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(s0), '-t', str(s1 - s0 + CARD), '-i', SONG,
-                    '-af', f'afade=t=in:d=.6,afade=t=out:st={s1 - s0 - .5}:d={CARD + .4},loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', wav], check=True)
+                    '-af', f'afade=t=in:d=0.6,afade=t=out:st={s1 - s0 - .5}:d={CARD + .4},loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', wav], check=True)
     ff = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-', '-i', wav,
                            '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
                            '-level', '4.0', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', out], stdin=subprocess.PIPE)
