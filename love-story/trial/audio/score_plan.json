@@ -1,0 +1,12 @@
+{
+ "positive_global_styles": ["instrumental romantic film score", "Malayalam indie film background music", "warm intimate late-night mood", "piano, nylon acoustic guitar, soft strings", "C major", "cinematic, emotional, gentle"],
+ "negative_global_styles": ["vocals", "singing", "choir", "EDM drop", "heavy drums", "horror", "distorted guitar"],
+ "sections": [
+  {"section_name": "2 AM alone", "positive_local_styles": ["solo felt piano", "sparse, lonely", "slow tempo", "soft rain ambience feel", "intimate"], "negative_local_styles": ["drums", "strings"], "duration_ms": 9000, "lines": []},
+  {"section_name": "Scrolling", "positive_local_styles": ["lo-fi soft beat", "muted plucks", "repetitive, monotone, ticking", "same piano motif"], "negative_local_styles": ["strings swell"], "duration_ms": 8000, "lines": []},
+  {"section_name": "Her reel", "positive_local_styles": ["warm nylon guitar enters", "soft strings swell", "heart-flutter romantic theme blooms", "magical, tender, hopeful"], "negative_local_styles": ["sad", "dark"], "duration_ms": 16000, "lines": []},
+  {"section_name": "Replay again and again", "positive_local_styles": ["gentle romantic groove", "piano and guitar together", "light brushed percussion", "dreamy, smiling, playful"], "negative_local_styles": ["heavy drums"], "duration_ms": 22000, "lines": []},
+  {"section_name": "What would I even say", "positive_local_styles": ["slower, tender", "solo piano with soft pads", "longing, hesitant, bittersweet"], "negative_local_styles": ["percussion"], "duration_ms": 19000, "lines": []},
+  {"section_name": "Sent", "positive_local_styles": ["music thins to one low sustained piano note and soft pad", "suspense, held breath", "fade to near silence"], "negative_local_styles": ["melody", "percussion"], "duration_ms": 6000, "lines": []}
+ ]
+}

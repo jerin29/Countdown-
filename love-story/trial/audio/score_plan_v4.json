@@ -1,0 +1,14 @@
+{
+ "positive_global_styles": ["instrumental only", "feel-good romantic background score", "warm Malayalam rom-com film BGM", "one memorable love theme melody that returns", "acoustic guitar, romantic piano, warm strings, flute, light glockenspiel", "C major, bright and happy", "sweet, smiling, butterflies in the stomach", "polished cinematic production"],
+ "negative_global_styles": ["vocals", "singing", "humming", "choir", "sad", "minor key", "dark", "horror", "heavy drums", "EDM", "aggressive"],
+ "sections": [
+  {"section_name": "Cozy night intro", "positive_local_styles": ["soft romantic piano introduces the love theme", "gentle acoustic guitar", "cozy, warm, sweet"], "negative_local_styles": ["drums"], "duration_ms": 15000, "lines": []},
+  {"section_name": "First sight of her", "positive_local_styles": ["love theme blooms on flute with lush warm strings", "glockenspiel sparkle", "magical, heart skipping a beat, joyful romance"], "negative_local_styles": ["sad"], "duration_ms": 14000, "lines": []},
+  {"section_name": "Watching again and again", "positive_local_styles": ["feel-good light groove", "bright guitar strums, soft claps and shaker, piano", "playful, happy, smiling, in love"], "negative_local_styles": ["heavy drums"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Her profile", "positive_local_styles": ["sweet admiring melody on violin and glockenspiel", "light and charming"], "negative_local_styles": ["percussion"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Shy typing", "positive_local_styles": ["cute playful pizzicato strings and soft piano", "shy, nervous but sweet, smiling"], "negative_local_styles": ["heavy"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Lying awake in love", "positive_local_styles": ["love theme returns on flute with warm strings swelling gently", "dreamy, warm, happy"], "negative_local_styles": ["drums"], "duration_ms": 9000, "lines": []},
+  {"section_name": "Sent", "positive_local_styles": ["music softly stops on one sustained piano note", "held breath", "fade to near silence"], "negative_local_styles": ["melody", "percussion"], "duration_ms": 5600, "lines": []},
+  {"section_name": "Title card", "positive_local_styles": ["love theme returns warmly on piano and strings", "hopeful, sweet resolution, gentle ending"], "negative_local_styles": ["drums"], "duration_ms": 6400, "lines": []}
+ ]
+}

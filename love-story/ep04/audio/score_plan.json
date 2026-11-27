@@ -1,0 +1,143 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel",
+  "84 BPM, 4/4, warm major key, I-V-vi-IV",
+  "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)",
+  "bansuri flute carries the sweet romantic melody",
+  "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass",
+  "glockenspiel sparkle, gentle string swells",
+  "tender, dreamy, deeply romantic, falling in love, intimate and warm"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "heavy drums",
+  "EDM",
+  "dark",
+  "sad",
+  "horror",
+  "rock",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Frozen at 2 AM",
+   "positive_local_styles": [
+    "near silence, one soft held piano note and a faint warm pad",
+    "breathless, stunned, suspense"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "melody"
+   ],
+   "duration_ms": 7000,
+   "lines": []
+  },
+  {
+   "section_name": "Her voice",
+   "positive_local_styles": [
+    "very soft warm pad and gentle music-box notes, lots of space",
+    "tender, magical, quiet"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "humming",
+    "busy"
+   ],
+   "duration_ms": 13000,
+   "lines": []
+  },
+  {
+   "section_name": "It sinks in",
+   "positive_local_styles": [
+    "female humming swells in with bansuri flute, rising, heart bursting"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": [
+    "Hmm hmm... aah..."
+   ]
+  },
+  {
+   "section_name": "Happy dance",
+   "positive_local_styles": [
+    "full joyful love theme, claps, snaps, shaker, bansuri flute lead, male and female humming duet, bouncy groove",
+    "euphoric, silly, happiest moment"
+   ],
+   "negative_local_styles": [
+    "heavy drums",
+    "EDM"
+   ],
+   "duration_ms": 11000,
+   "lines": [
+    "Ooh... hmm hmm hmm..."
+   ]
+  },
+  {
+   "section_name": "2 AM phone call",
+   "positive_local_styles": [
+    "playful pizzicato strings and plucked guitar, light comic groove",
+    "funny, cheeky"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "Bright morning",
+   "positive_local_styles": [
+    "full warm romantic theme, sunlit acoustic guitar, flute melody, humming duet, glockenspiel, string swells",
+    "the whole world feels new, glowing happiness"
+   ],
+   "negative_local_styles": [
+    "dark",
+    "heavy drums"
+   ],
+   "duration_ms": 19000,
+   "lines": [
+    "Aah... hmm hmm..."
+   ]
+  },
+  {
+   "section_name": "Seen",
+   "positive_local_styles": [
+    "music softens, tender solo guitar and soft flute",
+    "content, gentle smile"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "busy"
+   ],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "Her birthday story",
+   "positive_local_styles": [
+    "music lifts on a questioning suspended chord, glockenspiel shimmer"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 3000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "warm gentle love theme tail, soft humming, fade out"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 6000,
+   "lines": [
+    "Hmm..."
+   ]
+  }
+ ]
+}

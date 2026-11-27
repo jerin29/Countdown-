@@ -1,0 +1,133 @@
+{
+ "positive_global_styles": [
+  "subtle Malayalam film drama underscore",
+  "cold, quiet, tense, real-life unease",
+  "soft strings, sparse piano, low pads"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "romantic",
+  "love song",
+  "humming",
+  "happy",
+  "drums",
+  "EDM",
+  "horror jump scares"
+ ],
+ "sections": [
+  {
+   "section_name": "A letter falls",
+   "positive_local_styles": [
+    "single soft piano note, faint high string"
+   ],
+   "negative_local_styles": [
+    "melody"
+   ],
+   "duration_ms": 3000,
+   "lines": []
+  },
+  {
+   "section_name": "Ordinary afternoon",
+   "positive_local_styles": [
+    "light, neutral, gentle acoustic guitar and soft marimba, everyday calm, no romance"
+   ],
+   "negative_local_styles": [
+    "romantic",
+    "sad"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Opening the parcel",
+   "positive_local_styles": [
+    "curious light pizzicato, soft, a little warm"
+   ],
+   "negative_local_styles": [
+    "romantic"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "The letter",
+   "positive_local_styles": [
+    "soft but cold sustained strings, slow, the warmth drains away"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "How does he know",
+   "positive_local_styles": [
+    "low cello drone, sparse unsettled piano notes"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "melody"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Amma reads",
+   "positive_local_styles": [
+    "tense quiet strings, slow pulse, worry"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 14000,
+   "lines": []
+  },
+  {
+   "section_name": "Locking the gate at night",
+   "positive_local_styles": [
+    "dark ambient pad, slow low heartbeat-like pulse, unease"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "melody"
+   ],
+   "duration_ms": 11000,
+   "lines": []
+  },
+  {
+   "section_name": "Searching her messages",
+   "positive_local_styles": [
+    "tense high string tremolo, very quiet, building slowly"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 12000,
+   "lines": []
+  },
+  {
+   "section_name": "Police",
+   "positive_local_styles": [
+    "suspended dissonant string chord that stops abruptly"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 7000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "sparse sad piano, distant, unresolved"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "positive_global_styles": ["modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel", "84 BPM, 4/4, warm major key, I-V-vi-IV", "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)", "bansuri flute carries the sweet romantic melody", "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass", "glockenspiel sparkle, gentle string swells", "tender, dreamy, deeply romantic, falling in love, intimate and warm"],
+ "negative_global_styles": ["lyrics", "words", "heavy drums", "EDM", "dark", "sad", "horror", "rock", "busy"],
+ "sections": [
+  {"section_name": "Intro", "positive_local_styles": ["soft female humming over warm pads and plucked guitar", "flute answers the humming", "dreamy, intimate, night"], "negative_local_styles": ["percussion"], "duration_ms": 15000, "lines": ["Hmm... hmm hmm... hmm...", "Ooh... ooh..."]},
+  {"section_name": "First sight", "positive_local_styles": ["male humming joins the female humming in harmony", "flute plays the love melody, glockenspiel twinkles, strings rise", "heart melting, magical"], "negative_local_styles": ["heavy"], "duration_ms": 14000, "lines": ["Hmm hmm... hmm...", "Aah... aah..."]},
+  {"section_name": "Again and again", "positive_local_styles": ["gentle romantic groove with snaps and soft shaker", "flute melody and humming duet together", "sweet, smiling"], "negative_local_styles": ["heavy drums"], "duration_ms": 11000, "lines": ["Ooh... ooh... hmm..."]},
+  {"section_name": "Her world", "positive_local_styles": ["long expressive bansuri flute solo, soft strings and pads", "admiring her from far, tender longing"], "negative_local_styles": ["drums"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Shy", "positive_local_styles": ["soft female humming with light guitar and snaps", "short flute replies", "shy, sweet"], "negative_local_styles": ["strings"], "duration_ms": 11000, "lines": ["Hmm... hmm..."]},
+  {"section_name": "In love", "positive_local_styles": ["humming duet and flute together on the love melody, strings swell warmly", "most romantic moment, glowing"], "negative_local_styles": ["heavy drums"], "duration_ms": 10000, "lines": ["Aah... aah... ooh...", "Hmm..."]},
+  {"section_name": "Stop", "positive_local_styles": ["everything stops, one soft pad holds", "fade to near silence"], "negative_local_styles": ["percussion", "melody", "humming"], "duration_ms": 4600, "lines": []},
+  {"section_name": "Outro", "positive_local_styles": ["soft female humming and flute on the love melody with lone guitar", "warm sweet ending"], "negative_local_styles": ["drums"], "duration_ms": 6400, "lines": ["Hmm... hmm..."]}
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "positive_global_styles": ["deeply romantic Malayalam film background score", "love theme", "bansuri flute lead melody", "lush warm string section", "romantic grand piano", "soft acoustic guitar", "slow ballad 72 BPM", "C major", "heart-melting, tender, swooning", "cinematic love story"],
+ "negative_global_styles": ["vocals", "singing", "choir", "dark", "horror", "heavy drums", "EDM", "tense"],
+ "sections": [
+  {"section_name": "Night love theme", "positive_local_styles": ["romantic piano opening with a gentle bansuri flute melody", "warm strings softly underneath", "dreamy, longing, sweet"], "negative_local_styles": ["drums"], "duration_ms": 16000, "lines": []},
+  {"section_name": "Love theme full", "positive_local_styles": ["full romantic love theme", "flute melody over lush swelling strings and piano", "soft tabla-like hand percussion", "falling in love, glowing"], "negative_local_styles": ["sad"], "duration_ms": 28000, "lines": []},
+  {"section_name": "Her profile", "positive_local_styles": ["tender violin solo with piano", "admiring, shy smile, sweet longing"], "negative_local_styles": ["percussion"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Typing and deleting", "positive_local_styles": ["soft piano with light pizzicato strings", "shy, nervous but sweet, romantic"], "negative_local_styles": ["heavy"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Can't sleep, in love", "positive_local_styles": ["flute returns with the love theme, warm strings swell gently", "dreamy, smiling at the ceiling, in love"], "negative_local_styles": ["drums"], "duration_ms": 8000, "lines": []},
+  {"section_name": "Sent", "positive_local_styles": ["music softly stops on a single sustained piano note", "held breath", "fade to near silence"], "negative_local_styles": ["melody", "percussion"], "duration_ms": 5000, "lines": []}
+ ]
+}

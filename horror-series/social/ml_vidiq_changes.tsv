@@ -1,0 +1,13 @@
+ml	S1E6	fa5f642e-80a0-4af7-8d27-a97b1b43e573	ee8f46cf-db3e-4cf4-a5d6-8db0e4deaf39
+ml	S1E7	81cf6c6d-e319-4278-9224-c88d26ef29a0	12332166-88e5-485e-858d-0ea7efcf91a7
+ml	S1E8	64bf4ec1-7308-41b7-be52-d606fd994064	4e59a11c-bea0-44c9-ba23-5583faa5ff01
+ml	S1E9	e2e3db7c-4f24-432b-afe5-b28f6594f844	c027e05c-08da-44b9-8047-90e76e7386c4
+ml	S1E10	705f2b01-83a0-492b-81ed-ec7af274f2bf	e1fbd1da-abd4-43de-8820-55a4a1f5d564
+ml	S2E1	c80a21ac-5ab4-4c5b-a25f-7119c92cb9d4	13084dd3-dea4-45f5-bdcc-594a3bff8278
+ml	S2 gap teaser	7fc2c4be-dd72-4dae-9271-856f765bdb04	46f0c27a-7dfa-4bae-be61-6e9d28c8aba3	2026-12-05T15:30:00Z	scheduled
+ml	S1E6 short	fa5f642e-80a0-4af7-8d27-a97b1b43e573	e5e7fc2b-2c39-40b1-9153-7d0ad4c5ea59	2026-11-27T15:30:00Z	scheduled
+ml	S1E7 short	81cf6c6d-e319-4278-9224-c88d26ef29a0	236e1507-e2c8-4ff6-8fec-20fd15b2688b	2026-11-28T15:30:00Z	scheduled
+ml	S1E8 short	64bf4ec1-7308-41b7-be52-d606fd994064	40e29e9b-f401-42f0-9589-54824c75ca77	2026-11-29T15:30:00Z	scheduled
+ml	S1E9 short	e2e3db7c-4f24-432b-afe5-b28f6594f844	5ed49352-58c3-41e0-b21f-d36e6b2bde80	2026-11-30T15:30:00Z	scheduled
+ml	S1E10 short	705f2b01-83a0-492b-81ed-ec7af274f2bf	fdb8b0a2-7e24-4699-a521-25ac64efa0cb	2026-12-01T15:30:00Z	scheduled
+ml	S1E6-10	reverted to full 90 s hook versions (ee8f46cf, 12332166, 4e59a11c, c027e05c, e1fbd1da) at user's request		27 Nov-1 Dec	scheduled

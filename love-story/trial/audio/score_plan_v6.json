@@ -1,0 +1,14 @@
+{
+ "positive_global_styles": ["romantic film love theme", "ONE short memorable 4-bar love melody (leitmotif) that keeps returning in every section", "bittersweet romantic harmony: major key with the borrowed minor iv chord and flat-VI chord, suspensions and appoggiaturas that resolve late, longing", "slow, rubato, 66 BPM", "intimate solo piano, high soaring strings, bamboo flute, veena", "soft wordless female humming in places", "Malayalam romantic cinema background music", "tender, aching, beautiful, falling in love"],
+ "negative_global_styles": ["drums", "brass", "upbeat pop", "EDM", "horror", "lyrics", "words", "busy arrangement", "happy-go-lucky jingle"],
+ "sections": [
+  {"section_name": "Love theme on piano", "positive_local_styles": ["solo piano alone, slow and rubato", "states the love melody softly over I - vi - IV - iv", "intimate, 2 AM, lonely but warm"], "negative_local_styles": ["strings", "vocals"], "duration_ms": 15000, "lines": []},
+  {"section_name": "First sight of her", "positive_local_styles": ["soft wordless female humming sings the love melody", "high strings swell in underneath, piano arpeggios", "heart skips a beat, breathtaking, romantic"], "negative_local_styles": ["drums"], "duration_ms": 14000, "lines": ["Mmm... mmm... mmm...", "Aaa... aaa..."]},
+  {"section_name": "Watching her again", "positive_local_styles": ["bamboo flute plays the love melody", "gentle fingerpicked guitar pulse", "smiling, sweet, dreamy"], "negative_local_styles": ["vocals"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Her world", "positive_local_styles": ["solo violin plays the love melody, piano arpeggios", "admiring from far away, longing, bittersweet minor iv"], "negative_local_styles": ["vocals"], "duration_ms": 11000, "lines": []},
+  {"section_name": "What do I say", "positive_local_styles": ["sparse piano, fragments of the love melody that hesitate and do not resolve", "soft veena notes", "shy, nervous, tender"], "negative_local_styles": ["vocals", "strings swell"], "duration_ms": 11000, "lines": []},
+  {"section_name": "Awake, in love", "positive_local_styles": ["the full love melody returns, strings and piano together, gentle swell", "soft wordless female humming again", "most emotional moment, warm, glowing"], "negative_local_styles": ["drums"], "duration_ms": 10000, "lines": ["Aaa... mmm..."]},
+  {"section_name": "Sent", "positive_local_styles": ["everything stops except one held high string note", "held breath", "fade to silence"], "negative_local_styles": ["melody", "vocals"], "duration_ms": 4600, "lines": []},
+  {"section_name": "Title", "positive_local_styles": ["the love melody once more on solo piano, slow, resolving warmly", "gentle ending"], "negative_local_styles": ["vocals"], "duration_ms": 6400, "lines": []}
+ ]
+}

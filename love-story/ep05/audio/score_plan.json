@@ -1,0 +1,139 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel",
+  "84 BPM, 4/4, warm major key, I-V-vi-IV",
+  "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)",
+  "bansuri flute carries the sweet romantic melody",
+  "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass",
+  "glockenspiel sparkle, gentle string swells",
+  "tender, dreamy, deeply romantic, falling in love, intimate and warm"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "heavy drums",
+  "EDM",
+  "horror",
+  "rock",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Teasing friends",
+   "positive_local_styles": [
+    "light playful plucked guitar, finger snaps, pizzicato",
+    "cheeky, funny, bright"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "Age is just a number",
+   "positive_local_styles": [
+    "sweet romantic theme, bansuri flute, soft female humming, warm guitar",
+    "confident, tender, smiling"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 10000,
+   "lines": [
+    "Hmm hmm..."
+   ]
+  },
+  {
+   "section_name": "Watching her reels at night",
+   "positive_local_styles": [
+    "slower sweet love theme, soft piano and flute, gentle humming",
+    "dreamy, a little obsessive, late night"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "busy"
+   ],
+   "duration_ms": 12000,
+   "lines": [
+    "Ooh..."
+   ]
+  },
+  {
+   "section_name": "A gift",
+   "positive_local_styles": [
+    "tender solo guitar and soft flute, hopeful but unsure"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "The gate",
+   "positive_local_styles": [
+    "music thins out, a single sustained bansuri flute note over a soft low pad",
+    "something feels wrong, uneasy quiet"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "happy",
+    "humming"
+   ],
+   "duration_ms": 12000,
+   "lines": []
+  },
+  {
+   "section_name": "Searching the map",
+   "positive_local_styles": [
+    "quiet tense ticking pulse, low muted piano notes, uneasy suspended strings, no melody",
+    "tense, uneasy, a line is being crossed"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "romantic",
+    "humming",
+    "drums"
+   ],
+   "duration_ms": 12000,
+   "lines": []
+  },
+  {
+   "section_name": "Should you",
+   "positive_local_styles": [
+    "very soft low drone and a few hesitant piano notes",
+    "worried, heavy silence"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "happy"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Pen on paper",
+   "positive_local_styles": [
+    "near silence, a faint low hum fading out"
+   ],
+   "negative_local_styles": [
+    "melody",
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "soft sad piano with a faint distant flute echo of the love theme, unresolved"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  }
+ ]
+}

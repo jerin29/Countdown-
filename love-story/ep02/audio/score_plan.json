@@ -1,0 +1,117 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel",
+  "84 BPM, 4/4, warm major key, I-V-vi-IV",
+  "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)",
+  "bansuri flute carries the sweet romantic melody",
+  "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass",
+  "glockenspiel sparkle, gentle string swells",
+  "tender, dreamy, deeply romantic, falling in love, intimate and warm"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "heavy drums",
+  "EDM",
+  "dark",
+  "sad",
+  "horror",
+  "rock",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Morning blues",
+   "positive_local_styles": [
+    "soft solo piano with gentle female humming",
+    "a little sad but warm, rainy morning"
+   ],
+   "negative_local_styles": [
+    "percussion"
+   ],
+   "duration_ms": 10000,
+   "lines": [
+    "Hmm... hmm..."
+   ]
+  },
+  {
+   "section_name": "Her reel and comments",
+   "positive_local_styles": [
+    "bansuri flute plays the love melody lightly",
+    "cute shy pizzicato while typing",
+    "sweet, longing"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 18000,
+   "lines": []
+  },
+  {
+   "section_name": "Tea shop fun",
+   "positive_local_styles": [
+    "playful light groove, finger snaps, guitar strums, shaker",
+    "cheeky, friendly teasing, smiling"
+   ],
+   "negative_local_styles": [
+    "heavy drums"
+   ],
+   "duration_ms": 18000,
+   "lines": []
+  },
+  {
+   "section_name": "2 AM again",
+   "positive_local_styles": [
+    "soft female humming and flute over warm pads",
+    "dreamy, quiet night"
+   ],
+   "negative_local_styles": [
+    "percussion"
+   ],
+   "duration_ms": 12000,
+   "lines": [
+    "Ooh... hmm..."
+   ]
+  },
+  {
+   "section_name": "Discovery",
+   "positive_local_styles": [
+    "curious plucked guitar and glockenspiel building, strings slowly rising",
+    "anticipation, something is coming"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 16000,
+   "lines": []
+  },
+  {
+   "section_name": "Hope",
+   "positive_local_styles": [
+    "male and female humming duet with flute on the love melody, warm strings swell",
+    "hopeful peak"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": [
+    "Aah... aah..."
+   ]
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "flute and humming resolve the love theme warmly",
+    "gentle ending"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 6000,
+   "lines": [
+    "Hmm..."
+   ]
+  }
+ ]
+}
