@@ -99,8 +99,7 @@ def avatar(key, size):
 
 
 E.avatar = avatar
-# her name is now Manjusha: until the voice line can be re-recorded, drop the old "Nila…" line (the screen shows the name)
-E.VO = [v for v in E.VO if v[0] != 'v06']
+# v06 is re-recorded as "മഞ്ജുഷ. അഞ്ചു ലക്ഷം ഫോളോവേഴ്സ്." (27 Nov), so all Episode 1 lines play
 
 if __name__ == '__main__':
     if '--out' not in sys.argv: sys.argv += ['--out', E.R + '/out/ONE_REPLY_ep01_anime_ml_9x16.mp4']
