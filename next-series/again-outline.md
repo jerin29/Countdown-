@@ -26,7 +26,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 | 9 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
 | 10 | ഓപ്പൺ സെലക്ഷൻ | Inter-zone meet open selection, on his own: district team |
 | 11 | ചിരി | Not selected for state, but this time he played; he smiles |
-| 12 | ടീം | Starting the college handball team: boys AND girls |
+| 12 | ടീം | Starting the college handball team: boys AND girls. **Full-circle moment:** a junior girl stands at the edge of the court watching (like Aadhi in Ep1), then walks up: "ചേട്ടാ… എനിക്കും ചേരാമോ?" Aadhi smiles and gives the exact line his sir once gave him: "നാളെ രാവിലെ ആറു മണിക്ക് ഗ്രൗണ്ടിൽ വാ." |
 | 13 | Again | Leaving college; new juniors join both teams; 5 AM, he is still running toward new goals; mirror callback; final card: AGAIN |
 
 ## Rules
@@ -44,3 +44,8 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - ~12–13 Jan: AGAIN teaser with title song v1.
 - ~15 Jan: AGAIN Episode 1 "പന്ത്" (script draft in again-scripts.md; waiting for the creator's real details).
 - Then one episode per night at 9 PM IST (same slot).
+
+## Story notes (27 Nov)
+- Pattern: three falls, each answered more strongly: Malappuram (cries, mirror promise), the selection told the night before (runs next morning), Army test missed by one second (doesn't break, new goals).
+- Keep lighter moments between the falls (team jokes, practice fun, a friend); ask the creator for real funny team memories.
+- Ep1 and Ep12 must mirror each other shot for shot: the edge of the ground, the walk up, the question, "നാളെ രാവിലെ ആറു മണിക്ക് ഗ്രൗണ്ടിൽ വാ."
