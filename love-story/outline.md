@@ -107,3 +107,4 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 
 ## Scheduled
 - **31 Dec 2026, 9:00 PM IST** — title song (version 1, anime video, no lyrics) on @kili_poyi_ai via vidIQ. postId 90259a73-6f79-4495-a16e-29e7e4b5bc2b, upload 64ccbc5f-5cab-431a-be17-d1b05a10ec3e.
+- **28 Dec 2026, 9:00 PM IST** — 60 s song teaser (with lyrics) on @kili_poyi_ai via vidIQ. postId 6d6419d5-09de-4c59-b8d2-01be43e8f34a, upload 762f2b10-ebdd-4ded-ba0e-9c0109c8d435.
