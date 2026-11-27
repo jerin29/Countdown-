@@ -133,7 +133,7 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 8 · അയക്കാത്ത കത്ത് (The Letter He Never Sends)
+## Episode 8 · അയക്കാത്ത കത്ത് (The Letter He Never Sends) ✅ (made)
 **Hook:** his finger over **Send** on a very long note — then **Delete**.
 | Time | Picture | Voice / sound |
 |---|---|---|

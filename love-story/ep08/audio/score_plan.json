@@ -1,0 +1,124 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam film underscore, bittersweet and healing",
+  "slow, intimate, tender",
+  "solo piano, bansuri flute, soft strings, gentle humming later"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "EDM",
+  "rock",
+  "horror",
+  "heavy drums",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Delete",
+   "positive_local_styles": [
+    "single soft piano chord, held, rain-like stillness"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "melody"
+   ],
+   "duration_ms": 3000,
+   "lines": []
+  },
+  {
+   "section_name": "2:14 again",
+   "positive_local_styles": [
+    "slow solo piano, sad and quiet, heavy rain mood"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "happy"
+   ],
+   "duration_ms": 7000,
+   "lines": []
+  },
+  {
+   "section_name": "The letter",
+   "positive_local_styles": [
+    "tender slow solo piano melody, very intimate, regret and honesty"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "happy"
+   ],
+   "duration_ms": 18000,
+   "lines": []
+  },
+  {
+   "section_name": "Realisation",
+   "positive_local_styles": [
+    "piano thins to a few soft notes and a low string pad"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Letting go",
+   "positive_local_styles": [
+    "the romantic love theme played very slowly on a lone bansuri flute over soft piano, bittersweet"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "humming"
+   ],
+   "duration_ms": 14000,
+   "lines": []
+  },
+  {
+   "section_name": "Only this one",
+   "positive_local_styles": [
+    "flute and soft strings, a small warm moment, gentle"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "Dawn",
+   "positive_local_styles": [
+    "soft female humming returns gently with warm acoustic guitar and strings, morning light, healing"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "sad"
+   ],
+   "duration_ms": 10000,
+   "lines": [
+    "Hmm... aah..."
+   ]
+  },
+  {
+   "section_name": "Record",
+   "positive_local_styles": [
+    "music lifts with hope, warm strings swell, glockenspiel shimmer, a new beginning"
+   ],
+   "negative_local_styles": [
+    "heavy drums"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "gentle warm piano and flute tail, hopeful, resolved"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 6000,
+   "lines": []
+  }
+ ]
+}
