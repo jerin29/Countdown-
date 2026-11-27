@@ -12,15 +12,15 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - **Open selection at an inter-zone meet**: he goes on his own effort and makes the **district team**. Not selected for state, but happy.
 - **Leaving college, he starts the college handball team, a boys' team AND a girls' team**, still there; new students keep joining.
 
-## Season plan: 13 episodes (updated 27 Nov; the extra episode is real material, not filler)
+## Season plan: 13 episodes (final, chosen by the creator 27 Nov)
 | # | Title idea | Beat |
 |---|---|---|
 | 1 | പന്ത് | 2017, Plus One, new to a Kottayam school; watches the team train, asks the sir; first time holding a handball |
 | 2 | വിയർപ്പ് | A whole year of practice, not in the main team yet |
 | 3 | മെയിൻ ടീം | Plus Two: main team; junior selection |
 | 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram"; a first hint of tension between the sirs |
-| 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; tears on the bench. **Then Pappa calls on his Samsung keypad phone: "എത്തിയോ? കളിക്കാൻ ഇറങ്ങിയോ?" Heart pounding, he can't say it. He looks into the washroom mirror, eyes full, and says: "ഇറങ്ങാൻ പോവാ പപ്പാ."** (real) |
-| 6 | കണ്ണാടി | Back home he tells Pappa the truth. On the sit-out bench Pappa holds his hand: "പോട്ടെടാ, വിഷമിക്കണ്ട. നമുക്ക് അടുത്തത് ശരിയാക്കാം. ഇങ്ങനെ ഡൗൺ ആവരുത്. ലൈഫ് ഇനി ഒരുപാടുണ്ട്… അതിലെ ചെറിയൊരു അധ്യായം മാത്രമാണിത്." (real) That night, the mirror: "ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്." (midpoint) |
+| 5 | ബെഞ്ച് | Malappuram: arrives full of hope; sir takes his documents; the sirs argue; "you can't play"; the bench, eyes filling, the unopened food packet. **CLIFF: his keypad phone rings: "പപ്പ calling".** |
+| 6 | കണ്ണാടി | Pappa: "എത്തിയോ? കളിക്കാൻ ഇറങ്ങിയോ?" Washroom mirror, eyes full: "ഇറങ്ങാൻ പോവാ പപ്പാ." Home: on the sit-out bench he tells the truth; Pappa holds his hand: "പോട്ടെടാ… ലൈഫ് ഇനി ഒരുപാടുണ്ട്, ചെറിയൊരു അധ്യായം മാത്രമാണിത്." That night, the home mirror: "ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്." Both mirrors in one episode. (midpoint) |
 | 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs; a handball selection he can't go to because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
 | 8 | ഒരു സെക്കൻഡ് | The Army test after 1.5 years of training: he misses it by **one second**. He doesn't break. |
 | 9 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
