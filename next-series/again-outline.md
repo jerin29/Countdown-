@@ -7,26 +7,27 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - **Plus Two:** makes the main team, then junior selection, then **selected for the state team**, then the state-team selection coaching camp.
 - Then he learns the match is in **Malappuram**. There his sir takes his documents, then a problem between the sirs means **he isn't allowed to play**. In tears, he **can't even eat**; he watches the others from the bench.
 - Back home, in front of the mirror: "ഇത് എന്റെ അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്."
-- **College (engineering), years 1–2 (~1.5 years):** trains for the **Army**: early-morning runs, workouts, physical fitness every day. In between, a **selection comes up, but the sir isn't active and tells them only the night before**, so they miss it / don't get it. He keeps training anyway.
+- **College (engineering), years 1–2 (~1.5 years):** trains for the **Army**: early-morning runs, workouts, physical fitness every day. In between, a **handball selection comes up, but the sir isn't active and tells them only the night before, so he can't go**. The **Army test: he misses it by just 1 second.** He doesn't break; he keeps running toward new goals (still true today).
 -  **Third year: a new sir** joins (real name changed on screen), active in sports; the college team starts.
 - **Open selection at an inter-zone meet**: he goes on his own effort and makes the **district team**. Not selected for state, but happy.
 - **Leaving college, he starts the college handball team, a boys' team AND a girls' team**, still there; new students keep joining.
 
-## Season plan: 12 episodes (updated with the real story)
+## Season plan: 13 episodes (updated 27 Nov; the extra episode is real material, not filler)
 | # | Title idea | Beat |
 |---|---|---|
-| 1 | പന്ത് | Plus One, new to a Kottayam school; first time holding a handball; joins the team |
+| 1 | പന്ത് | 2017, Plus One, new to a Kottayam school; watches the team train, asks the sir; first time holding a handball |
 | 2 | വിയർപ്പ് | A whole year of practice, not in the main team yet |
 | 3 | മെയിൻ ടീം | Plus Two: main team; junior selection |
-| 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram" |
-| 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; watches from the bench |
+| 4 | സ്റ്റേറ്റ് | Selected for the state team; selection coaching camp; "it's in Malappuram"; a first hint of tension between the sirs |
+| 5 | ബെഞ്ച് | Malappuram: sir takes his documents; sirs' dispute; can't play; can't eat; tears on the bench |
 | 6 | കണ്ണാടി | Back home, the mirror scene (midpoint) |
-| 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs and workouts for 1.5 years; a selection missed because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
-| 8 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
-| 9 | ഓപ്പൺ സെലക്ഷൻ | Inter-zone meet open selection, on his own: district team |
-| 10 | ചിരി | Not selected for state, and he smiles |
-| 11 | ടീം | Starting the college handball team: boys AND girls |
-| 12 | Again | Leaving college; new juniors join both teams; mirror callback; final card: AGAIN |
+| 7 | ഓട്ടം | College years 1–2: Army dream, 5 AM runs; a handball selection he can't go to because the sir told them only the night before; next morning he runs AGAIN (2:14 AM One Reply cameo) |
+| 8 | ഒരു സെക്കൻഡ് | The Army test after 1.5 years of training: he misses it by **one second**. He doesn't break. |
+| 9 | പുതിയ സാർ | Third year: the new sports-loving sir arrives |
+| 10 | ഓപ്പൺ സെലക്ഷൻ | Inter-zone meet open selection, on his own: district team |
+| 11 | ചിരി | Not selected for state, but this time he played; he smiles |
+| 12 | ടീം | Starting the college handball team: boys AND girls |
+| 13 | Again | Leaving college; new juniors join both teams; 5 AM, he is still running toward new goals; mirror callback; final card: AGAIN |
 
 ## Rules
 - Change names of schools, colleges, coaches and teammates (the college sir's real name is NOT used on screen). Coaches are not villains: "adults' ego cost a kid his dream".
