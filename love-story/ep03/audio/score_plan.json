@@ -1,0 +1,128 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel",
+  "84 BPM, 4/4, warm major key, I-V-vi-IV",
+  "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)",
+  "bansuri flute carries the sweet romantic melody",
+  "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass",
+  "glockenspiel sparkle, gentle string swells",
+  "tender, dreamy, deeply romantic, falling in love, intimate and warm"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "heavy drums",
+  "EDM",
+  "dark",
+  "sad",
+  "horror",
+  "rock",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Nervous typing",
+   "positive_local_styles": [
+    "soft piano and shy pizzicato, light finger snaps",
+    "nervous, cute, hesitant"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 12000,
+   "lines": []
+  },
+  {
+   "section_name": "The message",
+   "positive_local_styles": [
+    "playful light groove, plucked guitar, glockenspiel twinkles on every line",
+    "funny, honest, innocent"
+   ],
+   "negative_local_styles": [
+    "heavy drums"
+   ],
+   "duration_ms": 22000,
+   "lines": []
+  },
+  {
+   "section_name": "Sent",
+   "positive_local_styles": [
+    "soft female humming bursts in with flute, joyful and embarrassed",
+    "butterflies"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 10000,
+   "lines": [
+    "Hmm hmm... ooh..."
+   ]
+  },
+  {
+   "section_name": "Waiting days",
+   "positive_local_styles": [
+    "light humming over gentle ticking guitar, a little lonely",
+    "waiting, hoping"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 12000,
+   "lines": [
+    "Hmm..."
+   ]
+  },
+  {
+   "section_name": "Kiran laughs",
+   "positive_local_styles": [
+    "bouncy comic groove, claps, cheeky",
+    "friends teasing"
+   ],
+   "negative_local_styles": [
+    "heavy drums"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Buzz",
+   "positive_local_styles": [
+    "everything drops to one soft held note",
+    "suspense"
+   ],
+   "negative_local_styles": [
+    "melody",
+    "percussion"
+   ],
+   "duration_ms": 6000,
+   "lines": []
+  },
+  {
+   "section_name": "Cliffhanger",
+   "positive_local_styles": [
+    "humming duet and flute burst in joyfully, strings swell",
+    "a dream coming true"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 6000,
+   "lines": [
+    "Aah... aah..."
+   ]
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "flute love theme resolves warmly"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 6000,
+   "lines": [
+    "Hmm..."
+   ]
+  }
+ ]
+}
