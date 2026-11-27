@@ -117,7 +117,7 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 7 · മുന്നറിയിപ്പ് (The Warning)
+## Episode 7 · മുന്നറിയിപ്പ് (The Warning) ✅ (made)
 **Hook:** Kiran bursting into Aadhi's room: "എടാ!"
 | Time | Picture | Voice / sound |
 |---|---|---|

@@ -1,0 +1,144 @@
+{
+ "positive_global_styles": [
+  "Malayalam film drama underscore",
+  "emotional, quiet, real-life guilt and realisation",
+  "soft piano, strings, low pads"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "EDM",
+  "rock",
+  "horror",
+  "heavy drums"
+ ],
+ "sections": [
+  {
+   "section_name": "Kiran bursts in",
+   "positive_local_styles": [
+    "sudden sharp string stab then silence"
+   ],
+   "negative_local_styles": [
+    "melody"
+   ],
+   "duration_ms": 3000,
+   "lines": []
+  },
+  {
+   "section_name": "Almost hopeful",
+   "positive_local_styles": [
+    "light hopeful acoustic guitar with a faint bansuri flute echo of the love theme, soft female humming, innocent"
+   ],
+   "negative_local_styles": [
+    "sad",
+    "drums"
+   ],
+   "duration_ms": 7000,
+   "lines": []
+  },
+  {
+   "section_name": "The question",
+   "positive_local_styles": [
+    "music drops to a nervous low pulse and tense pizzicato"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "romantic"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Police case",
+   "positive_local_styles": [
+    "dark low strings building tension, uneasy"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "romantic"
+   ],
+   "duration_ms": 12000,
+   "lines": []
+  },
+  {
+   "section_name": "Shock",
+   "positive_local_styles": [
+    "near silence, a faint high sustained tone"
+   ],
+   "negative_local_styles": [
+    "melody",
+    "drums"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "Her side flashback",
+   "positive_local_styles": [
+    "cold strings, distant heartbeat-like pulse, sorrow"
+   ],
+   "negative_local_styles": [
+    "happy",
+    "romantic"
+   ],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "Friend beside him",
+   "positive_local_styles": [
+    "gentle sad piano and warm cello, compassion, quiet"
+   ],
+   "negative_local_styles": [
+    "drums",
+    "happy"
+   ],
+   "duration_ms": 14000,
+   "lines": []
+  },
+  {
+   "section_name": "Alone",
+   "positive_local_styles": [
+    "solo piano, slow, lonely"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 4000,
+   "lines": []
+  },
+  {
+   "section_name": "Opening her profile",
+   "positive_local_styles": [
+    "very quiet tension, slow ticking piano notes"
+   ],
+   "negative_local_styles": [
+    "happy"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "User not found",
+   "positive_local_styles": [
+    "a single low piano note, then silence"
+   ],
+   "negative_local_styles": [
+    "melody"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "sparse sad piano with a very distant flute, unresolved"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  }
+ ]
+}
