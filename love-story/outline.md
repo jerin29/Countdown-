@@ -111,6 +111,7 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - **1 Jan 2027, 9:00 PM IST** — Episode 1 (anime, with Manjusha line). postId 57d1bc6d-a422-4505-8812-5ec36a3ca14c, upload 1a2bf70f-112e-45fa-9c02-d27dcc938d29.
 - **2 Jan 2027, 9:00 PM IST** — Episode 2 "ചുവര്" (anime). postId b9e5589e-6c1b-4abb-8f4b-cfc502489695, upload 899fec15-e2e5-4d8d-8334-302c6ae84541.
 - **3 Jan 2027, 9:00 PM IST** — Episode 3 "കൊളാബ് പേജ്" (anime). postId 0420c935-a84a-47d0-b599-7b69b10b3c6a, upload 2e9895bc-b9b6-4814-9bdd-d9361e098700. Caption promises Ep4 on 4 Jan.
+- **4 Jan 2027, 9:00 PM IST** — Episode 4 "ഒരു റിപ്ലൈ" (anime, real voice-message reply, AI voice "Amara"). postId 697e84c8-53d2-4634-ad2f-b1ffb484f614, upload b87abe7f-e3ca-4028-9f52-5f88b409bc22. Caption promises Ep5 on 5 Jan.
 - Style decision: One Reply = anime; COUNTDOWN keeps its flat 2D painted style.
 
 ## Language focus (decided 27 Nov)
