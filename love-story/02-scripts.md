@@ -100,7 +100,7 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 6 · സമ്മാനം (The Gift) — from **her** side
+## Episode 6 · സമ്മാനം (The Gift) — from **her** side ✅ (made; Amma voice "Solly Rajan", last line recorded as "നമ്മൾ പോലീസിനെ അറിയിക്കണോ?")
 **Hook:** Manjusha's hands opening a parcel; a handwritten letter falls out.
 | Time | Picture | Voice / sound |
 |---|---|---|
