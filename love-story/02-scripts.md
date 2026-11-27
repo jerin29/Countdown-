@@ -148,7 +148,7 @@ Release: title song 31 Dec · Ep1 1 Jan · Ep2–Ep10 2–10 Jan, 9 PM.
 
 ---
 
-## Episode 9 · ഇഷ്ടം കൊണ്ട് (What He Does With the Love)
+## Episode 9 · ഇഷ്ടം കൊണ്ട് (What He Does With the Love) ✅ (made)
 **Hook:** his own reel: 1 view → 1,000 → 100K.
 | Time | Picture | Voice / sound |
 |---|---|---|

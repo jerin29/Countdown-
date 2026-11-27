@@ -1,0 +1,127 @@
+{
+ "positive_global_styles": [
+  "modern Malayalam romantic acoustic background score, 2010s Malayalam love song feel",
+  "84 BPM, 4/4, warm major key, I-V-vi-IV",
+  "soft wordless male and female humming duet throughout (hmm, ooh, aah, no words)",
+  "bansuri flute carries the sweet romantic melody",
+  "warm acoustic guitar fingerpicking, soft finger snaps, shaker, warm bass",
+  "glockenspiel sparkle, gentle string swells",
+  "tender, dreamy, deeply romantic, falling in love, intimate and warm"
+ ],
+ "negative_global_styles": [
+  "lyrics",
+  "words",
+  "heavy drums",
+  "EDM",
+  "dark",
+  "sad",
+  "horror",
+  "rock",
+  "busy"
+ ],
+ "sections": [
+  {
+   "section_name": "Counter rising",
+   "positive_local_styles": [
+    "quick rising glockenspiel and plucked guitar build, exciting"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 3000,
+   "lines": []
+  },
+  {
+   "section_name": "First reel at 2 AM",
+   "positive_local_styles": [
+    "quiet night, soft piano and gentle rain-like guitar, thoughtful"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 9000,
+   "lines": []
+  },
+  {
+   "section_name": "23 views",
+   "positive_local_styles": [
+    "light playful groove returns, snaps, plucked guitar, funny"
+   ],
+   "negative_local_styles": [
+    "heavy"
+   ],
+   "duration_ms": 10000,
+   "lines": []
+  },
+  {
+   "section_name": "Every night he creates",
+   "positive_local_styles": [
+    "warm guitar strums and claps, steady uplifting groove, bansuri flute melody, montage energy"
+   ],
+   "negative_local_styles": [
+    "EDM"
+   ],
+   "duration_ms": 18000,
+   "lines": []
+  },
+  {
+   "section_name": "Comments",
+   "positive_local_styles": [
+    "soft female and male humming duet over warm guitar, touching"
+   ],
+   "negative_local_styles": [
+    "heavy drums"
+   ],
+   "duration_ms": 14000,
+   "lines": [
+    "Hmm hmm... ooh..."
+   ]
+  },
+  {
+   "section_name": "It takes off",
+   "positive_local_styles": [
+    "music builds: strings rise, claps, full love theme with flute and humming, joyful"
+   ],
+   "negative_local_styles": [
+    "EDM"
+   ],
+   "duration_ms": 12000,
+   "lines": [
+    "Aah... hmm..."
+   ]
+  },
+  {
+   "section_name": "Because of her",
+   "positive_local_styles": [
+    "music softens to tender piano and flute, grateful, emotional"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 8000,
+   "lines": []
+  },
+  {
+   "section_name": "One million",
+   "positive_local_styles": [
+    "big uplifting swell of strings and humming, then a sudden cut to silence"
+   ],
+   "negative_local_styles": [
+    "EDM"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  },
+  {
+   "section_name": "End card",
+   "positive_local_styles": [
+    "gentle warm piano and flute tail, hopeful"
+   ],
+   "negative_local_styles": [
+    "drums"
+   ],
+   "duration_ms": 5000,
+   "lines": []
+  }
+ ]
+}
