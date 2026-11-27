@@ -116,6 +116,7 @@ Approved file: `trial/out/ONE_REPLY_trial_ep01_ml_9x16_v9.mp4` (score `trial/aud
 - **6 Jan 2027, 9:00 PM IST** — Episode 6 "സമ്മാനം" (anime, her side). postId eee4efc1-8f25-47b9-847b-2610dd762a2c, upload cb0a49ab-e13d-4d3b-835c-e46f0d9596da. Caption promises Ep7 on 7 Jan.
 - **7 Jan 2027, 9:00 PM IST** — Episode 7 "മുന്നറിയിപ്പ്" (anime). postId c93d1bc6-24f6-4f8a-beed-97403cd19de8, upload 36b7c66c-82e4-4f13-b595-0b1172ce8f00. Caption promises Ep8 on 8 Jan. Ep8–10 to be made after the 21 Dec vidIQ refill.
 - **8 Jan 2027, 9:00 PM IST** — Episode 8 "അയക്കാത്ത കത്ത്" (anime). postId 03993327-08d0-4f8b-a273-80a8c453407e, upload 81bd9c73-e667-4541-b47e-46896747c9f4. Caption promises Ep9 on 9 Jan.
+- **9 Jan 2027, 9:00 PM IST** — Episode 9 "ഇഷ്ടം കൊണ്ട്" (anime). postId f554b80a-f151-4998-bad0-c33d3474768e, upload d55781da-45bd-456f-9f4b-ac853485afae. Caption promises the finale (Ep10) on 10 Jan — make after the 21 Dec refill.
 - Style decision: One Reply = anime; COUNTDOWN keeps its flat 2D painted style.
 
 ## Language focus (decided 27 Nov)
