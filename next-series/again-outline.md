@@ -1,5 +1,5 @@
-# തുടക്കം (Thudakkam / "The Beginning") — next series after ഒരു റിപ്ലൈ
-Working title, from the creator's own mirror line: "ഇത് ഒന്നിന്റെയും അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്."
+# AGAIN (വീണ്ടും) — next series after ഒരു റിപ്ലൈ
+Title chosen by the creator (27 Nov): **Again**. Theme: he falls, gets up and plays again. Heart of the story: the mirror line "ഇത് ഒന്നിന്റെയും അവസാനമല്ല, എല്ലാത്തിനും തുടക്കമാണ്."
 Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi** (a prequel/sequel in the One Reply universe).
 
 ## Real events (creator's account)
@@ -25,7 +25,7 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 | 9 | ടീം | Training a team of beginners; first match |
 | 10 | ഓപ്പൺ സെലക്ഷൻ | Thiruvananthapuram open selection → district team |
 | 11 | ചിരി | Not selected at the next level — and he smiles |
-| 12 | തുടക്കം | Leaving college; years later new juniors join "his" team; mirror callback |
+| 12 | Again | Leaving college; years later new juniors join "his" team; mirror callback — the final card: AGAIN |
 
 ## Rules
 - Change names of schools, colleges, coaches and teammates. Coaches are not villains: "adults' ego cost a kid his dream".
