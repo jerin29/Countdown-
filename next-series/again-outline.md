@@ -31,3 +31,8 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - Change names of schools, colleges, coaches and teammates. Coaches are not villains: "adults' ego cost a kid his dream".
 - Music: sports-drama build (drums, rise), not the One Reply love theme — but the One Reply flute can appear once as a nod.
 - Decide 12 vs 15 after One Reply's numbers and any extra real moments the creator shares.
+
+## Title song (27 Nov)
+- **Final: version 1** — `song/again-ml-v1_master.mp3` (2:55, 120 BPM anthem; lyrics `song/again-ml-lyrics.md`). Chosen by the creator.
+- v2 (high-energy, 136 BPM, long intro) kept as an alternative: `song/again-ml-v2_master.mp3`.
+- Timings in v1: chorus 0:44 · bench verse 1:04 · mirror bridge 1:36 · final chorus 2:20.
