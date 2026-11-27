@@ -35,7 +35,7 @@ Names of schools, coaches and teammates are changed. No school name, crest or pl
 1. Answered 27 Nov: he saw them training and just went and asked the sir. (The invented "throw" scene is removed.)
 2. Your coach's personality — strict, funny, quiet? (name will be changed)
 3. How did your Amma/Achan react?
-4. Your jersey number?
+4. Answered 27 Nov: jersey number **23**.
 5. A school friend from the team we can bring in (name changed)?
 
 ---

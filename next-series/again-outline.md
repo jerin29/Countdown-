@@ -54,3 +54,4 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
   - Ep9: **first meeting with the new sir**: he catches Aadhi and friends bunking at the ground/canteen; instead of scolding, he sees Aadhi throw a ball and asks "നീ ഹാൻഡ്‌ബോൾ കളിക്കുമോ?"
   - Exam "bits": a light comic beat only (panic the night before, a bit hidden in a pen cap, then the invigilator walks by and they freeze); never shown as clever or rewarded.
   - Ep12: team bonding: the new team crammed around one phone watching a movie after practice.
+- **Aadhi's jersey number: 23** (the creator's real number). Use it on every jersey (school and college), in the Ep5 bench close-up, and on the AGAIN poster/cover.
