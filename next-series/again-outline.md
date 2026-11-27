@@ -49,3 +49,8 @@ Based on the creator's real life (told 27 Nov). Same anime style; hero = **Aadhi
 - Pattern: three falls, each answered more strongly: Malappuram (cries, mirror promise), the selection told the night before (runs next morning), Army test missed by one second (doesn't break, new goals).
 - Keep lighter moments between the falls (team jokes, practice fun, a friend); ask the creator for real funny team memories.
 - Ep1 and Ep12 must mirror each other shot for shot: the edge of the ground, the walk up, the question, "നാളെ രാവിലെ ആറു മണിക്ക് ഗ്രൗണ്ടിൽ വാ."
+- **Real college fun (creator, 27 Nov):** bunking class to roam around, going out to eat, setting up "bits" before exams, watching movies on the phone in class.
+  - Ep7: quick montage between the 5 AM runs: bunking with Kiran, a movie on the phone under the desk, parotta at the thattukada.
+  - Ep9: **first meeting with the new sir**: he catches Aadhi and friends bunking at the ground/canteen; instead of scolding, he sees Aadhi throw a ball and asks "നീ ഹാൻഡ്‌ബോൾ കളിക്കുമോ?"
+  - Exam "bits": a light comic beat only (panic the night before, a bit hidden in a pen cap, then the invigilator walks by and they freeze); never shown as clever or rewarded.
+  - Ep12: team bonding: the new team crammed around one phone watching a movie after practice.
